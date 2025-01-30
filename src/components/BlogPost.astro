@@ -1,0 +1,31 @@
+---
+const { title, content } = Astro.props;
+import { Image } from 'astro:assets';
+import stones from '../assets/img/image.png';
+
+---
+<section class="mb-16 blog_section">
+    <article class="mb-16 last:mb-0 flex flex-col md:flex-row">
+        <div class="blog_content flex-1">
+            <h2 class="text-2xl  font-bold mb-6">{title}</h2>
+            <p class="blog_text">
+                {content}
+            </p>
+
+
+        </div>
+        <div class="prose max-w-none flex-1">
+            <Image src={stones} alt="Blog Post Image" class="align-self-center"/>
+        </div>
+    </article>
+</section>
+
+<style>
+    .blog_text{
+        font-size: 16px;
+    }
+    .blog_section{
+        background: red;
+
+    }
+</style>

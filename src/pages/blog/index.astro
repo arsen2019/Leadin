@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../components/BlogPost.astro';
+
+const loremContent = `Lorem Ipsum is simply dummy text of the printing and typesetting
+ industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+  took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+   but also the leap into electronic typesetting`;
+---
+<BaseLayout title="Leadin Agency - Insights & Success Stories">
+    <article class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <header class="mb-16 text-center">
+            <p class="text-lg">
+                Discover transformative strategies from real success stories
+            </p>
+        </header>
+
+        <BlogPost
+                title="How Joe Had A Record Month Using His Personal Brand"
+                content={loremContent}
+        />
+        {
+
+        }
+        <BlogPost
+                title="How Joe Had A Record Month Using His Personal Brand"
+                content={loremContent}
+        />
+    </article>
+</BaseLayout>

@@ -1,0 +1,33 @@
+---
+const menuItems = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "Clients", path: "/clients" },
+    { name: "Portfolio", path: "/portfolio" },
+    { name: "Blog", path: "/blog" },
+    { name: "Connect us", path: "/connect" }
+];
+import { Image } from 'astro:assets';
+import logo from '../assets/img/logo.png';
+---
+<nav class="top-0 shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <Image src={logo} alt="logo"/>
+
+                <div class="hidden md:flex space-x-8 ml-10">
+                    {menuItems.map(item => (
+                            <a
+                                    href={item.path}
+                                    class="over:text-grey-600 transition-colors"
+                            >
+                                {item.name}
+                            </a>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
