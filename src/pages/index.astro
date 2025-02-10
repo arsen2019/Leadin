@@ -1,20 +1,102 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PortfolioSlider from '../components/PortfolioSlider.astro';
+
+import Footer from '../components/Footer.astro';
+import BrandingCard from "../components/BrandingCard.astro";
+import OurTeam from "../components/OurTeam.astro";
+import Get_started from "../components/pop_ups/get_started.astro";
+import Subscribe from "../components/pop_ups/subscribe.astro";
 ---
 <BaseLayout title="Leadin Agency - Transform Your Personal Brand">
 
     <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold mb-4">
-                Beyond Surface-Level Branding
-            </h2>
-            <p class="max-w-2xl mx-auto">
-                We specialize in intimate exploration of personal essence, helping clients
-                transform their fears into strengths and aspirations into reality.
-            </p>
+        <div class="flex flex-col justify-between items-center gap-14">
+            <div><img src="src/assets/img/HomeLogo.svg"></div>
+            <div ><h2 class="text-4xl">We are ready to lead your personal brand to success. </h2></div>
+            <div> <Get_started /></div>
+        </div>
+    </section >
+
+<!-- Branding cards-->
+    <section class="cards-section  max-w-7xl mx-auto py-12 px-4  bg-black my-28">
+        <h2>Result-Based Personal Branding</h2>
+        <div class="grid max-2xl:grid-cols-2  max-md:grid-cols-1 gap-6 ">
+            <BrandingCard title="Telecom" subTitle="Personal Branding on LinkedIn" src="/telecom.png" heading="How Joe Had A Record Month Using His Personal Brand" />
+            <BrandingCard title="Nutrition" subTitle="Blogging on Instagram" src="/nutrition.png" heading="How Joe Had A Record Month Using His Personal Brand"/>
+            <BrandingCard title="Health" subTitle="Blogging on Instagram" src="/health.png" heading="How Joe Had A Record Month Using His Personal Brand"/>
+            <BrandingCard title="Tech" subTitle="Personal Branding on LinkedIn" src="/tech.png" heading="How Joe Had A Record Month Using His Personal Brand"/>
         </div>
     </section>
+<!--Our Services-->
+    <section class="max-w-7xl mx-auto py-12 px-4">
+        <h2>Our Services</h2>
+        <div class="ourServices-conteiner grid max-2xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-2">
+            <div class="ourServices  ">
+                <h3 class="text-2xl pb-4 ">Personal Brand Management</h3>
+                 <p class="text-[#D8D6D6] text-[16px] ">We help professionals build and maintain a strong, authentic personal brand that resonates with their audience and drives meaningful impact.</p>
+            </div>
+            <div class="ourServices " >
+                <h3 class="text-2xl pb-4">Digital Marketing</h3>
+                <p class="text-[#D8D6D6] text-[16px]">We manage social media, run PPC ads, and design marketing campaigns that amplify your online presence and achieve measurable results.</p>
+            </div>
+            <div class="ourServices" >
+                <h3 class="text-2xl pb-4">Marketing Strategy</h3>
+                <p class="text-[#D8D6D6] text-[16px]">We develop comprehensive strategies for companies, including vision, mission, market research, and actionable plans to drive growth.</p>
+            </div>
+            <div class="ourServices " >
+                <h3 class="text-2xl pb-4">Positioning Strategy</h3>
+                <p class="text-[#D8D6D6] text-[16px]">We craft personalized positioning strategies to establish your unique identity, build authority, and connect with your ideal audience.</p>
+            </div>
+            <div class="ourServices " >
+                <h3 class="text-2xl pb-4">Content Creation</h3>
+                <p class="text-[#D8D6D6] text-[16px]">We produce engaging ghostwriting, copywriting, video content, photoshoots, and reels for personal brands and companies to captivate and inspire.</p>
+            </div>
+            <div class="ourServices">
+                <h3 class="text-2xl pb-4">Branding and Design</h3>
+                <p class="text-[#D8D6D6] text-[16px]">We create compelling visual identities, logos, and brand designs that reflect the essence and values of your company.</p>
+            </div>
+
+
+        </div>
+    </section>
+<!--Contact us-->
+    <section class="bg-[#191718] max-w-7xl mx-auto py-12 px-4">
+        <div class="contact-conteiner flex ">
+            <div class="contact-href flex flex-col gap-8">
+                <h3 class="text-4xl">Do you have any questions?</h3>
+                <div class="flex lg:text-[20px] 2xl:text-[25px] max-sm:text-[13px] items-center">
+                    <div class="pr-4">
+                        <a href="#" class=""> <img src="/icons/InstagramLogo.svg"></a>
+                    </div>
+                    <div>
+                        <a href="#" class="underline underline-offset-2 ">leadin.agency</a>
+                    </div>
+                </div>
+                <div class="flex lg:text-[20px] 2xl:text-[25px] max-sm:text-[13px] items-center">
+                    <div class="pr-4">
+                        <a href="#" class=""> <img src="/icons/At.svg"></a>
+                    </div>
+                    <div>
+                        <a href="#" class="underline underline-offset-2 ">hello@leadin.agency</a>
+                    </div>
+                </div>
+                <div class="flex lg:text-[20px] 2xl:text-[25px] max-sm:text-[13px] items-center">
+                    <div class="pr-4">
+                        <a href="#" class=""> <img src="/icons/icons8-linkedin.svg" class="invert"></a>
+                    </div>
+                    <div>
+                        <a href="#" class="underline underline-offset-2 ">LEADIN Personal Branding Agency</a>
+                    </div>
+                </div>
+                <Subscribe/>
+            </div>
+            <div class="contact-send">
+
+            </div>
+        </div>
+    </section>
+<!-- class=" w-[15] lg:w-[20px] 2xl:w-[25px] "-->
+
     <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF]">
         <div class="NoVac  justify-center bg-[#FFF] border-[#785B55] border-2 rounded-md ">
             <div class="NoVacanciesContent my-4 flex flex-col items-center">
@@ -34,12 +116,11 @@ import PortfolioSlider from '../components/PortfolioSlider.astro';
             <div class="vacanciesContent flex flex-col items-center p-10 text-center" >
                 <h2 class="text-2xl text-[#FFF]">Personal Branding Specialist </h2>
                 <p class="text-x text-[#FFF] py-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                <button class=" bg-[#B19482] text-[#FFF] px-32 py-2 w-full">LeadIn</button>
+                <button class=" bg-[#B19482] text-[#FFF] px-32 py-2 w-full">LinkedIn</button>
             </div>
         </div>
     </section>
     <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <PortfolioSlider/>
     </section>
 
 
