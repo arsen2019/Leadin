@@ -1,33 +1,28 @@
 ---
-const menuItems = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Clients", path: "/clients" },
-    { name: "Portfolio", path: "/portfolio" },
-    { name: "Blog", path: "/blog" },
-    { name: "Connect us", path: "/connect" }
-];
-import { Image } from 'astro:assets';
-import logo from '../assets/img/logo.svg';
+import {Image} from 'astro:assets';
+import logo from '../assets/img/nav_logo.svg';
+import HamburgerMenu from './react_components/HamburgerMenu.tsx'
 ---
-<nav class="top-0 shadow-sm z-50">
+<nav class="top-0 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+        <HamburgerMenu client:only='react'/>
+        <div class="hidden lg:flex justify-between h-16">
             <div class="flex items-center">
                 <Image src={logo} alt="logo"/>
-
-                <div class="hidden md:flex space-x-8 ml-10">
-                    {menuItems.map(item => (
-                            <a
-                                    href={item.path}
-                                    class="over:text-grey-600 transition-colors"
-                            >
-                                {item.name}
-                            </a>
-                    ))}
-                </div>
             </div>
+            <div class="hidden lg:flex h-16 items-center xl:text-lg  text-md ">
+                <ul class="flex items-center gap-6 h-16">
+                    <li class="flex"><a href="/">Home</a></li>
+                    <li class="flex"><a href="/about">About Us</a></li>
+                    <li class="flex"><a href="/services">Services</a></li>
+                    <li class="flex"><a href="/clients">Clients</a></li>
+                    <li class="flex"><a href="/portfolio">Portfolio</a></li>
+                    <li class="flex"><a href="/connect">Connect</a></li>
+                    <li class="flex"><a href="/blog">Blog</a></li>
+                    <li class="flex"><a href=""><button class="py-1 px-3 bg-[#B19482] rounded-[0.5rem]">Connect us</button></a></li>
+                </ul>
+            </div>
+
         </div>
     </div>
 </nav>
