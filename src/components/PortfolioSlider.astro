@@ -3,8 +3,6 @@ import Portfolio from "./react_components/Portfolio.tsx";
 const image_paths = await import.meta.glob("/src/assets/img/portfolio/*");
 const images = Object.keys(image_paths);
 const concat = images.concat(images).concat(images);
-console.log(images);
-
 ---
 <div class="flex flex-col items-center">
     <h1 class="text-3xl">Our Portfolio</h1>
