@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
-export default function HamburgerMenu() {
+interface Props {
+    activePath: string;
+}
+
+export default function HamburgerMenu({activePath}: Props) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -25,18 +29,32 @@ export default function HamburgerMenu() {
                 onClick={toggleMenu}
             ></div>
             <div
-                className={`fixed top-0 right-0 h-screen w-1/4 bg-black opacity-80 text-white text-xl shadow-lg 
+                className={`fixed top-0 right-0 h-screen w-2/5 bg-black  p-2 text-white text-xl shadow-lg 
                 flex flex-col  justify-center transform transition-transform duration-500 
                 ${isOpen ? "translate-x-0" : "translate-x-full"}`}
             >
-                <ul className="space-y-4 text-center">
-                    <li className="cursor-pointer transform transition-all duration-300 opacity-80 hover:opacity-100 hover:scale-110 active:scale-150 "><a href="/">Home</a></li>
-                    <li className="cursor-pointer transform transition-all duration-300 opacity-80 hover:opacity-100 hover:scale-110 active:scale-150 "><a href="/about">About Us</a></li>
-                    <li className="cursor-pointer transform transition-all duration-300 opacity-80 hover:opacity-100 hover:scale-110 active:scale-150 "><a href="/services">Services</a></li>
-                    <li className="cursor-pointer transform transition-all duration-300 opacity-80 hover:opacity-100 hover:scale-110 active:scale-150 "><a href="/clients">Clients</a></li>
-                    <li className="cursor-pointer transform transition-all duration-300 opacity-80 hover:opacity-100 hover:scale-110 active:scale-150 "><a href="/portfolio">Portfolio</a></li>
-                    <li className="cursor-pointer transform transition-all duration-300 opacity-80 hover:opacity-100 hover:scale-110 active:scale-150 "><a href="/connect">Connect</a></li>
-                    <li className="cursor-pointer transform transition-all duration-300 opacity-80 hover:opacity-100 hover:scale-110 active:scale-150"><a href="/blog">Blog</a></li>
+                <ul className="space-y-4">
+                    <li className={`cursor-pointer transform transition-all duration-300 ${
+                        activePath === "/" ? "scale-130" : "opacity-80"
+                    } hover:scale-130 active:scale-120 `}><a href="/">Home</a></li>
+                    <li className={`cursor-pointer transform transition-all duration-300 ${
+                        activePath === "/about" ? "scale-130" : "opacity-80"
+                    }  hover:scale-130 active:scale-120 `}><a href="/about">About Us</a></li>
+                    <li className={`cursor-pointer transform transition-all duration-300 ${
+                        activePath === "/services" ? "scale-130" : "opacity-80"
+                    } hover:scale-130 active:scale-120 `}><a href="/services">Services</a></li>
+                    <li className={`cursor-pointer transform transition-all duration-300 ${
+                        activePath === "/clients" ? "scale-130" : "opacity-80"
+                    } hover:scale-130 active:scale-120 `}><a href="/clients">Clients</a></li>
+                    <li className={`cursor-pointer transform transition-all duration-300 ${
+                        activePath === "/portfolio" ? "scale-130 text-center" : "opacity-80"
+                    }  hover:scale-130 active:scale-120 `}><a href="/portfolio">Portfolio</a></li>
+                    <li className={`cursor-pointer transform transition-all duration-300 ${
+                        activePath === "/connect" ? "scale-130" : "opacity-80"
+                    }  hover:scale-130 active:scale-120 `}><a href="/connect">Connect</a></li>
+                    <li className={`cursor-pointer transform transition-all duration-300 ${
+                        activePath === "/blog" ? "scale-130" : "opacity-80"
+                    } hover:scale-130 active:scale-120 `}><a href="/blog">Blog</a></li>
                 </ul>
 
                 <button

@@ -2,27 +2,44 @@
 import {Image} from 'astro:assets';
 import logo from '../assets/img/nav_logo.svg';
 import HamburgerMenu from './react_components/HamburgerMenu.tsx'
+
+const path = Astro.url.pathname
 ---
 <nav class="top-0 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <HamburgerMenu client:only='react'/>
+        <HamburgerMenu activePath={path} client:only='react'/>
         <div class="hidden lg:flex justify-between h-16">
             <div class="flex items-center">
                 <Image src={logo} alt="logo"/>
             </div>
             <div class="hidden lg:flex h-16 items-center xl:text-lg  text-md ">
                 <ul class="flex items-center gap-6 h-16">
-                    <li class="flex"><a href="/">Home</a></li>
-                    <li class="flex"><a href="/about">About Us</a></li>
-                    <li class="flex"><a href="/services">Services</a></li>
-                    <li class="flex"><a href="/clients">Clients</a></li>
-                    <li class="flex"><a href="/portfolio">Portfolio</a></li>
-                    <li class="flex"><a href="/connect">Connect</a></li>
-                    <li class="flex"><a href="/blog">Blog</a></li>
-                    <li class="flex"><a href=""><button class="py-1 px-3 bg-[#B19482] rounded-[0.5rem]">Connect us</button></a></li>
+                    <li class=`flex ${
+                        path === "/" ? "border-b-2 border-[#fff]" : ""
+                    }`><a href="/">Home</a></li>
+                    <li class=`flex ${
+                        path === "/about" ? "border-b-2 border-[#fff]" : ""
+                    }`><a href="/about">About Us</a></li>
+                    <li class=`flex ${
+                        path === "/services" ? "border-b-2 border-[#fff]" : ""
+                    }`><a href="/services">Services</a></li>
+                    <li class=`flex ${
+                        path === "/clients" ? "border-b-2 border-[#fff]" : ""
+                    }`><a href="/clients">Clients</a></li>
+                    <li class=`flex ${
+                        path === "/portfolio" ? "border-b-2 border-[#fff]" : ""
+                    }`><a href="/portfolio">Portfolio</a></li>
+                    <li class=`flex ${
+                        path === "/connect" ? "border-b-2 border-[#fff]" : ""
+                    }`><a href="/connect">Connect</a></li>
+                    <li class=`flex ${
+                        path === "/blog" ? "border-b-2 border-[#fff]" : ""
+                    }`><a href="/blog">Blog</a></li>
+                    <li class="flex"><a href="">
+                        <button class="py-1 px-3 bg-[#B19482] rounded-[0.5rem]">Connect us</button>
+                    </a></li>
                 </ul>
             </div>
-
         </div>
     </div>
 </nav>
