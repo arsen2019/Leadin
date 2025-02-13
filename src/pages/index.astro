@@ -1,8 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+import Footer from '../components/Footer.astro';
 import BrandingCard from "../components/BrandingCard.astro";
+import OurTeam from "../components/OurTeam.astro";
 import Get_started from "../components/pop_ups/get_started.astro";
 import Subscribe from "../components/pop_ups/subscribe.astro";
+import OpenVac from "../components/OpenVac.astro";
+import NoVac from "../components/NoVac.astro";
+import SocialHref from "../components/SocialHref.astro";
 ---
 <BaseLayout title="Leadin Agency - Transform Your Personal Brand">
 
@@ -12,22 +18,30 @@ import Subscribe from "../components/pop_ups/subscribe.astro";
             <div ><h2 class="text-4xl">We are ready to lead your personal brand to success.</h2></div>
             <div> <Get_started /></div>
         </div>
-    </section >
+    </section>
 
-<!-- Branding cards-->
-    <section class="cards-section  max-w-7xl mx-auto py-12 px-4  bg-black my-28">
-        <h2>Result-Based Personal Branding</h2>
-        <div class="grid max-2xl:grid-cols-2  max-md:grid-cols-1 gap-6 ">
-            <BrandingCard title="Telecom" subTitle="Personal Branding on LinkedIn" src="/telecom.png" heading="How Joe Had A Record Month Using His Personal Brand" />
-            <BrandingCard title="Nutrition" subTitle="Blogging on Instagram" src="/nutrition.png" heading="How Joe Had A Record Month Using His Personal Brand"/>
-            <BrandingCard title="Health" subTitle="Blogging on Instagram" src="/health.png" heading="How Joe Had A Record Month Using His Personal Brand"/>
-            <BrandingCard title="Tech" subTitle="Personal Branding on LinkedIn" src="/tech.png" heading="How Joe Had A Record Month Using His Personal Brand"/>
+    <!-- Branding cards-->
+    <section class="cards-section  lg:max-w-7xl max-w-2xl mx-auto py-12 px-4  bg-black my-28">
+        <header class="text-center">
+            <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl ">Result-Based Personal Branding</h2>
+        </header>
+        <div class="grid lg:grid-cols-2  grid-cols-1 gap-6 ">
+            <BrandingCard title="Telecom" subTitle="Personal Branding on LinkedIn" src="/telecom.png"
+                          heading="How Joe Had A Record Month Using His Personal Brand"/>
+            <BrandingCard title="Nutrition" subTitle="Blogging on Instagram" src="/nutrition.png"
+                          heading="How Joe Had A Record Month Using His Personal Brand"/>
+            <BrandingCard title="Health" subTitle="Blogging on Instagram" src="/health.png"
+                          heading="How Joe Had A Record Month Using His Personal Brand"/>
+            <BrandingCard title="Tech" subTitle="Personal Branding on LinkedIn" src="/tech.png"
+                          heading="How Joe Had A Record Month Using His Personal Brand"/>
         </div>
     </section>
 <!--Our Services-->
     <section class="max-w-7xl mx-auto py-12 px-4">
-        <h2>Our Services</h2>
-        <div class="ourServices-conteiner grid max-2xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-2">
+        <header class="text-center">
+            <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl ">Our Services</h2>
+        </header>
+        <div class="ourServices-conteiner grid  grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-2">
             <div class="ourServices  ">
                 <h3 class="text-2xl pb-4 ">Personal Brand Management</h3>
                  <p class="text-[#D8D6D6] text-[16px] ">We help professionals build and maintain a strong, authentic personal brand that resonates with their audience and drives meaningful impact.</p>
@@ -92,6 +106,7 @@ import Subscribe from "../components/pop_ups/subscribe.astro";
             </div>
         </div>
     </section>
+<!-- class=" w-[15] lg:w-[20px] 2xl:w-[25px] "-->
 
     <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF]">
         <div class="NoVac  justify-center bg-[#FFF] border-[#785B55] border-2 rounded-md ">
