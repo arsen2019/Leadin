@@ -72,37 +72,28 @@ import SocialHref from "../components/SocialHref.astro";
     </section>
 <!--Contact us-->
     <section class="bg-[#191718] max-w-7xl mx-auto py-12 px-4">
-        <div class="contact-conteiner flex ">
-            <div class="contact-href flex flex-col gap-8">
-                <h3 class="text-4xl">Do you have any questions?</h3>
-                <div class="flex lg:text-[20px] 2xl:text-[25px] max-sm:text-[13px] items-center">
-                    <div class="pr-4">
-                        <a href="#" class=""> <img src="/icons/InstagramLogo.svg"></a>
-                    </div>
-                    <div>
-                        <a href="#" class="underline underline-offset-2 ">leadin.agency</a>
-                    </div>
-                </div>
-                <div class="flex lg:text-[20px] 2xl:text-[25px] max-sm:text-[13px] items-center">
-                    <div class="pr-4">
-                        <a href="#" class=""> <img src="/icons/At.svg"></a>
-                    </div>
-                    <div>
-                        <a href="#" class="underline underline-offset-2 ">hello@leadin.agency</a>
-                    </div>
-                </div>
-                <div class="flex lg:text-[20px] 2xl:text-[25px] max-sm:text-[13px] items-center">
-                    <div class="pr-4">
-                        <a href="#" class=""> <img src="/icons/icons8-linkedin.svg" class="invert"></a>
-                    </div>
-                    <div>
-                        <a href="#" class="underline underline-offset-2 ">LEADIN Personal Branding Agency</a>
-                    </div>
-                </div>
+        <header class="text-center">
+            <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl ">Contact Us</h2>
+        </header>
+        <div class="contact-conteiner flex sm:flex-row flex-col-reverse gap-4 px-10">
+            <div class="contact-href  flex flex-1 flex-col sm:gap-8 gap-2">
+                <h3 class="sm:text-4xl text-2xl p-4">Get in touch </h3>
+                <SocialHref/>
                 <Subscribe/>
             </div>
-            <div class="contact-send">
-
+            <div class="contact-send flex flex-1 flex-col gap-4">
+                <h3 class="sm:text-4xl text-2xl p-4">Do you have any questions?</h3>
+                <div>
+                    <input type="email" placeholder="Email"
+                           class="w-full p-2 border border-[#D9B99B] rounded-md focus:ring-2  bg-[#191718]"/>
+                </div>
+                <div class="flex  h-full ">
+                    <textarea placeholder="Text"
+                              class=" start-0 w-full border p-2 border-[#D9B99B] rounded-md focus:ring-2 bg-[#191718]"></textarea>
+                </div>
+                <div>
+                    <button class="bg-[#B19482] py-2 rounded-md w-full">Send</button>
+                </div>
             </div>
         </div>
     </section>
