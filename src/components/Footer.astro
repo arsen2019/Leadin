@@ -1,35 +1,39 @@
 ---
-// Footer component with dynamic year
+import Subscribe from "./pop_ups/subscribe.astro";
 const currentYear = new Date().getFullYear();
 ---
-<footer class="footer mt-12 p-8">
-    <div class="w-full mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-3 md:grid-cols-4 gap-6">
-            <div class="space-y-4">
+<footer class="bg-[#EED9C4] mt-12 p-4 md:p-6">
+    <div class="w-full mx-auto py-12 px-0 md:px-4 lg:px-6 ">
+        <div class="grid grid-cols-[2.5fr_1fr_1fr] md:grid-cols-[2fr_1fr_1fr_2fr] gap-3 md:gap-6">
+            <div>
+                    <ul class="lg:text-lg sm:text-sm xs:text-xs">
+                        <li class="pb-2"><a class="flex gap-2 cursor-pointer "><img class="invert self-start" src="/icons/InstagramLogo.svg"><span class="underline-offset-2 underline">leadin.agency</span></a></li>
+                        <li class="pb-2"><a class="flex gap-2 cursor-pointer "><img class="invert self-start" src="/icons/At.svg"><span class="underline-offset-2 underline">hello@leadin.agency</span></a></li>
+                        <li><a class="flex gap-2 cursor-pointer "><img class="self-start" src="/icons/icons8-linkedin.svg"><span class="underline-offset-2 underline">LEADIN Personal Branding Agency</span></a></li>
+                    </ul>
 
             </div>
-
-            <div class="space-y-4">
-                <ul class="space-y-2">
-                    <li><a href="/home" class="text-gray-600  text-sm">Home</a></li>
-                    <li><a href="/portfolio" class="text-gray-600  text-sm">Portfolio</a></li>
-                    <li><a href="/clients" class="text-gray-600 text-sm">Clients</a></li>
-                    <li><a href="#" class="text-gray-600 text-sm">Services</a></li>
+            <div>
+                <ul class="lg:text-lg sm:text-sm xs:text-xs">
+                    <li><a href="/home" class="text-black-600 ">Home</a></li>
+                    <li><a href="/portfolio" class="text-black-600  ">Portfolio</a></li>
+                    <li><a href="/clients" class="text-black-600 ">Clients</a></li>
+                    <li><a href="/services" class="text-black-600 ">Services</a></li>
                 </ul>
             </div>
 
-            <div class="space-y-4">
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-600  text-sm">About us</a></li>
-                    <li><a href="#" class="text-gray-600  text-sm">Contact</a></li>
-                    <li><a href="/blog" class="text-gray-600 text-sm">Blog</a></li>
+            <div>
+                <ul class="lg:text-lg sm:text-sm">
+                    <li><a href="/about" class="text-black-600 ">About us</a></li>
+                    <li><a href="/connect" class="text-black-600">Connect</a></li>
+                    <li><a href="/blog" class="text-black-600">Blog</a></li>
                 </ul>
             </div>
 
-            <div class="space-y-4 invisible md:visible ">
+            <div class="hidden md:block ">
                 <div class="flex flex-col gap-4">
                     <h3 class="text-xl text-bold">About the company</h3>
-                    <div class="text-gray-600 text-sm">
+                    <div class="text-black-500 text-[13px]">
                         <p>LEADIN is not just a personal branding agency; it's a journey of self-discovery and
                             transformation. Unlike traditional PR approaches, we go beyond surface-level image
                             projection. We believe that personal branding is an intimate exploration of an individual's
@@ -40,15 +44,9 @@ const currentYear = new Date().getFullYear();
 
         </div>
     </div>
-    <div class="md:col-span-4 pt-8">
+    <div>
         <p class="text-center text-sm text-gray-500">
             © COPYRIGHT {currentYear} LEADIN Personal Branding Agency
         </p>
     </div>
 </footer>
-
-<style>
-    .footer {
-        background: #EED9C4;
-    }
-</style>

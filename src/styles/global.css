@@ -1,9 +1,5 @@
-/*@keyframes infinite-scroll {*/
-/*    from { transform: translateX(0); }*/
-/*    to { transform: translateX(-50%); }*/
-/*}*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
 
-/*.animate-infinite-scroll {*/
-/*    animation: infinite-scroll 20s linear infinite;*/
-/*    display: flex;*/
-/*}*/
+* {
+    font-family: 'Raleway', sans-serif;
+}
