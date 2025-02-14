@@ -1,27 +1,22 @@
 ---
-
+import reviewCardSvg from '../assets/img/clients/reviewCard.png';
+import {Image} from "astro:assets";
 ---
-<div class="review-card w-[350px] h-[350px] bg-gray-700 rounded-[20px]">
-    <div class="custom-shape-divider-top-1739452682">
-        <svg
-                class="w-full"
-                viewBox="100 30 310 50"
-                xmlns="http://www.w3.org/2000/svg"
-        >
-            <path d="M112,20 C175,69 321,68 399,24 Z" />
-
-        </svg>
+<div class="review-container relative inline-block w-1/3 min-w-[200px]">
+    <div class=" ">
+        <Image src={reviewCardSvg} alt=''/>
+    </div>
+    <div class="review-content absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  w-10/12 flex flex-col gap-[1vh] text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px]">
+        <h3 class="text-white text-center">Karen Grigoryan</h3>
+        <span class="text-yellow-400  text-center">★★★★★✬</span>
+        <div class="review-feedback">
+            <div class="stars"></div>
+            <div class="opinion text-center">
+                <p>They helped me define my brand’s mission, values, and personality in a way that was both authentic
+                    and compelling. Since working with them, I’ve seen an increase in engagement and customer
+                    loyalty."</p>
+            </div>
+        </div>
     </div>
 </div>
 
-
-<style>
-    .custom-shape-divider-top-1739452682 {
-        width: 100%;
-        line-height: 0;
-    }
-
-
-
-
-</style>
