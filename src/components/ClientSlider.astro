@@ -3,8 +3,10 @@ import ClientCarousel from './react_components/ClientCarousel.tsx';
 import '../styles/global.css';
 import React from "react";
 
-const imageModules = import.meta.glob("/public/clients/*");
-const images = Object.keys(imageModules);
+const images = ['/public/clients/avanta.svg', '/public/clients/denova.svg', '/public/clients/perio.svg']
+
+// const imageModules = import.meta.glob("/public/clients/*");
+// const images = Object.keys(imageModules);
 ---
 
 <div class="flex flex-col items-center">
