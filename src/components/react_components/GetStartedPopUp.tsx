@@ -1,8 +1,12 @@
 import { useState } from "react";
-import "../../styles/modal.css";
+// import "../../styles/modal.css";
 import FeedbackPopUp from "./FeedbackPopUp.tsx";
 
-export default function GetStartedPopUp() {
+interface IProps {
+    style?: React.CSSProperties;
+}
+
+export default function GetStartedPopUp({style}: IProps) {
     const [isOpen, setIsOpen] = useState(false);
     const content = "Thanks for your interest in Leadin. We will get back to you as soon as possible."
     const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
@@ -14,7 +18,7 @@ export default function GetStartedPopUp() {
     };
     return (
         <div>
-            <button className="open-btn" onClick={() => setIsOpen(true)}>
+            <button className="open-btn"  style={style} onClick={() => setIsOpen(true)}>
                 Get Started
             </button>
 
@@ -28,11 +32,9 @@ export default function GetStartedPopUp() {
                             </button>
                         </div>
                         <div className="modal-content">
-
-
-                            <form className="modal-form" onSubmit={handleSubmit} >
+                            <form className="modal-form" onSubmit={handleSubmit}>
                                 <div className="initials flex gap-5">
-                                    <input type="text" placeholder="Name" className="input-field" />
+                                    <input type="text" placeholder="Name" className="input-field"/>
                                     <input type="text" placeholder="Surname" className="input-field" />
                                 </div>
                                 <div className="get_started_contacts flex gap-5">

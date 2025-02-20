@@ -12,7 +12,7 @@ export default function HamburgerMenu({activePath}: Props) {
     };
 
     return (
-        <div className="relative w-full flex justify-end py-4 lg:hidden">
+        <div className="relative w-full flex justify-end py-4 lg:hidden z-10">
             <img
                 src="/icons/hamburger.svg"
                 alt="hamburger"

@@ -5,7 +5,7 @@ import HamburgerMenu from './react_components/HamburgerMenu.tsx'
 
 const path = Astro.url.pathname
 ---
-<nav class="top-0 shadow-sm">
+<nav class="top-0 shadow-sm max-w-[1440px]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <HamburgerMenu activePath={path} client:only='react'/>
         <div class="hidden lg:flex justify-between h-16">
