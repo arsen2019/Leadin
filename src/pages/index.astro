@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BrandingCard from "../components/BrandingCard.astro";
-import Get_started from "../components/pop_ups/get_started.astro";
 import Subscribe from "../components/pop_ups/subscribe.astro";
 import GetStartedPopUp from "../components/react_components/GetStartedPopUp";
 import PortfolioSlider from "../components/PortfolioSlider.astro";
@@ -9,6 +8,8 @@ import ClientSlider from "../components/ClientSlider.astro";
 import OpenVac from "../components/OpenVac.astro";
 import NoVac from "../components/NoVac.astro";
 import SocialHref from "../components/SocialHref.astro";
+import {Image} from "astro:assets"
+import HomeLogo from "/public/logos/HomeLogo.svg"
 
 ---
 <BaseLayout title="Leadin Agency - Transform Your Personal Brand">
@@ -16,7 +17,7 @@ import SocialHref from "../components/SocialHref.astro";
     <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col justify-between items-center gap-14">
 
-            <div><img src="src/assets/img/HomeLogo.svg"></div>
+            <div><Image src={HomeLogo} alt='' /></div>
             <div >
                 <h2 class="text-center hidden sm:block text-[3vw]">We are ready to lead your personal brand to success.</h2>
                 <h2 class="text-2xl sm:hidden ">Start your personal branding journey.</h2>
@@ -92,19 +93,6 @@ import SocialHref from "../components/SocialHref.astro";
     </div>
 
     <ClientSlider/>
-<!--Contact us-->
-    <section class="bg-[#191718] max-w-7xl mx-auto py-12 px-4">
-        <div class="contact-conteiner flex ">
-            <div class="contact-href flex flex-col gap-8">
-                <h3 class="text-4xl">Do you have any questions?</h3>
-                <div class="flex lg:text-[20px] 2xl:text-[25px] max-sm:text-[13px] items-center">
-                    <div class="pr-4">
-                        <a href="#" class=""> <img src="/icons/InstagramLogo.svg"></a>
-                    </div>
-                    <div>
-                        <a href="#" class="underline underline-offset-2 ">leadin.agency</a>
-                    </div>
-
     <section class="max-w-7xl mx-auto  ">
         <div class="sm:flex sm:flex-row hidden">
             <div class="basis-3/10 w-full flex flex-col ">
@@ -125,7 +113,7 @@ import SocialHref from "../components/SocialHref.astro";
                 </div>
                 <div class="w-full flex flex-row basis-1/2 h-full">
                     <div class="basis-7/16 h-full bg-[#B19482] flex items-start p-5 pt-20 xl:text-base lg:text-sm sm:text-xs"><p>Personal brands increase credibility, with
-                        professionals who actively build their brands seen as more knowledgeableand approachable.</p>
+                        professionals who actively build their brands seen as more knowledgeable and approachable.</p>
                     </div>
                     <div class="basis-9/16 h-full bg-[#000] flex items-end p-5 pb-20 xl:text-base lg:text-sm sm:text-xs"><p> Our unique approach combines psychological insight,
                         content strategy, and expert guidance to craft a personal brand that is deeply authentic and
@@ -139,11 +127,11 @@ import SocialHref from "../components/SocialHref.astro";
     <section>
         <div class="flex flex-col sm:hidden">
             <div class="text-right bg-[#EED9C4] p-10 pl-14">
-                <h2 class="text-[#191718] text-3xl/10 font-bold">Why Strat Building Your Personal Brand With Us?</h2>
+                <h2 class="text-[#191718] text-3xl/10 font-bold">Why Start Building Your Personal Brand With Us?</h2>
                 <p class="text-[#000] text-sm/6 ml-6">Personal brands increase credibility, with professionals who actively build their brands seen as more knowledgeableand approachable.</p>
             </div>
             <div>
-                <img alt="HomeStaticImg" src="staticImg.png">
+                <img alt="HomeStaticImg" src="/staticImg.png">
             </div>
             <div class="p-10 bg-[#E0D3BD]">
                 <p class="text-[#191718] ">Our expertise in personal branding, marketing, and design ensures excBuilding a personal brand helps professionals establish themselves as thought leaders, enhancing their visibility and authority in their industries.eptional results tailored to your unique needs.</p>
