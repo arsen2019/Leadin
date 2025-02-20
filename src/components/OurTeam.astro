@@ -2,7 +2,7 @@
 const {title, position,followers,href,src} = Astro.props;
 ---
 <div class="team-member flex flex-col lg:p-14 md:p-6 p-2">
-    <div class="flex-1"><img src={src} alt=""></img></div>
+    <div class="flex-1"><img class="flex-shrink-0 min-w-full min-h-full" src={src} alt=""></img></div>
     <div class="team-content flex flex-col justify-center items-center  w-full lg:rounded-b-xl rounded-b-md pb-8 bg-[#000000] ">
         <h3 class="md:text-xl text-md pt-4">{title}</h3>
         <p class="md:text-lg text-xs">{position}</p>
