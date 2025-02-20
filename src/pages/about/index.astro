@@ -3,28 +3,64 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import OurTeam from "../../components/OurTeam.astro";
 ---
 <BaseLayout title="Leadin Agency - Insights & Success Stories">
-    <article class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <header class="mb-16 text-center">
-            <p class="text-lg">
-                Discover transformative strategies from real success stories
-            </p>
+    <section class=" max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <header class=" sm:m-12 m-8 text-center sm:text-4xl lg:text-6xl text-2xl">
+            <h2> We help individuals and companies build and grow their digital presence.</h2>
         </header>
-        <!-- Our Team cards-->
-        <section class="team-section w-full bg-white ">
-            <header class="text-center">
-                <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl text-[#000]">Our Team</h2>
-            </header>
-           <!-- <div class="team-container w-full max-w-[1440px] flex flex-row flex-wrap justify-center items-center text-center text-white">
-                <OurTeam title="Inessa Manukyan" position="CEO/Founder" followers="4k" href="https://www.linkedin.com/in/inessa-manukyan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" src="src/assets/img/teamImg.png" />
-            </div>-->
-            <div class="team-section grid sm:grid-cols-3 gap-4 grid-cols-2">
-                <OurTeam title="Inessa Manukyan" position="CEO/Founder" followers="4k" href="https://www.linkedin.com/in/inessa-manukyan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" src="src/assets/img/teamImg.png" />
-                <OurTeam title="Inessa Manukyan" position="CEO/Founder" followers="4k" href="https://www.linkedin.com/in/inessa-manukyan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" src="src/assets/img/teamImg.png" />
-                <OurTeam title="Inessa Manukyan" position="CEO/Founder" followers="4k" href="https://www.linkedin.com/in/inessa-manukyan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" src="src/assets/img/teamImg.png" />
-                <OurTeam title="Inessa Manukyan" position="CEO/Founder" followers="4k" href="https://www.linkedin.com/in/inessa-manukyan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" src="src/assets/img/teamImg.png" />
+    </section>
 
+
+    <section class="vision-section max-w-7xl mx-auto py-12 ">
+        <header class="text-center">
+            <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl">Our Vision</h2>
+        </header>
+        <div class="vision-container flex md:flex-row flex-col-reverse lg:gap-12  p-3">
+            <div class="flex flex-col basis-5/12 w-full lg:gap-9 gap-3 p-6">
+                <div class=" text-base lg:text-lg/6 xl:text-xl/8 ">
+                    <p>We empower executives and professionals worldwide to unlock the full potential of their personal
+                        brands.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl lg:text-3xl xl:text-4xl py-3">Holistic Approach</h3>
+                    <p class="text-base lg:text-lg/6 xl:text-xl/8"> LEADIN's unique approach dives into the emotional
+                        depths of personal branding, recognizing that true influence stems from authenticity and
+                        emotional resonance.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl lg:text-3xl xl:text-4xl py-3">Meaningful Connections</h3>
+                    <p class="text-base lg:text-lg/6 xl:text-xl/8">By crafting a brand rooted in emotions and
+                        aspirations, LEADIN helps clients forge deeper, more meaningful connections that drive real
+                        professional growth.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl lg:text-3xl xl:text-4x py-3">Expert Guidance</h3>
+                    <p class="text-base lg:text-lg/6 xl:text-xl/8">LEADIN provides personalized guidance, not just in
+                        content creation but also in emotional support and professional development, ensuring clients
+                        feel confident navigating the digital landscape.</p>
+                </div>
+                <div>
+                    <button class="bg-[#B19482] xl:py-4 py-2 rounded-md w-full">Build your personal brand with us
+                    </button>
+                </div>
             </div>
-        </section>
+            <div class="basis-7/12 flex justify-center items-center ">
+                <img src="/visionImg.png" alt="AboutPage img "/>
+            </div>
+        </div>
+    </section>
 
-    </article>
+
+    <!-- Our Team cards-->
+    <section class="team-section w-full bg-white max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <header class="text-center">
+            <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl text-[#000]">Our Team</h2>
+        </header>
+        <div class="team-section grid sm:grid-cols-3 gap-4 grid-cols-2">
+            <OurTeam title="Inessa Manukyan" position="CEO/Founder" followers="4k"
+                     href="https://www.linkedin.com/in/inessa-manukyan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                     src="src/assets/img/teamImg.png"/>
+        </div>
+    </section>
+
+
 </BaseLayout>
