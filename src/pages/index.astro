@@ -1,9 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-import Footer from '../components/Footer.astro';
 import BrandingCard from "../components/BrandingCard.astro";
-import OurTeam from "../components/OurTeam.astro";
 import Get_started from "../components/pop_ups/get_started.astro";
 import Subscribe from "../components/pop_ups/subscribe.astro";
 import OpenVac from "../components/OpenVac.astro";
@@ -15,10 +12,8 @@ import SocialHref from "../components/SocialHref.astro";
     <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col justify-between items-center gap-14">
             <div><img alt="Home logo" src="/logos/HomeLogo.svg"></div>
-            <div><h2 class="text-4xl">We are ready to lead your personal brand to success.</h2></div>
-            <div>
-                <Get_started/>
-            </div>
+            <div ><h2 class="text-4xl">We are ready to lead your personal brand to success.</h2></div>
+            <div> <Get_started /></div>
         </div>
     </section>
 
@@ -38,7 +33,7 @@ import SocialHref from "../components/SocialHref.astro";
                           heading="How Joe Had A Record Month Using His Personal Brand"/>
         </div>
     </section>
-    <!--Our Services-->
+<!--Our Services-->
     <section class="max-w-7xl mx-auto py-12 px-4">
         <header class="text-center">
             <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl ">Our Services</h2>
@@ -46,34 +41,30 @@ import SocialHref from "../components/SocialHref.astro";
         <div class="ourServices-conteiner grid  grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-2">
             <div class="ourServices  ">
                 <h3 class="text-2xl pb-4 ">Personal Brand Management</h3>
-                <p class="text-[#D8D6D6] text-[16px] ">We help professionals build and maintain a strong, authentic
-                    personal brand that resonates with their audience and drives meaningful impact.</p>
+                 <p class="text-[#D8D6D6] text-[16px] ">We help professionals build and maintain a strong, authentic personal brand that resonates with their audience and drives meaningful impact.</p>
             </div>
-            <div class="ourServices ">
+            <div class="ourServices " >
                 <h3 class="text-2xl pb-4">Digital Marketing</h3>
-                <p class="text-[#D8D6D6] text-[16px]">We manage social media, run PPC ads, and design marketing
-                    campaigns that amplify your online presence and achieve measurable results.</p>
+                <p class="text-[#D8D6D6] text-[16px]">We manage social media, run PPC ads, and design marketing campaigns that amplify your online presence and achieve measurable results.</p>
             </div>
-            <div class="ourServices">
+            <div class="ourServices" >
                 <h3 class="text-2xl pb-4">Marketing Strategy</h3>
-                <p class="text-[#D8D6D6] text-[16px]">We develop comprehensive strategies for companies, including
-                    vision, mission, market research, and actionable plans to drive growth.</p>
+                <p class="text-[#D8D6D6] text-[16px]">We develop comprehensive strategies for companies, including vision, mission, market research, and actionable plans to drive growth.</p>
             </div>
-            <div class="ourServices ">
+            <div class="ourServices " >
                 <h3 class="text-2xl pb-4">Positioning Strategy</h3>
-                <p class="text-[#D8D6D6] text-[16px]">We craft personalized positioning strategies to establish your
-                    unique identity, build authority, and connect with your ideal audience.</p>
+                <p class="text-[#D8D6D6] text-[16px]">We craft personalized positioning strategies to establish your unique identity, build authority, and connect with your ideal audience.</p>
             </div>
-            <div class="ourServices ">
+            <div class="ourServices " >
                 <h3 class="text-2xl pb-4">Content Creation</h3>
-                <p class="text-[#D8D6D6] text-[16px]">We produce engaging ghostwriting, copywriting, video content,
-                    photoshoots, and reels for personal brands and companies to captivate and inspire.</p>
+                <p class="text-[#D8D6D6] text-[16px]">We produce engaging ghostwriting, copywriting, video content, photoshoots, and reels for personal brands and companies to captivate and inspire.</p>
             </div>
             <div class="ourServices">
                 <h3 class="text-2xl pb-4">Branding and Design</h3>
-                <p class="text-[#D8D6D6] text-[16px]">We create compelling visual identities, logos, and brand designs
-                    that reflect the essence and values of your company.</p>
+                <p class="text-[#D8D6D6] text-[16px]">We create compelling visual identities, logos, and brand designs that reflect the essence and values of your company.</p>
             </div>
+
+
         </div>
     </section>
 
@@ -154,15 +145,16 @@ import SocialHref from "../components/SocialHref.astro";
                 </div>
             </div>
         </div>
+
     </section>
-
-
     <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF]">
         <OpenVac/>
         <NoVac/>
     </section>
     <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
     </section>
+
+
 
 
 </BaseLayout>
