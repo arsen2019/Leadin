@@ -1,7 +1,51 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-
-
+import ReviewCard from "../../components/ReviewCard.astro";
+import UserReview from "../../components/react_components/UserReview"
+import ClientSlider from "../../components/ClientSlider.astro";
+import {Image} from "astro:assets";
+import clientImg from "../../assets/img/clients_main.png";
 ---
 <BaseLayout title="Leadin Agency - Insights & Success Stories">
+    <div class="root bg-[#191718] w-full">
+        <div class="story-wrapper flex  justify-center">
+            <div class="stories relative h-1/2">
+                <Image src={clientImg} alt="client logo"/>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4">
+                    <h1 class="text-[8vw] font-semibold ">Stories</h1>
+                    <h3 class="text-[4vw]">We proudly share our work and stories.</h3>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="trusted-clients flex flex-col text-center gap-10 pt-24 pb-10 px-4">
+            <h1 class="text-lg md:text-4xl font-semibold">Trusted by 15+ clients</h1>
+            <p class="text-sm md:text-xl">Our clients are our top priority, and we are committed to providing them with
+                the high level of service</p>
+        </div>
+
+        <ClientSlider/>
+        <h1 class="text-3xl text-center my-14">Customer Review</h1>
+        <div class="grid items-center lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-1">
+            <ReviewCard name="Karen" last_name="Grigoryan" stars="5" text=`Our social media presence was all over the
+                        place before we started working with Leadin. They helped us develop a consistent, engaging
+                        social media strategy that reflects our brand’s voice and values.`/>
+            <ReviewCard name="Harutyun" last_name="Nahapetyan" stars="5"
+                        text=`"We were struggling with brand consistency across different platforms. Leadin created comprehensive brand guidelines for us, detailing everything from logo usage to the tone of voice in our messaging.`/>
+            <ReviewCard name="Tata" last_name="Bareghamyan" stars="5"
+                        text=` Now, every team member has a clear understanding of how to represent the brand, and we've seen a marked improvement in our marketing materials' cohesiveness and professionalism."`/>
+            <ReviewCard name="Armen" last_name="Avetisian" stars="5"
+                        text=`"As a small business owner, I needed help positioning my brand in a competitive market. Leadin took the time to understand my business’s goals and created a branding strategy that perfectly aligned with my target customers.`/>
+            <ReviewCard name="Deren" last_name="Minasyan" stars="5"
+                        text=`They helped me define my brand’s mission, values, and personality in a way that was both authentic and compelling. Since working with them, I’ve seen an increase in engagement and customer loyalty."`/>
+            <ReviewCard name="Srbui" last_name="Ambartsumian" stars="5"
+                        text=`From content calendars to post designs, they made sure everything we shared online reinforced our brand identity. We've noticed a significant increase in followers and engagement since implementing their strategy!"`/>
+            <ReviewCard name="Haik" last_name="Khachatryan" stars="5"
+                        text=`"One of the biggest challenges we faced was creating a consistent brand voice across all our communications. [Your Name] helped us develop a tone that speaks directly to our target audience, making our messaging more engaging and authentic. `/>
+            <ReviewCard name="Nina" last_name="Harutyunyan" stars="5"
+                        text=`The entire process was seamless—from the initial brainstorming sessions to the final launch. Our website now looks cohesive with the rest of our marketing materials and has improved our online presence dramatically."`/>
+        </div>
+        <UserReview client:only="react"/>
+    </div>
 </BaseLayout>

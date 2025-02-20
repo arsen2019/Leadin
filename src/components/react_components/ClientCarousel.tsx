@@ -9,8 +9,9 @@ export default function ClientCarousel({ logos }: ClientsCarouselProps) {
     return (
         <div className="flex flex-col items-center">
             <div className="w-full max-w-7xl overflow-hidden">
-                <Marquee gradient={false} speed={50} >
-                    {logos.map((logo, index) => (
+
+                <Marquee gradient={false} speed={60} >
+                    {logos.map((logo:any, index:number) => (
                         <div key={index} className="flex justify-center w-1/2  p-2">
                             <img
                                 src={logo}
