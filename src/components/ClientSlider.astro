@@ -4,12 +4,15 @@ import '../styles/global.css';
 import React from "react";
 
 
-const imageModules = import.meta.glob("/clients/*");
-const images = Object.keys(imageModules);
+const imageModules = import.meta.glob("/public/clients/*");
+const imagePaths = Object.keys(imageModules).map((path) =>
+    path.replace(/^\/public/, "")
+);
+console.log(imagePaths);
 
 ---
 
 <div class="flex flex-col items-center">
-    <ClientCarousel logos={images} client:only="react" />
+    <ClientCarousel logos={imagePaths} client:only="react" />
 </div>
 

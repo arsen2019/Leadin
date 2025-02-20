@@ -2,7 +2,7 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 
 interface ClientsCarouselProps {
-    logos: any;
+    logos: string[];
 }
 
 export default function ClientCarousel({ logos }: ClientsCarouselProps) {
