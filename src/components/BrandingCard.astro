@@ -2,18 +2,18 @@
 const { title, subTitle,heading,src } = Astro.props;
 
 ---
-<div class="cards-container flex flex-row rounded-xl overflow-hidden ">
+<div class="cards-container flex flex-row rounded-xl  overflow-hidden ">
     <div class="flex flex-[2] relative text-[#FFF] ">
         <img src={src}>
         <div class="absolute bottom-4 left-4">
-            <h3 class="card-name  text-xl ">{title}</h3>
-            <p>{subTitle}</p>
-        </div>
+            <h3 class="card-name   text-xs sm:text-xl">{title}</h3>
+            <p class="text-[10px] sm:text-[16px]">{subTitle}</p>
+        </div>+
     </div>
     <div class="card-content flex flex-[3] items-center bg-[#FFF] text-[#000000] p-6 ">
-        <div class="pr-14">
-            <h3 class="font-bold pb-4 ">{heading}</h3>
-            <p class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        <div class="sm:pr-14 pr-2">
+            <h3 class="font-bold pb-4 text-[10px] sm:text-lg ">{heading}</h3>
+            <p class="text-[9px] sm:text-[16px]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
         </div>
     </div>
 </div>

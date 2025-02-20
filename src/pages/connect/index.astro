@@ -1,7 +1,58 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-
-
+import SocialHref from "../../components/SocialHref.astro";
+import OpenVac from "../../components/OpenVac.astro";
 ---
 <BaseLayout title="Leadin Agency - Insights & Success Stories">
+
+    <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 justify-center ">
+        <header class="text-center">
+            <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl">Get In Touch</h2>
+        </header>
+        <div class="flex sm:flex-row flex-col gap-8 ">
+            <div class="flex flex-1 flex-col ">
+                <div><h3 class="sm:text-[40px] text-2xl sm:py-12 py-8">Star your personal branding journey today.</h3>
+                    <h3 class="sm:text-4xl text-2xl sm:pb-6 py-4">Follow us</h3>
+                </div>
+                <SocialHref/>
+            </div>
+            <div class="flex flex-1 w-full flex-col gap-4 text-[#D7D3CE]">
+                <div><input type="text" placeholder="First name"
+                            class="w-full p-2 border border-[#D7D3CE] rounded-md focus:ring-2  bg-[#000000]"></div>
+                <div><input type="text" placeholder="Last name"
+                            class="w-full p-2 border border-[#D7D3CE] rounded-md focus:ring-2  bg-[#000000]"></div>
+                <div><input type="text" placeholder="Phone number"
+                            class="w-full p-2 border border-[#D7D3CE] rounded-md focus:ring-2  bg-[#000000]"></div>
+                <div>
+                    <input type="email" placeholder="Email"
+                           class="w-full p-2 border border-[#D7D3CE] rounded-md focus:ring-2  bg-[#000000]"/>
+                </div>
+                <div class="flex  h-full ">
+                    <textarea placeholder="Text"
+                              class=" start-0 w-full border p-2 border-[#D7D3CE] rounded-md focus:ring-2 bg-[#000000]"></textarea>
+                </div>
+                <div>
+                    <button class="bg-[#B19482] py-2 rounded-md w-full">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 sm:bg-[#FFF]">
+        <header class="text-center">
+            <h2 class="sm:p-12 p-8 sm:text-5xl text-2xl sm:text-[#000]">Open Positions</h2>
+        </header>
+        <div class="sm:mx-32">
+            <p class="text-center sm:text-2xl text-lg sm:text-[#000000]">We're an ambitious group constantly pushing each other to become the best personal branding agency in the world. And we're having a great time doing it. Want to join us? Check out our current opportunities below.</p>
+            <div class="flex gap-6 py-14 sm:flex-row flex-col">
+                <div class="basis-2/3 w-full" > <input type="email" placeholder="Email"
+                             class=" w-full  p-2 border border-[#D7D3CE] rounded-md focus:ring-2  bg-[#000000] sm:bg-[#FFF] sm:text-[#000000]"/></div>
+                <div class="basis-1/3 w-full"> <button class="bg-[#B19482] py-2 rounded-md w-full">Send</button></div>
+            </div>
+        </div>
+        <OpenVac/>
+    </section>
+
+
 </BaseLayout>
