@@ -3,14 +3,13 @@ import ClientCarousel from './react_components/ClientCarousel.tsx';
 import '../styles/global.css';
 import React from "react";
 
-const imageModules = import.meta.glob("/src/assets/img/clients/*");
+const imageModules = import.meta.glob("/public/clients/*");
 const images = Object.keys(imageModules);
 console.log(images)
 // const images = ['/public/health.png', '/public/nutrition.png', '/public/tech.png','/public/telecom.png']
 ---
 
 <div class="flex flex-col items-center">
-    <h1 class="text-3xl">Our Clients</h1>
     <ClientCarousel logos={images} client:only="react" />
 </div>
 

@@ -15,7 +15,7 @@ export default function UserReview() {
     };
 
     return (
-        <div className="text-white p-6 rounded-lg text-center w-8/12 mx-auto min-w-[350px]">
+        <div className="text-white p-6 rounded-lg text-center w-8/12 mx-auto min-w-[350px] pb-16">
             <h2 className="text-xl md:text-2xl mb-3">You can share your opinion with others</h2>
 
             <div className="flex justify-center gap-2 mb-4">
