@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BrandingCard from "../components/BrandingCard.astro";
+import OurTeam from "../components/OurTeam.astro";
+import Get_started from "../components/pop_ups/get_started.astro";
 import Subscribe from "../components/pop_ups/subscribe.astro";
 import GetStartedPopUp from "../components/react_components/GetStartedPopUp";
 import PortfolioSlider from "../components/PortfolioSlider.astro";
@@ -14,15 +16,15 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
 ---
 <BaseLayout title="Leadin Agency - Transform Your Personal Brand">
 
-    <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <section class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col justify-between items-center gap-14">
 
             <div><Image src={HomeLogo} alt='' /></div>
             <div >
                 <h2 class="text-center hidden sm:block text-[3vw]">We are ready to lead your personal brand to success.</h2>
-                <h2 class="text-2xl sm:hidden ">Start your personal branding journey.</h2>
+                <h2 class="text-xl sm:hidden ">Start your personal branding journey.</h2>
             </div>
-            <GetStartedPopUp style={{width:'200px', backgroundColor:'black', border:'1px solid #B19482', color:'#E0D3BD'}} client:only="react" />
+            <GetStartedPopUp buttonText="Get Started" style={{width:'200px', backgroundColor:'black', border:'1px solid #B19482', color:'#E0D3BD'}} client:only="react" />
         </div>
     </section>
 
@@ -30,11 +32,11 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
     <PortfolioSlider/>
 
     <!-- Branding cards-->
-    <section class="cards-section  lg:max-w-7xl max-w-2xl mx-auto py-12 px-4  bg-black my-28">
+    <section class="cards-section  lg:max-w-[1440px] max-w-2xl mx-auto py-12 px-4  bg-black my-28">
         <header class="text-center">
-            <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl ">Result-Based Personal Branding</h2>
+            <h2 class="sm:p-12 p-8 sm:text-5xl text-[3vh] ">Result-Based Personal Branding</h2>
         </header>
-        <div class="grid lg:grid-cols-2  grid-cols-1 gap-6 ">
+        <div class="grid lg:grid-cols-2  grid-cols-1 gap-10 ">
             <BrandingCard title="Telecom" subTitle="Personal Branding on LinkedIn" src="/telecom.png"
                           heading="How Joe Had A Record Month Using His Personal Brand"/>
             <BrandingCard title="Nutrition" subTitle="Blogging on Instagram" src="/nutrition.png"
@@ -43,13 +45,12 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
                           heading="How Joe Had A Record Month Using His Personal Brand"/>
             <BrandingCard title="Tech" subTitle="Personal Branding on LinkedIn" src="/tech.png"
                           heading="How Joe Had A Record Month Using His Personal Brand"/>
-
         </div>
     </section>
-    <!--Our Services-->
-    <section class="max-w-7xl mx-auto py-12 px-4">
+<!--Our Services-->
+    <section class="max-w-[1440px] mx-auto py-12 px-4">
         <header class="text-center">
-            <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl ">Our Services</h2>
+            <h2 class="sm:p-12 p-8 sm:text-5xl text-[3vh] ">Our Services</h2>
         </header>
         <div class="ourServices-conteiner grid  grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-2">
             <div class="ourServices  ">
@@ -85,30 +86,32 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
         </div>
     </section>
 
+    <section class="max-w-[1440px] mx-auto  ">
 
     <div class="trusted-clients flex flex-col text-center gap-10 pt-24 pb-10 px-4">
         <h1 class="text-lg md:text-4xl font-semibold">Trusted by 15+ clients</h1>
         <p class="text-sm md:text-xl">Our clients are our top priority, and we are committed to providing them with
             the high level of service</p>
     </div>
-
     <ClientSlider/>
-    <section class="max-w-7xl mx-auto  ">
-        <div class="sm:flex sm:flex-row hidden">
+    </section>
+
+
+    <section class="max-w-[1440px] mx-auto ">
+        <div class="sm:flex sm:flex-row hidden pt-20" >
             <div class="basis-3/10 w-full flex flex-col ">
                 <div class="bg-[#EDE5D9] basis-1/2 h-full text-[#191718] flex  items-center lg:px-10 px-5 xl:text-base lg:text-sm sm:text-xs"><p>Building a personal brand helps professionals establish
                     themselves as thought leaders, enhancing their visibility and authority in their industries.</p>
-
                 </div>
                 <div class="bg-[#28241D] basis-1/2 h-full flex items-center lg:px-12 px-6 xl:text-base lg:text-sm sm:text-xs"><p>We believe that personal branding is an intimate
                     exploration of an individual's essence, encompassing their emotions, fears, and aspirations.</p>
                 </div>
             </div>
             <div class="basis-3/10 w-full">
-                <img alt="HomeStaticImg" src="staticImg.png">
+                <img alt="HomeStaticImg" class="flex-shrink-0 min-w-full min-h-full" src="staticImg.png">
             </div>
             <div class="basis-4/10  flex flex-col">
-                <div class="bg-[#E0D3BD] basis-1/2 h-full text-right lg:text-3xl xl:text-5xl sm:text-2xl text-[#191718] p-10">
+                <div class="bg-[#E0D3BD] basis-1/2 h-full text-right lg:text-3xl xl:text-5xl/[8vh] sm:text-2xl text-[#191718] p-10">
                     <p class="font-bold xl:ml-40 sm:ml-20">Why Strat Building Your Personal Brand With Us?</p>
                 </div>
                 <div class="w-full flex flex-row basis-1/2 h-full">
@@ -131,7 +134,7 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
                 <p class="text-[#000] text-sm/6 ml-6">Personal brands increase credibility, with professionals who actively build their brands seen as more knowledgeableand approachable.</p>
             </div>
             <div>
-                <img alt="HomeStaticImg" src="/staticImg.png">
+                <img class="flex-shrink-0 min-w-full min-h-full" alt="HomeStaticImg" src="staticImg.png">
             </div>
             <div class="p-10 bg-[#E0D3BD]">
                 <p class="text-[#191718] ">Our expertise in personal branding, marketing, and design ensures excBuilding a personal brand helps professionals establish themselves as thought leaders, enhancing their visibility and authority in their industries.eptional results tailored to your unique needs.</p>
@@ -143,10 +146,8 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
         </div>
 
     </section>
-
-
-    <!--Contact us-->
-    <section class="bg-[#191718] max-w-7xl mx-auto py-12 px-4">
+<!--Contact us-->
+    <section class="bg-[#191718] max-w-[1440px] mx-auto py-12 px-4">
         <header class="text-center">
             <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl ">Contact Us</h2>
         </header>
@@ -167,19 +168,13 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
                               class=" start-0 w-full border p-2 border-[#D9B99B] rounded-md focus:ring-2 bg-[#191718]"></textarea>
                 </div>
                 <div>
-                    <button class="bg-[#B19482] py-2 rounded-md w-full">Send</button>
+                    <button class="bg-[#B19482] py-2 rounded-md w-full hover:bg-white hover:text-black focus:-scale-30">Send</button>
                 </div>
             </div>
         </div>
     </section>
-
-
-    <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF]">
+    <section class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF]">
         <OpenVac/>
         <NoVac/>
     </section>
-    <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-    </section>
-
-
 </BaseLayout>
