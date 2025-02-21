@@ -22,9 +22,9 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
             <div><Image src={HomeLogo} alt='' /></div>
             <div >
                 <h2 class="text-center hidden sm:block text-[3vw]">We are ready to lead your personal brand to success.</h2>
-                <h2 class="text-2xl sm:hidden ">Start your personal branding journey.</h2>
+                <h2 class="text-xl sm:hidden ">Start your personal branding journey.</h2>
             </div>
-            <GetStartedPopUp style={{width:'200px', backgroundColor:'black', border:'1px solid #B19482', color:'#E0D3BD'}} client:only="react" />
+            <GetStartedPopUp buttonText="Get Started" style={{width:'200px', backgroundColor:'black', border:'1px solid #B19482', color:'#E0D3BD'}} client:only="react" />
         </div>
     </section>
 
@@ -34,7 +34,7 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
     <!-- Branding cards-->
     <section class="cards-section  lg:max-w-[1440px] max-w-2xl mx-auto py-12 px-4  bg-black my-28">
         <header class="text-center">
-            <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl ">Result-Based Personal Branding</h2>
+            <h2 class="sm:p-12 p-8 sm:text-5xl text-[3vh] ">Result-Based Personal Branding</h2>
         </header>
         <div class="grid lg:grid-cols-2  grid-cols-1 gap-10 ">
             <BrandingCard title="Telecom" subTitle="Personal Branding on LinkedIn" src="/telecom.png"
@@ -50,7 +50,7 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
 <!--Our Services-->
     <section class="max-w-[1440px] mx-auto py-12 px-4">
         <header class="text-center">
-            <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl ">Our Services</h2>
+            <h2 class="sm:p-12 p-8 sm:text-5xl text-[3vh] ">Our Services</h2>
         </header>
         <div class="ourServices-conteiner grid  grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-2">
             <div class="ourServices  ">
@@ -93,10 +93,12 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
         <p class="text-sm md:text-xl">Our clients are our top priority, and we are committed to providing them with
             the high level of service</p>
     </div>
-
     <ClientSlider/>
-    <section class="max-w-7xl mx-auto  ">
-        <div class="sm:flex sm:flex-row hidden">
+    </section>
+
+
+    <section class="max-w-[1440px] mx-auto ">
+        <div class="sm:flex sm:flex-row hidden pt-20" >
             <div class="basis-3/10 w-full flex flex-col ">
                 <div class="bg-[#EDE5D9] basis-1/2 h-full text-[#191718] flex  items-center lg:px-10 px-5 xl:text-base lg:text-sm sm:text-xs"><p>Building a personal brand helps professionals establish
                     themselves as thought leaders, enhancing their visibility and authority in their industries.</p>
@@ -166,7 +168,7 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
                               class=" start-0 w-full border p-2 border-[#D9B99B] rounded-md focus:ring-2 bg-[#191718]"></textarea>
                 </div>
                 <div>
-                    <button class="bg-[#B19482] py-2 rounded-md w-full">Send</button>
+                    <button class="bg-[#B19482] py-2 rounded-md w-full hover:bg-white hover:text-black focus:-scale-30">Send</button>
                 </div>
             </div>
         </div>

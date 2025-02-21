@@ -4,9 +4,10 @@ import FeedbackPopUp from "./FeedbackPopUp.tsx";
 
 interface IProps {
     style?: React.CSSProperties;
+    buttonText: string;
 }
 
-export default function GetStartedPopUp({style}: IProps) {
+export default function GetStartedPopUp({style,buttonText}: IProps) {
     const [isOpen, setIsOpen] = useState(false);
     const content = "Thanks for your interest in Leadin. We will get back to you as soon as possible."
     const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function GetStartedPopUp({style}: IProps) {
     return (
         <div>
             <button className="open-btn"  style={style} onClick={() => setIsOpen(true)}>
-                Get Started
+                {buttonText}
             </button>
 
 
