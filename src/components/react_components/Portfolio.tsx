@@ -1,94 +1,129 @@
-import React, { useRef, useState } from "react";
+import React, {useState, useRef, useEffect} from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import {filter} from "minimatch";
 
 interface PortfolioProps {
     slides: string[];
 }
 
 export default function Portfolio({ slides }: PortfolioProps) {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const carouselRef = useRef<any>(0);
+    const [itemsToShow, setItemsToShow] = useState(4);
+    const [currentIndex, setCurrentIndex] = useState(0.5);
 
-    // Calculate card width based on container width
-    const getCardWidth = () => {
-        if (!containerRef.current) return 300;
-        const containerWidth = containerRef.current.offsetWidth;
-        return Math.min(400, containerWidth * 0.8);
+    const responsive = {
+        superLargeDesktop: {
+            breakpoint: { max: 4000, min: 1024 },
+            items: 4,
+            partialVisibilityGutter: 0.5,
+        },
+        desktop: {
+            breakpoint: { max: 1024, min: 768 },
+            items: 4,
+            partialVisibilityGutter: 0.5,
+        },
+        tablet: {
+            breakpoint: { max: 768, min: 464 },
+            items: 3,
+            partialVisibilityGutter: 0.5,
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 3,
+            partialVisibilityGutter: 0.5,
+        },
     };
 
-    const scrollToIndex = (index: number) => {
-        if (!containerRef.current) return;
-
-        const newIndex = (index + slides.length) % slides.length;
-        const cardWidth = getCardWidth();
-        const gap = 8;
-        const scrollPosition = (cardWidth + gap) * newIndex;
-
-        containerRef.current.scrollTo({
-            left: scrollPosition,
-            behavior: 'smooth'
-        });
-
-        setCurrentIndex(newIndex);
+    const goToNext = () => {
+        if (carouselRef.current) {
+            carouselRef.current.next();
+        }
     };
+
+    const goToPrev = () => {
+        if (carouselRef.current) {
+            carouselRef.current.previous();
+        }
+    };
+
+    useEffect(() => {
+        if (carouselRef.current) {
+            setTimeout(() => {
+                carouselRef.current.goToSlide(0.5, true);
+            }, 100);
+        }
+    }, []);
+
+    useEffect(() => {
+        const updateItemsToShow = () => {
+            if (window.innerWidth >= 1024) {
+                setItemsToShow(4);
+            } else {
+                setItemsToShow(3);
+            }
+        };
+
+        updateItemsToShow();
+        window.addEventListener("resize", updateItemsToShow);
+        return () => window.removeEventListener("resize", updateItemsToShow);
+    }, []);
 
     return (
-        <div className="w-full">
-            <div
-                ref={containerRef}
-                className="h-full overflow-x-auto  snap-x snap-mandatory"
-                style={{
-                scrollbarWidth:"none" }}
+        <div className="w-full relative">
+            <Carousel
+                ref={carouselRef}
+                responsive={responsive}
+                swipeable={true}
+                draggable={true}
+                showDots={false}
+                infinite={false}
+                autoPlay={false}
+                keyBoardControl={true}
+                customTransition="all 0.5s ease"
+                transitionDuration={500}
+                containerClass="carousel-container"
+                beforeChange={(nextSlide) => setCurrentIndex(nextSlide)}
+                centerMode={false}
+                arrows={false}
+                partialVisible={true}
+                renderButtonGroupOutside={true}
             >
-                <div className="flex gap-8 h-full items-center ">
-                    {slides.map((image, index) => {
-                        const isFirst = index === 0;
-                        const isLast = index === slides.length - 1;
-                        const isEven = index % 2 === 0;
+                {slides.map((image, index) => {
+                    const isOdd = index % 2 === 1;
+                    const isMiddleOne = index % 4 === 2
+                    return (
+                        <div
+                            key={index}
+                            className="px-2"
+                            style={{ paddingTop: isMiddleOne ? "1.5rem" : isOdd ? "3rem" :"0rem" }}
+                        >
+                            <img
+                                src={image}
+                                alt={`Slide ${index + 1}`}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    );
+                })}
 
-                        return (
-                            <div
-                                key={index}
-                                className={`
-                                    flex-shrink-0  snap-start w-1/4
-                                    ${isFirst ? '-ml-[20%]' : ''}
-                                    ${isLast ? '-mr-[20%]' : ''}
-                                    transition-all duration-3000
-                
-                                `}
-                                style={{
-
-                                    paddingTop:`${isEven ? '-4rem' : '4rem'}`,
-
-                                }}
-                            >
-                                <div className="">
-                                    <img
-                                        src={image}
-                                        alt={`Slide ${index + 1}`}
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
-            <div className="flex justify-between">
+            </Carousel>
+            <div className="flex justify-between absolute left-0 right-0 px-4">
                 <button
-                    onClick={() => scrollToIndex(currentIndex - 1)}
-                    className=""
+                    onClick={goToPrev}
                     aria-label="Previous"
-                >
-                    <img src="/icons/previous.svg" alt="previous"/>
-                </button>
-
-                <button
-                    onClick={() => scrollToIndex(currentIndex + 1)}
                     className=""
-                    aria-label="Next"
+                    disabled={currentIndex === 0}
                 >
-                    <img src="/icons/next.svg" alt="next"/>
-
+                    <img src="/icons/previous.svg" alt="previous" style={{filter :currentIndex === 0 ? '' : 'brightness(2)'}} />
+                </button>
+                <button
+                    onClick={goToNext}
+                    aria-label="Next"
+                    className=""
+                    disabled={currentIndex >= slides.length - itemsToShow}
+                >
+                    <img src="/icons/next.svg" style={{filter :currentIndex >= slides.length - itemsToShow ? 'invert(0.5)' : ''}} alt="next" />
                 </button>
             </div>
         </div>
