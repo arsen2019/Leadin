@@ -12,7 +12,7 @@ export default function ClientCarousel({ logos }: ClientsCarouselProps) {
 
                 <Marquee gradient={false} speed={60} >
                     {logos.map((logo:any, index:number) => (
-                        <div key={index} className="flex justify-center w-1/2  p-2">
+                        <div key={index} className="flex justify-center w-3/4 ">
                             <img
                                 src={logo}
                                 alt={`Client ${index + 1}`}

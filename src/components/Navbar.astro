@@ -2,11 +2,12 @@
 import {Image} from 'astro:assets';
 import logo from '../assets/img/nav_logo.svg';
 import HamburgerMenu from './react_components/HamburgerMenu.tsx'
+import StepByStepPopUp from "./react_components/StepByStepPopUp.tsx";
 
 const path = Astro.url.pathname
 ---
-<nav class="top-0 shadow-sm max-w-[1440px] sticky bg-black z-50 mx-auto">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<nav class="top-0 shadow-sm  sticky bg-black z-50 ">
+    <div class="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <HamburgerMenu activePath={path} client:only='react'/>
         <div class="hidden lg:flex justify-between h-16 bg-black z-10">
             <div class="flex items-center">
@@ -35,9 +36,9 @@ const path = Astro.url.pathname
                     <li class=`flex ${
                         path === "/blog/" ? "border-b-2 border-[#fff]" : ""
                     }`><a href="/blog">Blog</a></li>
-                    <li class="flex"><a href="">
-                        <button class="py-1 px-3 bg-[#B19482] rounded-[0.5rem]">Connect us</button>
-                    </a></li>
+                    <li class="flex">
+                        <StepByStepPopUp btnText='Contact Us' client:only="react"/>
+                    </li>
                 </ul>
             </div>
         </div>
