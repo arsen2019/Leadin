@@ -12,6 +12,38 @@ import NoVac from "../components/NoVac.astro";
 import SocialHref from "../components/SocialHref.astro";
 import {Image} from "astro:assets"
 import HomeLogo from "/public/logos/HomeLogo.svg"
+import ReviewSlider from '../components/react_components/ReviewSlider'
+
+const reviews = [
+    {
+        id: 1,
+        firstName: "Deren",
+        lastName: "Minasyan",
+        rate: 5,
+        comment: "They helped me define my brand’s mission, values, and personality in a way that was both authentic and compelling. Since working with them, I’ve seen an increase in engagement and customer loyalty."
+    },
+    {
+        id: 2,
+        firstName: "Karen",
+        lastName: "Grigoryan",
+        rate: 5,
+        comment: "\"Our social media presence was all over the place before we started working with Leadin. They helped us develop a consistent, engaging social media strategy that reflects our brand’s voice and values."
+    },
+    {
+        id: 3,
+        firstName: "Srbui",
+        lastName: "Ambartsumian",
+        rate: 5,
+        comment: "From content calendars to post designs, they made sure everything we shared online reinforced our brand identity. We've noticed a significant increase in followers and engagement since implementing their strategy!"
+    },
+    {
+        id: 4,
+        firstName: "Haik",
+        lastName: "Khachatryan",
+        rate: 5,
+        comment: "One of the biggest challenges we faced was creating a consistent brand voice across all our communications. [Your Name] helped us develop a tone that speaks directly to our target audience, making our messaging more engaging and authentic. "
+    },
+];
 ---
 <BaseLayout title="Leadin Agency - Transform Your Personal Brand">
 
@@ -107,6 +139,10 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
                 the high level of service</p>
         </div>
         <ClientSlider/>
+    </section>
+   <section class="py-10 max-w-[1440px] mb-10 mx-auto">
+        <h1 class="text-center text-2xl lg:text-4xl py-10 mb-16">Customer Reviews</h1>
+        <ReviewSlider reviews={reviews} client:only="react"/>
     </section>
 
 

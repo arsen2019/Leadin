@@ -8,7 +8,6 @@ const imageModules = import.meta.glob("/public/clients/*");
 const imagePaths = Object.keys(imageModules).map((path) =>
     path.replace(/^\/public/, "")
 );
-console.log(imagePaths);
 
 ---
 

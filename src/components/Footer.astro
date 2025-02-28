@@ -2,10 +2,10 @@
 import Subscribe from "./pop_ups/subscribe.astro";
 const currentYear = new Date().getFullYear();
 ---
-<footer class="bg-[#EED9C4] p-4 md:p-6 max-w-[1440px] mx-auto">
-    <div class="w-full mx-auto py-12 px-0 md:px-4 lg:px-6 ">
+<footer class="bg-[#EED9C4] p-4 md:p-6">
+    <div class="w-full  py-12 px-0 md:px-4 lg:px-6  max-w-[1440px] mx-auto ">
         <div class="grid grid-cols-[2.5fr_1fr_1fr] md:grid-cols-[2fr_1fr_1fr_2fr] gap-3 md:gap-6">
-            <div>
+            <div class="order-3 md:order-none">
                     <ul class="lg:text-lg sm:text-sm xs:text-xs">
                         <li class="pb-2"><a class="flex gap-2 cursor-pointer "><img class="invert self-start" src="/icons/InstagramLogo.svg"><span class="underline-offset-2 underline">leadin.agency</span></a></li>
                         <li class="pb-2"><a class="flex gap-2 cursor-pointer "><img class="invert self-start" src="/icons/At.svg"><span class="underline-offset-2 underline">hello@leadin.agency</span></a></li>
@@ -13,7 +13,7 @@ const currentYear = new Date().getFullYear();
                     </ul>
 
             </div>
-            <div>
+            <div class="order-1 md:order-none">
                 <ul class="lg:text-lg sm:text-sm xs:text-xs">
                     <li><a href="/home" class="text-black-600 ">Home</a></li>
                     <li><a href="/portfolio" class="text-black-600  ">Portfolio</a></li>
@@ -22,7 +22,7 @@ const currentYear = new Date().getFullYear();
                 </ul>
             </div>
 
-            <div>
+            <div class="order-2 md:order-none">
                 <ul class="lg:text-lg sm:text-sm">
                     <li><a href="/about" class="text-black-600 ">About us</a></li>
                     <li><a href="/connect" class="text-black-600">Connect</a></li>
