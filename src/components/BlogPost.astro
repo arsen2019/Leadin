@@ -1,27 +1,22 @@
 ---
-const { title, content } = Astro.props;
+const { title, content, img, number } = Astro.props;
 import { Image } from 'astro:assets';
-import stones from '../assets/img/image.png';
+const bool = number % 2 === 0
 
 ---
 <section class="mb-16 blog_section">
-    <article class="mb-16 last:mb-0 flex flex-col md:flex-row">
-        <div class="blog_content flex-1">
+    <article class=`mb-16 last:mb-0 flex gap-4 flex-col md:flex-row md:${bool ? 'flex-row-reverse' : ''}`>
+        <div class="blog_content py-4 flex-1">
             <h2 class="text-2xl  font-bold mb-6">{title}</h2>
-            <p class="blog_text">
+            <p class="blog_text text-lg">
                 {content}
             </p>
 
 
         </div>
-        <div class="prose max-w-none flex-1">
-            <Image src={stones} alt="Blog Post Image" class="align-self-center"/>
+        <div class="flex-1">
+            <Image src={img} alt="Blog Post Image" class="align-self-center"/>
         </div>
     </article>
 </section>
 
-<style>
-    .blog_text{
-        font-size: 16px;
-    }
-</style>

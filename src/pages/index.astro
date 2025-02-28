@@ -1,10 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BrandingCard from "../components/BrandingCard.astro";
-import OurTeam from "../components/OurTeam.astro";
-import Get_started from "../components/pop_ups/get_started.astro";
-import Subscribe from "../components/pop_ups/subscribe.astro";
-import GetStartedPopUp from "../components/react_components/GetStartedPopUp";
+import SubscribePopUp from "../components/react_components/SubscribePopUp";
 import PortfolioSlider from "../components/PortfolioSlider.astro";
 import ClientSlider from "../components/ClientSlider.astro";
 import OpenVac from "../components/OpenVac.astro";
@@ -58,13 +55,13 @@ const reviews = [
                     success.</h2>
                 <h2 class="text-xl sm:hidden ">Start your personal branding journey.</h2>
             </div>
-            <div class="flex flex-row gap-6">
-                <div>
-                    <button class="py-2 rounded-md w-52 text-[#FFF] border-[#B19482] border-2 "><a href="/services">For
+            <div class="flex flex-row gap-6 w-full justify-center">
+                <div class="">
+                    <button class="py-3 px-4 md:px-12 rounded-md  text-[#FFF] text-md  md:text-xl  border-[#B19482] border-2 w-full "><a href="/services">For
                         Individuals</a></button>
                 </div>
-                <div>
-                    <button class="py-2 rounded-md w-52 text-[#FFF] border-[#B19482] border-2 "><a
+                <div class="">
+                    <button class="py-3 px-4 md:px-12 rounded-md  text-[#FFF] text-md md:text-xl border-[#B19482] border-2 w-full "><a
                             href="/services#headerCom">For Companies</a></button>
                 </div>
             </div>
@@ -209,14 +206,14 @@ const reviews = [
         <header class="text-center">
             <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl ">Contact Us</h2>
         </header>
-        <div class="contact-conteiner flex sm:flex-row flex-col-reverse gap-4 px-10">
+        <div class="contact-conteiner flex sm:flex-row flex-col-reverse gap-20 px-10">
             <div class="contact-href  flex flex-1 flex-col sm:gap-8 gap-2">
-                <h3 class="sm:text-4xl text-2xl p-4">Get in touch </h3>
+                <h3 class="sm:text-4xl text-2xl py-4">Do you have any questions?</h3>
                 <SocialHref/>
-                <Subscribe/>
+                <SubscribePopUp style={{width:'100%', borderRadius:'6px'}}/>
             </div>
             <div class="contact-send flex flex-1 flex-col gap-4">
-                <h3 class="sm:text-4xl text-2xl p-4">Do you have any questions?</h3>
+                <h3 class="sm:text-4xl text-2xl py-4">Get in touch</h3>
                 <div>
                     <input type="email" placeholder="Email"
                            class="w-full p-2 border border-[#D9B99B] rounded-md focus:ring-2  bg-[#191718]"/>

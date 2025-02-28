@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPost from '../../components/BlogPost.astro';
-import Subscribe from "../../components/pop_ups/subscribe.astro";
-import GetStarted from "../../components/pop_ups/get_started.astro";
+import StepByStepPopUp from "../../components/react_components/StepByStepPopUp";
+import stones from '../../assets/img/image.png';
+import axjik from '../../../public/axjik.png'
 
 const loremContent = `Lorem Ipsum is simply dummy text of the printing and typesetting
  industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
@@ -10,16 +11,18 @@ const loremContent = `Lorem Ipsum is simply dummy text of the printing and types
    but also the leap into electronic typesetting`;
 ---
 <BaseLayout title="Leadin Agency - Insights & Success Stories">
-    <article class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <section class="max-w-[1440px] mx-auto py-12 px-4 sm:px-6 lg:px-8 ">
         <header class="mb-16 text-center">
-            <p class="text-lg md:text-3xl">
-                Discover transformative strategies from real success stories
+            <p class="text-2xl font-semibold md:text-4xl">
+                Results-based personal branding
             </p>
         </header>
 
         <BlogPost
                 title="How Joe Had A Record Month Using His Personal Brand"
                 content={loremContent}
+                img={stones}
+                number=1
         />
         {
 
@@ -27,6 +30,27 @@ const loremContent = `Lorem Ipsum is simply dummy text of the printing and types
         <BlogPost
                 title="How Joe Had A Record Month Using His Personal Brand"
                 content={loremContent}
+                img={axjik}
+                number=2
         />
-    </article>
+        <BlogPost
+                title="How Joe Had A Record Month Using His Personal Brand"
+                content={loremContent}
+                img={stones}
+                number=3
+        />
+        {
+
+        }
+        <BlogPost
+                title="How Joe Had A Record Month Using His Personal Brand"
+                content={loremContent}
+                img={axjik}
+                number=4
+        />
+    </section>
+
+    <div class=" mx-auto py-12 w-full md:w-1/2 px-4">
+        <StepByStepPopUp btnText="Let's create your personal branding together" style={{width:'100%'}}/>
+    </div>
 </BaseLayout>

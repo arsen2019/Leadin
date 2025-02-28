@@ -18,7 +18,7 @@ interface ReviewSliderProps {
 export default function ReviewSlider({ reviews }: ReviewSliderProps) {
     const carouselRef = useRef<any>(null);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [itemsToShow, setItemsToShow] = useState(3);
+    const [itemsToShow, setItemsToShow] = useState(0);
 
     useEffect(() => {
         const updateItemsToShow = () => {
@@ -54,18 +54,16 @@ export default function ReviewSlider({ reviews }: ReviewSliderProps) {
             <Carousel
                 ref={carouselRef}
                 responsive={responsive}
-                swipeable
-                draggable
+                swipeable={false}
+                draggable={false}
                 showDots={false}
                 infinite={false}
                 autoPlay={false}
-                keyBoardControl
                 customTransition="all 0.5s ease"
                 transitionDuration={500}
                 containerClass="carousel-container"
                 beforeChange={(nextSlide) => setCurrentIndex(nextSlide)}
                 arrows={false}
-                partialVisible
             >
                 {reviews.map((review) => (
                     <div key={review.id} className="flex justify-center">
