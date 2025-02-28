@@ -12,19 +12,32 @@ import NoVac from "../components/NoVac.astro";
 import SocialHref from "../components/SocialHref.astro";
 import {Image} from "astro:assets"
 import HomeLogo from "/public/logos/HomeLogo.svg"
-
 ---
 <BaseLayout title="Leadin Agency - Transform Your Personal Brand">
 
     <section class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col justify-between items-center gap-14">
 
-            <div><Image src={HomeLogo} alt='' /></div>
-            <div >
-                <h2 class="text-center hidden sm:block text-[3vw]">We are ready to lead your personal brand to success.</h2>
+            <div>
+                <Image src={HomeLogo} alt=''/>
+            </div>
+            <div>
+                <h2 class="text-center hidden sm:block text-[3vw]">We are ready to lead your personal brand to
+                    success.</h2>
                 <h2 class="text-xl sm:hidden ">Start your personal branding journey.</h2>
             </div>
-            <GetStartedPopUp buttonText="Get Started" style={{width:'200px', backgroundColor:'black', border:'1px solid #B19482', color:'#E0D3BD'}} client:only="react" />
+            <div class="flex flex-row gap-6">
+                <div>
+                    <button class="py-2 rounded-md w-52 text-[#FFF] border-[#B19482] border-2 "><a href="/services">For
+                        Individuals</a></button>
+                </div>
+                <div>
+                    <button class="py-2 rounded-md w-52 text-[#FFF] border-[#B19482] border-2 "><a
+                            href="/services#headerCom">For Companies</a></button>
+                </div>
+            </div>
+
+
         </div>
     </section>
 
@@ -47,7 +60,7 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
                           heading="How Joe Had A Record Month Using His Personal Brand"/>
         </div>
     </section>
-<!--Our Services-->
+    <!--Our Services-->
     <section class="max-w-[1440px] mx-auto py-12 px-4">
         <header class="text-center">
             <h2 class="sm:p-12 p-8 sm:text-5xl text-[3vh] ">Our Services</h2>
@@ -88,23 +101,25 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
 
     <section class="max-w-[1440px] mx-auto  ">
 
-    <div class="trusted-clients flex flex-col text-center gap-10 pt-24 pb-10 px-4">
-        <h1 class="text-lg md:text-4xl font-semibold">Trusted by 15+ clients</h1>
-        <p class="text-sm md:text-xl">Our clients are our top priority, and we are committed to providing them with
-            the high level of service</p>
-    </div>
-    <ClientSlider/>
+        <div class="trusted-clients flex flex-col text-center gap-10 pt-24 pb-10 px-4">
+            <h1 class="text-lg md:text-4xl font-semibold">Trusted by 15+ clients</h1>
+            <p class="text-sm md:text-xl">Our clients are our top priority, and we are committed to providing them with
+                the high level of service</p>
+        </div>
+        <ClientSlider/>
     </section>
 
 
     <section class="max-w-[1440px] mx-auto ">
-        <div class="sm:flex sm:flex-row hidden pt-20" >
+        <div class="sm:flex sm:flex-row hidden pt-20">
             <div class="basis-3/10 w-full flex flex-col ">
-                <div class="bg-[#EDE5D9] basis-1/2 h-full text-[#191718] flex  items-center lg:px-10 px-5 xl:text-base lg:text-sm sm:text-xs"><p>Building a personal brand helps professionals establish
-                    themselves as thought leaders, enhancing their visibility and authority in their industries.</p>
+                <div class="bg-[#EDE5D9] basis-1/2 h-full text-[#191718] flex  items-center lg:px-10 px-5 xl:text-base lg:text-sm sm:text-xs">
+                    <p>Building a personal brand helps professionals establish
+                        themselves as thought leaders, enhancing their visibility and authority in their industries.</p>
                 </div>
-                <div class="bg-[#28241D] basis-1/2 h-full flex items-center lg:px-12 px-6 xl:text-base lg:text-sm sm:text-xs"><p>We believe that personal branding is an intimate
-                    exploration of an individual's essence, encompassing their emotions, fears, and aspirations.</p>
+                <div class="bg-[#28241D] basis-1/2 h-full flex items-center lg:px-12 px-6 xl:text-base lg:text-sm sm:text-xs">
+                    <p>We believe that personal branding is an intimate
+                        exploration of an individual's essence, encompassing their emotions, fears, and aspirations.</p>
                 </div>
             </div>
             <div class="basis-3/10 w-full">
@@ -115,12 +130,15 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
                     <p class="font-bold xl:ml-40 sm:ml-20">Why Strat Building Your Personal Brand With Us?</p>
                 </div>
                 <div class="w-full flex flex-row basis-1/2 h-full">
-                    <div class="basis-7/16 h-full bg-[#B19482] flex items-start p-5 pt-20 xl:text-base lg:text-sm sm:text-xs"><p>Personal brands increase credibility, with
-                        professionals who actively build their brands seen as more knowledgeable and approachable.</p>
+                    <div class="basis-7/16 h-full bg-[#B19482] flex items-start p-5 pt-20 xl:text-base lg:text-sm sm:text-xs">
+                        <p>Personal brands increase credibility, with
+                            professionals who actively build their brands seen as more knowledgeable and
+                            approachable.</p>
                     </div>
-                    <div class="basis-9/16 h-full bg-[#000] flex items-end p-5 pb-20 xl:text-base lg:text-sm sm:text-xs"><p> Our unique approach combines psychological insight,
-                        content strategy, and expert guidance to craft a personal brand that is deeply authentic and
-                        compelling.</p>
+                    <div class="basis-9/16 h-full bg-[#000] flex items-end p-5 pb-20 xl:text-base lg:text-sm sm:text-xs">
+                        <p> Our unique approach combines psychological insight,
+                            content strategy, and expert guidance to craft a personal brand that is deeply authentic and
+                            compelling.</p>
                     </div>
                 </div>
             </div>
@@ -131,22 +149,26 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
         <div class="flex flex-col sm:hidden">
             <div class="text-right bg-[#EED9C4] p-10 pl-14">
                 <h2 class="text-[#191718] text-3xl/10 font-bold">Why Start Building Your Personal Brand With Us?</h2>
-                <p class="text-[#000] text-sm/6 ml-6">Personal brands increase credibility, with professionals who actively build their brands seen as more knowledgeableand approachable.</p>
+                <p class="text-[#000] text-sm/6 ml-6">Personal brands increase credibility, with professionals who
+                    actively build their brands seen as more knowledgeableand approachable.</p>
             </div>
             <div>
                 <img class="flex-shrink-0 min-w-full min-h-full" alt="HomeStaticImg" src="staticImg.png">
             </div>
             <div class="p-10 bg-[#E0D3BD]">
-                <p class="text-[#191718] ">Our expertise in personal branding, marketing, and design ensures excBuilding a personal brand helps professionals establish themselves as thought leaders, enhancing their visibility and authority in their industries.eptional results tailored to your unique needs.</p>
+                <p class="text-[#191718] ">Our expertise in personal branding, marketing, and design ensures excBuilding
+                    a personal brand helps professionals establish themselves as thought leaders, enhancing their
+                    visibility and authority in their industries.eptional results tailored to your unique needs.</p>
             </div>
             <div class="bg-[#B19482] text-right p-10 py-20">
-                <p >We believe that personal branding is an intimate exploration of an individual's essence, encompassing their emotions, fears, and aspirations.
+                <p>We believe that personal branding is an intimate exploration of an individual's essence, encompassing
+                    their emotions, fears, and aspirations.
                 </p>
             </div>
         </div>
 
     </section>
-<!--Contact us-->
+    <!--Contact us-->
     <section class="bg-[#191718] max-w-[1440px] mx-auto py-12 px-4">
         <header class="text-center">
             <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl ">Contact Us</h2>
@@ -168,7 +190,9 @@ import HomeLogo from "/public/logos/HomeLogo.svg"
                               class=" start-0 w-full border p-2 border-[#D9B99B] rounded-md focus:ring-2 bg-[#191718]"></textarea>
                 </div>
                 <div>
-                    <button class="bg-[#B19482] py-2 rounded-md w-full hover:bg-[#8D705D] text-white focus:-scale-30">Send</button>
+                    <button class="bg-[#B19482] py-2 rounded-md w-full hover:bg-[#8D705D] text-white focus:-scale-30">
+                        Send
+                    </button>
                 </div>
             </div>
         </div>
