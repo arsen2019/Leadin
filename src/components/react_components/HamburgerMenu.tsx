@@ -35,25 +35,25 @@ export default function HamburgerMenu({activePath}: Props) {
             >
                 <ul className="space-y-4">
                     <li className={`cursor-pointer transform transition-all duration-300 ${
-                        activePath === "/" ? "scale-130" : "opacity-80"
+                        activePath === "/" ? "font-bold" : "opacity-80"
                     } hover:scale-130 active:scale-120 `}><a href="/">Home</a></li>
                     <li className={`cursor-pointer transform transition-all duration-300 ${
-                        activePath === "/about" ? "scale-130" : "opacity-80"
+                        activePath === "/about/" ? "font-bold" : "opacity-80"
                     }  hover:scale-130 active:scale-120 `}><a href="/about">About Us</a></li>
                     <li className={`cursor-pointer transform transition-all duration-300 ${
-                        activePath === "/services" ? "scale-130" : "opacity-80"
+                        activePath === "/services/" ? "font-bold" : "opacity-80"
                     } hover:scale-130 active:scale-120 `}><a href="/services">Services</a></li>
                     <li className={`cursor-pointer transform transition-all duration-300 ${
-                        activePath === "/clients" ? "scale-130" : "opacity-80"
+                        activePath === "/clients/" ? "font-bold" : "opacity-80"
                     } hover:scale-130 active:scale-120 `}><a href="/clients">Clients</a></li>
                     <li className={`cursor-pointer transform transition-all duration-300 ${
-                        activePath === "/portfolio" ? "scale-130 text-center" : "opacity-80"
+                        activePath === "/portfolio/" ? "font-bold" : "opacity-80"
                     }  hover:scale-130 active:scale-120 `}><a href="/portfolio">Portfolio</a></li>
                     <li className={`cursor-pointer transform transition-all duration-300 ${
-                        activePath === "/connect" ? "scale-130" : "opacity-80"
+                        activePath === "/connect/" ? "font-bold" : "opacity-80"
                     }  hover:scale-130 active:scale-120 `}><a href="/connect">Connect</a></li>
                     <li className={`cursor-pointer transform transition-all duration-300 ${
-                        activePath === "/blog" ? "scale-130" : "opacity-80"
+                        activePath === "/blog/" ? "font-bold" : "opacity-80"
                     } hover:scale-130 active:scale-120 `}><a href="/blog">Blog</a></li>
                 </ul>
 
