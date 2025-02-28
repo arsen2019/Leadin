@@ -1,10 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PortfolioSlider from '../../components/PortfolioSlider.astro';
-import ClientSlider from '../../components/ClientSlider.astro';
+import VideoComponent from "../../components/react_components/VideoComponent";
 ---
 <BaseLayout title="Leadin Agency - Insights & Success Stories">
     <main class="max-w-7xl mx-auto">
+        <div class="w-fit">
+            <VideoComponent client:only="react" />
+
+        </div>
     </main>
 
 
