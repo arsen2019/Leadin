@@ -4,15 +4,15 @@ const { title, subTitle,heading,src } = Astro.props;
 ---
 <div class="cards-container flex flex-row rounded-xl  overflow-hidden ">
     <div class="flex flex-[2] relative text-[#FFF] ">
-        <img src={src}>
+        <img class="flex-shrink-0 min-w-full min-h-full" src={src}>
         <div class="absolute bottom-4 left-4">
             <h3 class="card-name   text-xs sm:text-xl">{title}</h3>
             <p class="text-[10px] sm:text-[16px]">{subTitle}</p>
-        </div>+
+        </div>
     </div>
-    <div class="card-content flex flex-[3] items-center bg-[#FFF] text-[#000000] p-6 ">
-        <div class="sm:pr-14 pr-2">
-            <h3 class="font-bold pb-4 text-[10px] sm:text-lg ">{heading}</h3>
+    <div class="card-content flex flex-[3] items-center bg-[#FFF] text-[#000000] sm:p-6 p-2 w-full">
+        <div class="lg:pr-14 ">
+            <h3 class="font-bold pb-4 text-sm sm:text-md ">{heading}</h3>
             <p class="text-[9px] sm:text-[16px]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
         </div>
     </div>

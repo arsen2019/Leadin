@@ -2,21 +2,23 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import OurTeam from "../../components/OurTeam.astro";
 import OurTeamImg from '../../assets/img/teamImg.png'
+import LanaImg from '../../assets/img/Lana.png'
+import GetStartedPopUp from "../../components/react_components/GetStartedPopUp";
 ---
 <BaseLayout title="Leadin Agency - Insights & Success Stories">
-    <section class=" max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <section class=" max-w-[1440px] mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <header class=" sm:m-12 m-8 text-center sm:text-4xl lg:text-6xl text-2xl">
             <h2> We help individuals and companies build and grow their digital presence.</h2>
         </header>
     </section>
 
 
-    <section class="vision-section max-w-7xl mx-auto py-12 ">
+    <section class="vision-section max-w-[1440px] mx-auto py-12 ">
         <header class="text-center">
             <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl">Our Vision</h2>
         </header>
         <div class="vision-container flex md:flex-row flex-col-reverse lg:gap-12  p-3">
-            <div class="flex flex-col basis-5/12 w-full lg:gap-9 gap-3 p-6">
+            <div class="flex flex-col md:w-[44%] xl:gap-9 md:gap-6 gap-3 p-6">
                 <div class=" text-base lg:text-lg/6 xl:text-xl/8 ">
                     <p>We empower executives and professionals worldwide to unlock the full potential of their personal
                         brands.</p>
@@ -39,29 +41,52 @@ import OurTeamImg from '../../assets/img/teamImg.png'
                         content creation but also in emotional support and professional development, ensuring clients
                         feel confident navigating the digital landscape.</p>
                 </div>
-                <div>
-                    <button class="bg-[#B19482] xl:py-4 py-2 rounded-md w-full">Build your personal brand with us
+                <div class="xl:pt-20">
+                    <button class="bg-[#B19482] xl:py-4 py-2 rounded-md w-full hover:bg-white hover:text-black focus:-scale-30">
+                        Build your personal brand with us
                     </button>
                 </div>
             </div>
-            <div class="basis-7/12 flex justify-center items-center ">
-                <img src="/visionImg.png" alt="AboutPage img "/>
+            <div class=" flex md:w-[56%] justify-center items-center ">
+                <img class="flex-shrink-0 min-w-full min-h-full" src="/visionImg.png" alt="AboutPage img "/>
             </div>
         </div>
     </section>
 
 
     <!-- Our Team cards-->
-    <section class="team-section w-full bg-white max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <section class="team-section w-full bg-white max-w-[1440px] mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <header class="text-center">
             <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl text-[#000]">Our Team</h2>
         </header>
-        <div class="team-section grid sm:grid-cols-3 gap-4 grid-cols-2">
-            <OurTeam title="Inessa Manukyan" position="CEO/Founder" followers="4k"
+        <div class="team-section grid sm:grid-cols-3 grid-cols-2 gap-8 ">
+            <OurTeam title="Inessa Manukyan" position="CEO/Founder" followers="4K"
                      href="https://www.linkedin.com/in/inessa-manukyan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                      src={OurTeamImg}/>
+            <OurTeam title="Lana Hakobjanyan" position="Chief Operations Officer " followers="2K"
+                     href="#"
+                     src={LanaImg}/>
         </div>
     </section>
 
+    <section class="team-section w-full bg-black max-w-[1440px] mx-auto py-24 px-4 sm:px-6 lg:px-8">
+        <div class="w-full flex justify-center items-center ">
+            <div class="flex flex-col  md:w-[60%] justify-center items-center ">
+                <div class="">
+                    <h3 class=" text-center sm:text-3xl text-2xl text-[#FFF]">Let's create your personal branding
+                        together</h3>
+                </div>
+                <div class="w-full md:pt-8 pt-4">
+                    <GetStartedPopUp buttonText="Get Started" style={{
+                        width: '100%',
+                        backgroundColor: '#B19482',
+                        border: '1px solid',
+                        color: '#FFF',
+                        padding: '1%',
+                    }} client:only="react"/>
+                </div>
 
+            </div>
+        </div>
+    </section>
 </BaseLayout>

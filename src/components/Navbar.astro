@@ -6,6 +6,7 @@ import StepByStepPopUp from "./react_components/StepByStepPopUp.tsx";
 
 const path = Astro.url.pathname
 ---
+
 <nav class="top-0 shadow-sm  sticky bg-black z-50 ">
     <div class="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <HamburgerMenu activePath={path} client:only='react'/>
