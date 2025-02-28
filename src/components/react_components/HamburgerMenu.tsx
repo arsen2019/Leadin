@@ -29,7 +29,7 @@ export default function HamburgerMenu({activePath}: Props) {
                 onClick={toggleMenu}
             ></div>
             <div
-                className={`fixed top-0 right-0 h-screen w-2/5 bg-black  p-2 text-white text-xl shadow-lg 
+                className={`fixed top-0 right-0 h-screen w-max bg-black  px-[10%] text-white text-xl shadow-lg 
                 flex flex-col  justify-center transform transition-transform duration-500 
                 ${isOpen ? "translate-x-0" : "translate-x-full"}`}
             >

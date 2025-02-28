@@ -34,7 +34,7 @@ export default function UserReview() {
                         <input type="text" placeholder='Last Name*' required={true} className='w-2/5 px-5 py-3 border border-white rounded-lg bg-[#191718]'/>
                     </div>
                     <div className='flex justify-start '>
-                        <input type="text" placeholder='Compnay' className='w-full px-5 py-3 border border-white rounded-lg bg-[#191718]' />
+                        <input type="text" placeholder='Company' className='w-full px-5 py-3 border border-white rounded-lg bg-[#191718]' />
                     </div>
                     <textarea
                         required={true}

@@ -1,5 +1,6 @@
 ---
 import SubscribePopUp from '../react_components/SubscribePopUp.tsx';
+const {style} = Astro.props
 ---
 
-<SubscribePopUp client:load />
+<SubscribePopUp style={style} client:load />

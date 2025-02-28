@@ -42,9 +42,11 @@ import GetStartedPopUp from "../../components/react_components/GetStartedPopUp";
                         feel confident navigating the digital landscape.</p>
                 </div>
                 <div class="xl:pt-20">
-                    <button class="bg-[#B19482] xl:py-4 py-2 rounded-md w-full hover:bg-white hover:text-black focus:-scale-30">
-                        Build your personal brand with us
-                    </button>
+                    <GetStartedPopUp buttonText="Build Your personal brand with us" style={{
+                        width: '100%',
+                        padding: '10px',
+                    }} client:only="react" />
+
                 </div>
             </div>
             <div class=" flex md:w-[56%] justify-center items-center ">
@@ -59,7 +61,7 @@ import GetStartedPopUp from "../../components/react_components/GetStartedPopUp";
         <header class="text-center">
             <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl text-[#000]">Our Team</h2>
         </header>
-        <div class="team-section grid sm:grid-cols-3 grid-cols-2 gap-8 ">
+        <div class="team-section grid sm:grid-cols-3 grid-cols-2 gap-8 place-items-center">
             <OurTeam title="Inessa Manukyan" position="CEO/Founder" followers="4K"
                      href="https://www.linkedin.com/in/inessa-manukyan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                      src={OurTeamImg}/>
@@ -69,20 +71,19 @@ import GetStartedPopUp from "../../components/react_components/GetStartedPopUp";
         </div>
     </section>
 
-    <section class="team-section w-full bg-black max-w-[1440px] mx-auto py-24 px-4 sm:px-6 lg:px-8">
+    <section class="team-section w-full bg-black max-w-[1440px] mx-auto py-24 px-8 sm:px-6 lg:px-10">
         <div class="w-full flex justify-center items-center ">
-            <div class="flex flex-col  md:w-[60%] justify-center items-center ">
+            <div class="flex flex-col w-fit  justify-center items-center ">
                 <div class="">
                     <h3 class=" text-center sm:text-3xl text-2xl text-[#FFF]">Let's create your personal branding
                         together</h3>
                 </div>
                 <div class="w-full md:pt-8 pt-4">
-                    <GetStartedPopUp buttonText="Get Started" style={{
+                    <GetStartedPopUp buttonText="Let's build your brand" style={{
                         width: '100%',
-                        backgroundColor: '#B19482',
-                        border: '1px solid',
+                        border: '1px solid none',
                         color: '#FFF',
-                        padding: '1%',
+                        padding: '10px',
                     }} client:only="react"/>
                 </div>
 

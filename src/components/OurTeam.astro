@@ -2,7 +2,7 @@
 import {Image} from 'astro:assets'
 const {title, position, followers, href, src} = Astro.props;
 ---
-<div class="team-member flex flex-col ">
+<div class="team-member flex flex-col max-w-72  ">
     <div class="lg:rounded-xl rounded-md overflow-hidden">
         <div class="flex-1">
             <Image src={src} class="flex-shrink-0 min-w-full min-h-full" alt=''/>

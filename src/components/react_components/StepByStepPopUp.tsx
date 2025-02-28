@@ -49,7 +49,7 @@ export default function StepByStepPopUp({style, btnText}: StepByStepProps) {
 
     return (
         <div>
-            <button className="py-2 px-4 bg-[#B19482] text-white rounded-lg"  style={style} onClick={() => setIsOpen(true)}>
+            <button className="py-2 px-4 bg-[#B19482] hover:bg-[#8D705D] text-white rounded-lg"  style={style} onClick={() => setIsOpen(true)}>
                 {btnText}
             </button>
             {isOpen && (
@@ -112,7 +112,9 @@ export default function StepByStepPopUp({style, btnText}: StepByStepProps) {
                                                     type="text"
                                                     placeholder='Write your answer here'
                                                     className='bg-black p-2 border-b border-b-[#6E6B6B] w-full sm:text-md md:text-3xl '
-                                                    onChange={handleChange}/>
+                                                    onChange={handleChange}
+                                                    required={true}
+                                                />
                                                 <button
                                                     className='p-2  mt-8 w-2/5 min-w-32 bg-black text-white border border-[#B19482] rounded-lg text-md md:text-xl hover:bg-white hover:text-black'
                                                     type='button'
