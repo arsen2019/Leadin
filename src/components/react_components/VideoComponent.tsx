@@ -16,7 +16,7 @@ export default function VideoComponent() {
             muted={true}
             playsinline={true}
             onReady={onLoadedData}
-            width='500px'
+            width='300px'
 
         />
     )

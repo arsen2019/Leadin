@@ -99,7 +99,7 @@ export default function StepByStepPopUp({style, btnText}: StepByStepProps) {
                                                     className='p-2  mt-8 w-2/5 min-w-32 bg-black text-white border border-[#B19482] rounded-lg text-md md:text-xl hover:bg-white hover:text-black'
                                                     type='button'
                                                     onClick={handleSubmit}>
-                                                    Send
+                                                    Submit
                                                 </button>
                                             </>
                                         ) : (
@@ -119,7 +119,7 @@ export default function StepByStepPopUp({style, btnText}: StepByStepProps) {
                                                     className='p-2  mt-8 w-2/5 min-w-32 bg-black text-white border border-[#B19482] rounded-lg text-md md:text-xl hover:bg-white hover:text-black'
                                                     type='button'
                                                     onClick={handleNext}>
-                                                    Send
+                                                    Next
                                                 </button>
                                             </>
                                         )}
