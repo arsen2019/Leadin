@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import GetStartedPopUp from "../../components/react_components/GetStartedPopUp";
 ---
 <BaseLayout title="Leadin Agency - Insights & Success Stories">
     <section class=" max-w-[1440px] mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -7,114 +8,144 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <h2> We help individuals and companies build and grow their digital presence.</h2>
         </header>
     </section>
-    <section class="forInd-section  mx-auto py-12 px-4 sm:px-6 lg:px-8 bg-[#FFF] ">
-        <div class="max-w-[1440px] mx-auto text-[#000]">
-            <header class=" sm:m-12 p-8 text-center  font-bold ">
-                <h2 class=" sm:text-2xl lg:text-4xl text-xl ">For Individuals</h2>
-                <p class="sm:text-lg lg:text-3xl/[4vh] italic pt-8 lg:mx-20 md:mx-10 xl:mx-40">Build a powerful personal brand,
-                    expand your network, and generate high-quality leads.</p>
-            </header>
-            <div class="forInd-container grid lg:pt-10 pt-5 sm:grid-cols-2 xl:px-28 lg:px-14 grid-cols-1 gap-12 sm:gap-24 lg:p-4 ">
-                <div class="sm:px-12">
-                    <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">LinkedIn Personal
-                        Branding</h3>
-                    <p class="lg:text-2xl md:text-xl text-md">Professionally revamp your profile to attract the right
-                        audience and opportunities.</p>
-                </div>
-                <div class="sm:px-12">
-                    <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">LinkedIn Profile
-                        Optimization</h3>
-                    <p class="lg:text-2xl md:text-xl text-md">Define your positioning, craft your unique narrative, and
-                        stand out in your industry.</p>
-                </div>
-                <div class="sm:px-12">
-                    <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Content Strategy &
-                        Creation</h3>
-                    <p class="lg:text-2xl md:text-xl text-md">Structured, high-quality content (text, video, visuals) to
-                        showcase your expertise and authority.</p>
-                </div>
-                <div class="sm:px-12">
-                    <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Personal Photo and Video
-                        Production</h3>
-                    <p class="lg:text-2xl md:text-xl text-md">High quality photoshoots and videoshoot in professional a
-                        setting.</p>
-                </div>
-                <div class="sm:px-12">
-                    <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Engagement & Network
-                        Growth</h3>
-                    <p class="lg:text-2xl md:text-xl text-md">Strategic commenting, connections expansion, and community
-                        engagement.</p>
-                </div>
-                <div class="sm:px-12">
-                    <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Lead Generation & Sales
-                        System</h3>
-                    <p class="lg:text-2xl md:text-xl text-md">LinkedIn strategies to attract potential clients and
-                        convert them into business opportunities.</p>
-                </div>
-                <div class="sm:px-12">
-                    <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Podcast & Media Placement</h3>
-                    <p class="lg:text-2xl md:text-xl text-md">Get featured in industry podcasts and online publications
-                        to boost your credibility.</p>
-                </div>
-                <div class="sm:px-12">
-                    <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Influencer Marketing</h3>
-                    <p class="lg:text-2xl md:text-xl text-md">Collaborate with top LinkedIn influencers to amplify your
-                        reach.</p>
-                </div>
+    <section class="forInd-section  max-w-[1440px] mx-auto text-[#000] py-12 px-4 sm:px-6 lg:px-8 bg-[#FFF] ">
+
+        <header class=" sm:m-12 p-8 text-center  font-bold ">
+            <h2 id="headerInd" class=" sm:text-2xl lg:text-4xl text-xl ">For Individuals</h2>
+            <p class="sm:text-lg lg:text-3xl/[4vh] italic pt-8 lg:mx-20 md:mx-10 xl:mx-40">Build a powerful personal
+                brand,
+                expand your network, and generate high-quality leads.</p>
+        </header>
+        <div class="forInd-container grid lg:pt-10 pt-5 sm:grid-cols-2 xl:px-28 lg:px-14 grid-cols-1 gap-12 sm:gap-24 lg:p-4 ">
+            <div class="sm:px-12">
+                <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">LinkedIn Personal
+                    Branding</h3>
+                <p class="lg:text-2xl md:text-xl text-md">Professionally revamp your profile to attract the right
+                    audience and opportunities.</p>
+            </div>
+            <div class="sm:px-12">
+                <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">LinkedIn Profile
+                    Optimization</h3>
+                <p class="lg:text-2xl md:text-xl text-md">Define your positioning, craft your unique narrative, and
+                    stand out in your industry.</p>
+            </div>
+            <div class="sm:px-12">
+                <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Content Strategy &
+                    Creation</h3>
+                <p class="lg:text-2xl md:text-xl text-md">Structured, high-quality content (text, video, visuals) to
+                    showcase your expertise and authority.</p>
+            </div>
+            <div class="sm:px-12">
+                <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Personal Photo and Video
+                    Production</h3>
+                <p class="lg:text-2xl md:text-xl text-md">High quality photoshoots and videoshoot in professional a
+                    setting.</p>
+            </div>
+            <div class="sm:px-12">
+                <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Engagement & Network
+                    Growth</h3>
+                <p class="lg:text-2xl md:text-xl text-md">Strategic commenting, connections expansion, and community
+                    engagement.</p>
+            </div>
+            <div class="sm:px-12">
+                <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Lead Generation & Sales
+                    System</h3>
+                <p class="lg:text-2xl md:text-xl text-md">LinkedIn strategies to attract potential clients and
+                    convert them into business opportunities.</p>
+            </div>
+            <div class="sm:px-12">
+                <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Podcast & Media Placement</h3>
+                <p class="lg:text-2xl md:text-xl text-md">Get featured in industry podcasts and online publications
+                    to boost your credibility.</p>
+            </div>
+            <div class="sm:px-12">
+                <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Influencer Marketing</h3>
+                <p class="lg:text-2xl md:text-xl text-md">Collaborate with top LinkedIn influencers to amplify your
+                    reach.</p>
             </div>
         </div>
     </section>
-    <section class="forCom-section max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <header id="headerCom" class=" sm:m-12 p-8 text-center  font-bold ">
-            <h2 class=" sm:text-2xl lg:text-4xl text-xl mb-10 ">For Companies</h2>
+    <section class="max-w-[1440px] mx-auto">
+        <div class="py-16 md:w-[40%] w-full p-2 mx-auto">
+            <GetStartedPopUp buttonText="Get a quote" style={{
+                width: '100%',
+                border: '1px solid none',
+                color: '#FFF',
+                padding: '10px',
+            }} client:only="react"/>
+        </div>
+    </section>
+    <section class="forCom-section max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-[#151515]">
+        <header class=" sm:m-12 p-8 text-center  font-bold ">
+            <h2 id="headerCom" class=" sm:text-2xl lg:text-4xl text-xl mb-10 ">For Companies</h2>
             <p class="sm:text-lg lg:text-3xl/[5vh] italic pt-8 lg:mx-10 xl:mx-20">We help businesses scale their online
                 presence, generate leads, and build brand authority with high-impact digital marketing strategies.</p>
         </header>
         <div class="forInd-container grid lg:pt-10 pt-5 sm:grid-cols-2 xl:px-28 lg:px-14 grid-cols-1 gap-12 sm:gap-24 lg:p-4 ">
             <div class="sm:px-12">
                 <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Content Production</h3>
-                <p class="lg:text-2xl md:text-xl text-md">High-quality videos, reels, graphics, and engaging content tailored to captivate your audience and boost engagement.</p>
+                <p class="lg:text-2xl md:text-xl text-md">High-quality videos, reels, graphics, and engaging content
+                    tailored to captivate your audience and boost engagement.</p>
             </div>
             <div class="sm:px-12">
                 <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Paid Ads</h3>
-                <p class="lg:text-2xl md:text-xl text-md">Targeted Google, LinkedIn, Facebook & Instagram Ads to drive leads, increase conversions, and maximize ROI.</p>
+                <p class="lg:text-2xl md:text-xl text-md">Targeted Google, LinkedIn, Facebook & Instagram Ads to drive
+                    leads, increase conversions, and maximize ROI.</p>
             </div>
             <div class="sm:px-12">
                 <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">LinkedIn Company Page Growth</h3>
-                <p class="lg:text-2xl md:text-xl text-md">We will optimize, manage, and grow your LinkedIn page with strategic content and engagement.</p>
+                <p class="lg:text-2xl md:text-xl text-md">We will optimize, manage, and grow your LinkedIn page with
+                    strategic content and engagement.</p>
             </div>
             <div class="sm:px-12">
-                <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">LinkedIn Content Strategy & Execution</h3>
-                <p class="lg:text-2xl md:text-xl text-md">High-quality posts, case studies, and thought leadership content to position your brand as an industry leader.</p>
+                <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">LinkedIn Content Strategy &
+                    Execution</h3>
+                <p class="lg:text-2xl md:text-xl text-md">High-quality posts, case studies, and thought leadership
+                    content to position your brand as an industry leader.</p>
             </div>
             <div class="sm:px-12">
                 <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Employee Advocacy & Training</h3>
-                <p class="lg:text-2xl md:text-xl text-md">We will activate your team as brand ambassadors through content creation and engagement strategies.</p>
+                <p class="lg:text-2xl md:text-xl text-md">We will activate your team as brand ambassadors through
+                    content creation and engagement strategies.</p>
             </div>
             <div class="sm:px-12">
                 <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Instagram & Facebook Growth </h3>
-                <p class="lg:text-2xl md:text-xl text-md">Organic & paid strategies to increase followers, engagement, and brand visibility across social platforms.</p>
+                <p class="lg:text-2xl md:text-xl text-md">Organic & paid strategies to increase followers, engagement,
+                    and brand visibility across social platforms.</p>
             </div>
             <div class="sm:px-12">
                 <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Influencer Marketing</h3>
-                <p class="lg:text-2xl md:text-xl text-md">We collaborate with industry-specific influencers to amplify your reach and enhance brand credibility.</p>
+                <p class="lg:text-2xl md:text-xl text-md">We collaborate with industry-specific influencers to amplify
+                    your reach and enhance brand credibility.</p>
             </div>
             <div class="sm:px-12">
                 <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Social Media Strategy</h3>
-                <p class="lg:text-2xl md:text-xl text-md">We will develop customised, data-driven marketing plan to position your brand, engage your audience, and drive business growth.</p>
+                <p class="lg:text-2xl md:text-xl text-md">We will develop customised, data-driven marketing plan to
+                    position your brand, engage your audience, and drive business growth.</p>
             </div>
             <div class="sm:px-12">
                 <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Copywriting</h3>
-                <p class="lg:text-2xl md:text-xl text-md">Persuasive, high-converting copy for ads, social media, blogs, and website content to engage and convert your audience.</p>
+                <p class="lg:text-2xl md:text-xl text-md">Persuasive, high-converting copy for ads, social media, blogs,
+                    and website content to engage and convert your audience.</p>
             </div>
             <div class="sm:px-12">
                 <h3 class=" font-bold lg:text-3xl md:text-2xl text-xl lg:pb-10 pb-5 ">Feed Curation & Design</h3>
-                <p class="lg:text-2xl md:text-xl text-md">Aesthetic, on-brand, and strategically planned Instagram & Facebook feeds that enhance brand perception.</p>
+                <p class="lg:text-2xl md:text-xl text-md">Aesthetic, on-brand, and strategically planned Instagram &
+                    Facebook feeds that enhance brand perception.</p>
             </div>
-
         </div>
-
     </section>
+
+  <section class="max-w-[1440px] mx-auto">
+      <div class="py-16 md:w-[40%] w-full p-2 mx-auto">
+          <GetStartedPopUp buttonText="Get a quote" style={{
+              width: '100%',
+              border: '1px solid none',
+              color: '#FFF',
+              padding: '10px',
+          }} client:only="react"/>
+      </div>
+  </section>
 
 
 </BaseLayout>

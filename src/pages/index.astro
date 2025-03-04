@@ -10,6 +10,7 @@ import SocialHref from "../components/SocialHref.astro";
 import {Image} from "astro:assets"
 import HomeLogo from "/public/logos/HomeLogo.svg"
 import ReviewSlider from '../components/react_components/ReviewSlider'
+import GetStartedPopUp from "../components/react_components/GetStartedPopUp";
 
 const reviews = [
     {
@@ -45,7 +46,7 @@ const reviews = [
 <BaseLayout title="Leadin Agency - Transform Your Personal Brand">
 
     <section class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col justify-between items-center gap-14">
+        <div class="flex flex-col justify-between items-center gap-20">
 
             <div class="w-3/4 md:w-1/2">
                 <Image src={HomeLogo} alt=''/>
@@ -57,12 +58,12 @@ const reviews = [
             </div>
             <div class="flex flex-row gap-6 w-full justify-center">
                 <div class="">
-                    <button class="py-3 px-4 md:px-12 rounded-md  text-[#FFF] text-md  md:text-xl  border-[#B19482] border-2 w-full "><a href="/services">For
-                        Individuals</a></button>
+                    <button class="py-3 px-4 md:px-12 rounded-md  text-[#FFF] text-md  md:text-xl  border-[#B19482] border-2 w-full ">
+                        <a href="/services#headerInd">For Individuals</a></button>
                 </div>
                 <div class="">
-                    <button class="py-3 px-4 md:px-12 rounded-md  text-[#FFF] text-md md:text-xl border-[#B19482] border-2 w-full "><a
-                            href="/services#headerCom">For Companies</a></button>
+                    <button class="py-3 px-4 md:px-12 rounded-md  text-[#FFF] text-md md:text-xl border-[#B19482] border-2 w-full ">
+                        <a href="/services#headerCom">For Companies</a></button>
                 </div>
             </div>
 
@@ -74,11 +75,12 @@ const reviews = [
     <PortfolioSlider/>
 
     <!-- Branding cards-->
-    <section class="cards-section  lg:max-w-[1440px] max-w-2xl mx-auto py-12 px-4  bg-black my-28">
+    <section class="cards-section  lg:max-w-[1440px] max-w-2xl mx-auto py-6 px-4  bg-black my-14">
         <header class="text-center">
-            <h2 class="sm:p-12 p-8 sm:text-5xl text-[3vh] ">Result-Based Personal Branding</h2>
+            <h2 class="sm:py-12 py-8 xl:text-5xl lg:text-4xl text-3xl font-semibold ">Result-Based Personal
+                Branding</h2>
         </header>
-        <div class="grid lg:grid-cols-2  grid-cols-1 gap-10 ">
+        <div class="grid lg:grid-cols-2  grid-cols-1 md:gap-10 gap-5">
             <BrandingCard title="Telecom" subTitle="Personal Branding on LinkedIn" src="/telecom.png"
                           heading="How Joe Had A Record Month Using His Personal Brand"/>
             <BrandingCard title="Nutrition" subTitle="Blogging on Instagram" src="/nutrition.png"
@@ -90,38 +92,38 @@ const reviews = [
         </div>
     </section>
     <!--Our Services-->
-    <section class="max-w-[1440px] mx-auto py-12 px-4">
+    <section class="max-w-[1440px] mx-auto py-6 px-4">
         <header class="text-center">
-            <h2 class="sm:p-12 p-8 sm:text-5xl text-[3vh] ">Our Services</h2>
+            <h2 class="sm:pb-12 pb-8 font-semibold xl:text-5xl lg:text-4xl text-3xl">Our Services</h2>
         </header>
-        <div class="ourServices-conteiner grid  grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-2">
+        <div class="ourServices-conteiner grid  grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 sm:gap-10 gap-5">
             <div class="ourServices  ">
-                <h3 class="text-2xl pb-4 ">Personal Brand Management</h3>
+                <h3 class="sm:text-2xl text-xl pb-4 ">Personal Brand Management</h3>
                 <p class="text-[#D8D6D6] text-[16px] ">We help professionals build and maintain a strong, authentic
                     personal brand that resonates with their audience and drives meaningful impact.</p>
             </div>
             <div class="ourServices ">
-                <h3 class="text-2xl pb-4">Digital Marketing</h3>
+                <h3 class="sm:text-2xl text-xl pb-4">Digital Marketing</h3>
                 <p class="text-[#D8D6D6] text-[16px]">We manage social media, run PPC ads, and design marketing
                     campaigns that amplify your online presence and achieve measurable results.</p>
             </div>
             <div class="ourServices">
-                <h3 class="text-2xl pb-4">Marketing Strategy</h3>
+                <h3 class="sm:text-2xl text-xl pb-4">Marketing Strategy</h3>
                 <p class="text-[#D8D6D6] text-[16px]">We develop comprehensive strategies for companies, including
                     vision, mission, market research, and actionable plans to drive growth.</p>
             </div>
             <div class="ourServices ">
-                <h3 class="text-2xl pb-4">Positioning Strategy</h3>
+                <h3 class="sm:text-2xl text-xl pb-4">Positioning Strategy</h3>
                 <p class="text-[#D8D6D6] text-[16px]">We craft personalized positioning strategies to establish your
                     unique identity, build authority, and connect with your ideal audience.</p>
             </div>
             <div class="ourServices ">
-                <h3 class="text-2xl pb-4">Content Creation</h3>
+                <h3 class="sm:text-2xl text-xl pb-4">Content Creation</h3>
                 <p class="text-[#D8D6D6] text-[16px]">We produce engaging ghostwriting, copywriting, video content,
                     photoshoots, and reels for personal brands and companies to captivate and inspire.</p>
             </div>
             <div class="ourServices">
-                <h3 class="text-2xl pb-4">Branding and Design</h3>
+                <h3 class="sm:text-2xl text-xl pb-4">Branding and Design</h3>
                 <p class="text-[#D8D6D6] text-[16px]">We create compelling visual identities, logos, and brand designs
                     that reflect the essence and values of your company.</p>
             </div>
@@ -131,20 +133,33 @@ const reviews = [
     <section class="max-w-[1440px] mx-auto  ">
 
         <div class="trusted-clients flex flex-col text-center gap-10 pt-24 pb-10 px-4">
-            <h1 class="text-lg md:text-4xl font-semibold">Trusted by 15+ clients</h1>
+            <h1 class="xl:text-5xl lg:text-4xl text-3xl font-semibold">Trusted by 15+ clients</h1>
             <p class="text-sm md:text-xl">Our clients are our top priority, and we are committed to providing them with
                 the high level of service</p>
         </div>
         <ClientSlider/>
     </section>
-   <section class="py-10 max-w-[1440px] mb-10 mx-auto">
-        <h1 class="text-center text-2xl lg:text-4xl py-10 mb-16">Customer Reviews</h1>
+    <section class="py-10 max-w-[1440px] mb-4 mx-auto">
+        <h1 class="text-center sm:py-10 py-5 xl:text-5xl lg:text-4xl text-3xl font-semibold">Customer Reviews</h1>
         <ReviewSlider reviews={reviews} client:only="react"/>
+    </section>
+    
+    <section class="max-w-[1440px] my-8 mx-auto ">
+        <div class="flex flex-col items-center justify-center w-[90%] mx-auto border-[#785B55] border-2 rounded-md p-3 gap-3 md:w-[80%] md:py-8">
+            <h2 class="font-semibold md:text-4xl text-xl text-center">Define your personal branding strategy with LEADIN</h2>
+            <div class="md:w-[60%] w-[90%]"> <GetStartedPopUp buttonText="Get Started" style={{
+                width: '100%',
+                border: '1px solid none',
+                color: '#FFF',
+                padding: '10px',
+            }} client:only="react"/>
+            </div>
+        </div>
     </section>
 
 
     <section class="max-w-[1440px] mx-auto ">
-        <div class="sm:flex sm:flex-row hidden pt-20">
+        <div class="sm:flex sm:flex-row hidden pt-10">
             <div class="basis-3/10 w-full flex flex-col ">
                 <div class="bg-[#EDE5D9] basis-1/2 h-full text-[#191718] flex  items-center lg:px-10 px-5 xl:text-base lg:text-sm sm:text-xs">
                     <p>Building a personal brand helps professionals establish
@@ -159,8 +174,8 @@ const reviews = [
                 <img alt="HomeStaticImg" class="flex-shrink-0 min-w-full min-h-full" src="staticImg.png">
             </div>
             <div class="basis-4/10  flex flex-col">
-                <div class="bg-[#E0D3BD] basis-1/2 h-full text-right lg:text-3xl xl:text-5xl/[8vh] sm:text-2xl text-[#191718] p-10">
-                    <p class="font-bold xl:ml-40 sm:ml-20">Why Strat Building Your Personal Brand With Us?</p>
+                <div class="bg-[#E0D3BD] basis-1/2 h-full text-right lg:text-5xl/[5vh] md:text-4xl text-3xl/10  text-[#191718] p-10">
+                    <p class="font-bold xl:ml-40 sm:ml-20">Why Start Building Your Personal Brand With Us?</p>
                 </div>
                 <div class="w-full flex flex-row basis-1/2 h-full">
                     <div class="basis-7/16 h-full bg-[#B19482] flex items-start p-5 pt-20 xl:text-base lg:text-sm sm:text-xs">
@@ -204,13 +219,13 @@ const reviews = [
     <!--Contact us-->
     <section class="bg-[#191718] max-w-[1440px] mx-auto py-12 px-4">
         <header class="text-center">
-            <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl ">Contact Us</h2>
+            <h2 class="sm:p-12 p-8 xl:text-5xl lg:text-4xl text-3xl font-semibold">Contact Us</h2>
         </header>
         <div class="contact-conteiner flex sm:flex-row flex-col-reverse gap-20 px-10">
             <div class="contact-href  flex flex-1 flex-col sm:gap-8 gap-2">
                 <h3 class="sm:text-4xl text-2xl py-4">Do you have any questions?</h3>
                 <SocialHref/>
-                <SubscribePopUp style={{width:'100%', borderRadius:'6px'}}/>
+                <SubscribePopUp style={{width: '100%', borderRadius: '6px'}}/>
             </div>
             <div class="contact-send flex flex-1 flex-col gap-4">
                 <h3 class="sm:text-4xl text-2xl py-4">Get in touch</h3>
