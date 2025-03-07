@@ -12,7 +12,7 @@ export default function GetStartedPopUp({style,buttonText}: IProps) {
         lastName: '',
         phone: '',
         email: '',
-        description: '',
+        text: '',
     }
     const [isOpen, setIsOpen] = useState(false);
     const content = "Thanks for your interest in Leadin. We will get back to you as soon as possible."
@@ -21,16 +21,23 @@ export default function GetStartedPopUp({style,buttonText}: IProps) {
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = event.target;
-        if (name === "description" && value.length > 500) return;
+        if (name === "text" && value.length > 500) return;
         setFormData({...formData, [name]: value});
     };
 
     const handleSubmit = (event: React.FormEvent) => {
-        console.log(formData)
         event.preventDefault();
         setIsOpen(false);
         setIsFeedbackOpen(true);
+        fetch("http://137.184.20.192:8080/subscriptions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
     };
+
     return (
         <div>
             <button className="open-btn hover:bg-[#8D705D]"  style={style} onClick={() => setIsOpen(true)}>
@@ -56,7 +63,7 @@ export default function GetStartedPopUp({style,buttonText}: IProps) {
                                     <input type="text" onChange={handleChange} required={true} value={formData['email']} name='email' placeholder="Email" className="input-field" />
                                     <input type="text" onChange={handleChange} required={true} value={formData['phone']} name='phone' placeholder="Phone" className="input-field" />
                                 </div>
-                                <textarea placeholder="Text" onChange={handleChange} value={formData['description']} name='description' className="input-field" />
+                                <textarea placeholder="Text" onChange={handleChange} value={formData['text']} name='text' className="input-field" />
                                 <div className="send_btn flex justify-end">
                                     <button type="submit" className="submit-btn">Send</button>
                                 </div>

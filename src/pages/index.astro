@@ -11,6 +11,8 @@ import {Image} from "astro:assets"
 import HomeLogo from "/public/logos/HomeLogo.svg"
 import ReviewSlider from '../components/react_components/ReviewSlider'
 import GetStartedPopUp from "../components/react_components/GetStartedPopUp";
+import CardSlider from "../components/react_components/CardSlider";
+import QueryProvider from "../components/react_components/QueryProvider";
 
 const reviews = [
     {
@@ -80,16 +82,11 @@ const reviews = [
             <h2 class="sm:py-12 py-8 xl:text-5xl lg:text-4xl text-3xl font-semibold ">Result-Based Personal
                 Branding</h2>
         </header>
-        <div class="grid lg:grid-cols-2  grid-cols-1 md:gap-10 gap-5">
-            <BrandingCard title="Telecom" subTitle="Personal Branding on LinkedIn" src="/telecom.png"
-                          heading="How Joe Had A Record Month Using His Personal Brand"/>
-            <BrandingCard title="Nutrition" subTitle="Blogging on Instagram" src="/nutrition.png"
-                          heading="How Joe Had A Record Month Using His Personal Brand"/>
-            <BrandingCard title="Health" subTitle="Blogging on Instagram" src="/health.png"
-                          heading="How Joe Had A Record Month Using His Personal Brand"/>
-            <BrandingCard title="Tech" subTitle="Personal Branding on LinkedIn" src="/tech.png"
-                          heading="How Joe Had A Record Month Using His Personal Brand"/>
-        </div>
+
+            <CardSlider client:only="react" />
+
+
+
     </section>
     <!--Our Services-->
     <section class="max-w-[1440px] mx-auto py-6 px-4">
@@ -225,7 +222,7 @@ const reviews = [
             <div class="contact-href  flex flex-1 flex-col sm:gap-8 gap-2">
                 <h3 class="sm:text-4xl text-2xl py-4">Do you have any questions?</h3>
                 <SocialHref/>
-                <SubscribePopUp style={{width: '100%', borderRadius: '6px'}}/>
+                <SubscribePopUp style={{width: '100%', borderRadius: '6px'}} client:only="react"/>
             </div>
             <div class="contact-send flex flex-1 flex-col gap-4">
                 <h3 class="sm:text-4xl text-2xl py-4">Get in touch</h3>
