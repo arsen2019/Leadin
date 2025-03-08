@@ -12,7 +12,10 @@ const path = Astro.url.pathname
         <HamburgerMenu activePath={path} client:only='react'/>
         <div class="hidden lg:flex justify-between h-16 bg-black z-10">
             <div class="flex items-center">
-                <Image src={logo} alt="logo"/>
+                <a href="/">
+                    <Image src={logo} alt="logo"/>
+                </a>
+
             </div>
             <div class="hidden lg:flex h-16 items-center xl:text-lg  text-md ">
                 <ul class="flex items-center gap-6 h-16">
@@ -38,7 +41,7 @@ const path = Astro.url.pathname
                         path === "/blog/" ? "border-b-2 border-[#fff]" : ""
                     }`><a href="/blog">Blog</a></li>
                     <li class="flex">
-                        <StepByStepPopUp btnText='Get Started' client:only="react"/>
+                        <StepByStepPopUp btnText='Get Started' client:visible/>
                     </li>
                 </ul>
             </div>
