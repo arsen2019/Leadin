@@ -4,14 +4,36 @@ import FeedbackPopUp from "./FeedbackPopUp.tsx";
 export default function UserReview() {
     const [rating, setRating] = useState(0);
     const [submitted, setSubmitted] = useState(false);
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        company:'',
+        rate: 0,
+        comment: '',
+    });
 
     const handleRating = (index: number) => {
         setRating(index);
+        formData['rate'] = index;
+
+    };
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const {name, value} = event.target;
+        if (name === "text" && value.length > 500) return;
+        setFormData({...formData, [name]: value});
     };
 
     const handleSubmit = () => {
         setSubmitted(true);
         setTimeout(() => setSubmitted(false), 2000);
+        fetch("http://137.184.20.192:8080/reviews", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
     };
 
     return (
@@ -30,14 +52,17 @@ export default function UserReview() {
 
                 <div className="review-inputs flex flex-col gap-4 text-xs md:text-lg">
                     <div className="credentials flex justify-between">
-                        <input type="text" placeholder='Name*' required={true} className='w-2/5 px-5 py-3 border-white border rounded-lg bg-[#191718]'/>
-                        <input type="text" placeholder='Last Name*' required={true} className='w-2/5 px-5 py-3 border border-white rounded-lg bg-[#191718]'/>
+                        <input type="text" placeholder='Name*' onChange={handleChange} value={formData['firstName']} name='firstName' required={true} className='w-2/5 px-5 py-3 border-white border rounded-lg bg-[#191718]'/>
+                        <input type="text" placeholder='Last Name*' onChange={handleChange} value={formData['lastName']} name='lastName' required={true} className='w-2/5 px-5 py-3 border border-white rounded-lg bg-[#191718]'/>
                     </div>
                     <div className='flex justify-start '>
-                        <input type="text" placeholder='Company' className='w-full px-5 py-3 border border-white rounded-lg bg-[#191718]' />
+                        <input type="text" placeholder='Company' onChange={handleChange} value={formData['company']} name='company' className='w-full px-5 py-3 border border-white rounded-lg bg-[#191718]' />
                     </div>
                     <textarea
                         required={true}
+                        value={formData['comment']}
+                        name='comment'
+                        onChange={handleChange}
                         className="w-full bg-[#191718]  border border-white py-7 px-5 rounded-md text-white text-xs md:text-lg"
                         placeholder="Tell us about your personal experience working with us."
                     ></textarea>

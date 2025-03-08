@@ -1,62 +1,10 @@
 version: '3.8'
 
-networks:
-  strapi_network:
-    driver: bridge
-
 services:
-  postgres:
-    image: postgres:latest
-    container_name: strapi_postgres
-    restart: always
-    environment:
-      POSTGRES_USER: leadin
-      POSTGRES_PASSWORD: leadin_4455
-      POSTGRES_DB: leadin
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "5432:5432"
-    networks:
-      - strapi_network
-
-  strapi:
-    image: aramkhachibabyan/my-strapi-app:latest
-    container_name: strapi
+      - "80:80"
     restart: always
-    depends_on:
-      - postgres
-    environment:
-      DATABASE_CLIENT: postgres
-      DATABASE_HOST: postgres
-      DATABASE_PORT: 5432
-      DATABASE_NAME: leadin
-      DATABASE_USERNAME: leadin
-      DATABASE_PASSWORD: leadin_4455
-      NODE_ENV: production
-    ports:
-      - "1337:1337"
-    volumes:
-      - strapi_uploads:/app/public/uploads
-    networks:
-      - strapi_network
-    command: ["npm", "run", "start"]
-
-  spring_app:
-    image: aramkhachibabyan/leadin:latest
-    container_name: spring_app
-    restart: always
-    depends_on:
-      - postgres
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/leadin
-      SPRING_DATASOURCE_USERNAME: leadin
-      SPRING_DATASOURCE_PASSWORD: leadin_4455
-    ports:
-      - "8080:8080"
-    networks:
-      - strapi_network
-volumes:
-  postgres_data:
-  strapi_uploads:
-

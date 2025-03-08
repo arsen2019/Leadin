@@ -1,14 +1,47 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import VideoComponent from "../../components/react_components/VideoComponent";
+import Counter from "../../components/react_components/Counter";
+import CompanySlider from '../../components/CompanySlider.astro';
 ---
 <BaseLayout title="Leadin Agency - Insights & Success Stories">
-    <main class="max-w-7xl mx-auto">
-        <div class="w-fit">
-            <VideoComponent client:only="react" />
+    <section class="max-w-[1440px] bg-black mx-auto px-10 ">
+        <div class="flex flex-col justify-center items-center h-[110vh]">
+            <div class="flex justify-center items-center w-2/3 flex-1">
+                <h1 class="font-semibold text-[25px]  md:text-[60px]">Let's make your personal brand look <span class="text-[#B19482]">professional</span></h1>
+            </div>
+            <div class="flex flex-end w-full mb-5">
+                <div class="  py-5 border-y border-white flex justify-between w-full">
+                    <div class="flex flex-col font-semibold text-[15px] items-center w-fit p-2 md:text-[20px]  ">
+                        <h2>Clients</h2>
+                        <span><Counter value={15} client:only="react"/>+</span>
+                    </div>
+                    <div class="flex flex-col font-semibold text-[20px] items-center w-fit p-2">
+                        <h2>Industries</h2>
+                        <span><Counter value={6} client:only="react"/>+</span>
+                    </div>
+                    <div class="flex flex-col font-semibold text-[20px] items-center w-fit p-2 ">
+                        <h2>Campaigns</h2>
+                        <span><Counter value={10} client:only="react"/>+</span>
+                    </div>
+                    <div class="flex flex-col font-semibold text-[20px] items-center w-fit p-2">
+                        <h2>Advertising Budget</h2>
+                        <span>$<Counter value={30} client:only="react" />K+</span>
+                    </div>
+                    <div class="flex flex-col font-semibold text-[20px] items-center  w-fit p-2">
+                        <h2>Accounts Reached</h2>
+                        <span><Counter value={3}  client:only="react"/>M+</span>
+                    </div>
+                </div>
 
+            </div>
         </div>
-    </main>
+
+    </section>
+
+    <section class="max-w-[1440px] bg-white mx-auto">
+            <CompanySlider/>
+    </section>
 
 
 </BaseLayout>
