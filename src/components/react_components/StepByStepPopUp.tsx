@@ -6,17 +6,16 @@ interface StepByStepProps {
     btnText: string;
 }
 export default function StepByStepPopUp({style, btnText}: StepByStepProps) {
-    const formStruct = {
+    const [isOpen, setIsOpen] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
+    const [step, setStep] = useState(0);
+    const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
         phone: "",
         email: "",
         description: ""
-    }
-    const [isOpen, setIsOpen] = useState(false);
-    const [submitted, setSubmitted] = useState(false);
-    const [step, setStep] = useState(0);
-    const [formData, setFormData] = useState(formStruct);
+    });
     const content = 'Thank you. Your form is submitted. You will be contacted by our team shortly.'
 
     const queries = [
@@ -39,12 +38,27 @@ export default function StepByStepPopUp({style, btnText}: StepByStepProps) {
         }
     };
 
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLFormElement>) => {
+        if (event.key === "Enter") {
+            if (!isFormValid()) {
+                handleNext()
+                event.preventDefault();
+            }
+        }
+    };
+
+    const isFormValid = () => {
+        return Object.values(formData).every(value => value.trim() !== "");
+    };
+
+
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        console.log(formData);
+        if (!isFormValid()) return;
+
         setSubmitted(true);
         setIsOpen(false);
-        setStep(0)
+        setStep(0);
     };
 
     return (
@@ -71,7 +85,7 @@ export default function StepByStepPopUp({style, btnText}: StepByStepProps) {
                             </button>
                         </div>
                         <div className=" w-full  rounded-lg">
-                            <form onSubmit={handleSubmit}>
+                            <form onSubmit={handleSubmit} onKeyDown={handleKeyDown}>
                                 <div className='flex flex-col  w-full p-5 md:p-20'>
 
                                     {
@@ -91,7 +105,9 @@ export default function StepByStepPopUp({style, btnText}: StepByStepProps) {
                                                           className='bg-black p-4 border border-[#6E6B6B] w-full sm:text-md md:text-xl'
                                                           onChange={handleChange}
                                                           value={formData.description}
+                                                          required={true}
                                                           placeholder='Text'></textarea>
+
                                                 <div
                                                     className='text-right text-gray-400'>{formData.description.length}/500
                                                 </div>
