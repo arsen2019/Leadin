@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 interface Props {
     activePath: string;
@@ -6,10 +6,25 @@ interface Props {
 
 export default function HamburgerMenu({activePath}: Props) {
     const [isOpen, setIsOpen] = useState(false);
+    const menuRef = useRef<HTMLDivElement>(null);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+
+    useEffect(() => {
+        const handleOutsideClick = (event: MouseEvent) => {
+            if (isOpen && menuRef.current && !menuRef.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleOutsideClick);
+        return () => {
+            document.removeEventListener("mousedown", handleOutsideClick);
+        };
+    }, [isOpen]);
+
 
     return (
         <div className="relative w-full flex justify-end py-4 lg:hidden ">
@@ -19,19 +34,21 @@ export default function HamburgerMenu({activePath}: Props) {
                 className="cursor-pointer w-8 h-8 z-50"
                 style={{ visibility: !isOpen ? "visible"  :"hidden" }}
                 onClick={toggleMenu}
-
             />
 
             <div
-                className={`fixed bg-black bg-opacity-50 transition-opacity ${
-                    isOpen ? "opacity-50 visible" : "opacity-0 invisible"
+                className={`fixed inset-0 bg-black transition-opacity duration-500 ${
+                    isOpen ? "opacity-70 visible" : "opacity-0 hidden"
                 }`}
+                style={{ backdropFilter: 'blur(2px)' }}
                 onClick={toggleMenu}
             ></div>
+
             <div
-                className={`fixed top-0 right-0 h-screen w-max bg-black  px-[10%] text-white text-xl shadow-lg 
-                flex flex-col  justify-center transform transition-transform duration-500 
-                ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+                ref={menuRef}
+                className={`fixed top-0 right-0 h-screen w-max bg-black px-[10%] text-white text-xl
+                flex flex-col justify-center transform transition-transform duration-500 ease-in-out
+                ${isOpen ? "translate-x-0 " : "translate-x-full"}`}
             >
                 <ul className="space-y-4">
                     <li className={`cursor-pointer transform transition-all duration-300 ${
@@ -59,7 +76,7 @@ export default function HamburgerMenu({activePath}: Props) {
 
                 <button
                     onClick={toggleMenu}
-                    className="absolute top-6 right-6 text-3xl text-white"
+                    className="absolute top-6 right-6 text-3xl text-white hover:text-red-400  transition-colors"
                 >
                     ✖
                 </button>
