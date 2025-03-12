@@ -1,27 +1,5 @@
 import {useEffect, useState, useCallback} from "react";
-
-const API_URL = 'http://137.184.20.192:1337'
-const fetchData = async () => {
-
-    try {
-        const response = await fetch(`http://137.184.20.192:1337/api/vacancies`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const result = await response.json();
-        console.log(result);
-        return result;
-    } catch (error) {
-        console.error("Failed to fetch data:", error);
-        return null;
-    }
-};
+import {fetchData} from "../../utils/utils.ts";
 
 
 export default function Vacancies() {
@@ -35,19 +13,12 @@ export default function Vacancies() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    const vacancies = useCallback(async () => {
-        setLoading(true);
-        setError(null);
-        const result = await fetchData();
-        console.log(result)
-        if (result) setData(result);
-        else setError("Failed to fetch data");
-        setLoading(false);
-    }, []);
-
     useEffect(() => {
-        vacancies();
-    }, [vacancies]);
+        (async () => {
+            setData(await fetchData('/api/vacancies'));
+        })()
+
+    }, []);
 
     return (
         <div className="flex  items-center justify-center">

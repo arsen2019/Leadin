@@ -1,5 +1,6 @@
 import {useState} from "react";
 import FeedbackPopUp from "./FeedbackPopUp.tsx";
+import {postData} from "../../utils/utils.ts";
 
 interface StepByStepProps {
     style?: React.CSSProperties;
@@ -55,7 +56,7 @@ export default function StepByStepPopUp({style, btnText}: StepByStepProps) {
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
         if (!isFormValid()) return;
-
+        postData('/subscriptions', formData)
         setSubmitted(true);
         setIsOpen(false);
         setStep(0);

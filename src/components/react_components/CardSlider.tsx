@@ -1,11 +1,12 @@
 import React, {useState, useRef, useEffect} from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import {fetchData} from '../../utils/utils.ts'
+import {PUBLIC_API_URL_STRAPI} from "../../services/api.ts";
 
 
 export default function CardSlider() {
 
-    const API_URL = 'http://137.184.20.192:1337'
     const carouselRef = useRef<any>(null);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [itemsToShow, setItemsToShow] = useState(1);
@@ -13,27 +14,10 @@ export default function CardSlider() {
         data: []
     });
 
-    async function fetchData() {
-        const response = await fetch(`${API_URL}/api/cards?populate=image`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const res = await response.json();
-        console.log(res);
-        setData(res)
-        return res;
-    }
 
     useEffect(() => {
         (async () => {
-            setData(await fetchData());
+            setData(await fetchData('/api/cards?populate=image'));
         })()
 
     }, []);
@@ -75,7 +59,7 @@ export default function CardSlider() {
                             <div key={card.id} className="cards-container flex flex-row rounded-xl  overflow-hidden ">
                                 <div className="basis-2/5 relative text-[#FFF] ">
                                     <img className="flex-shrink-0 min-w-full min-h-full"
-                                         src={API_URL + card.image.formats.thumbnail.url}/>
+                                         src={PUBLIC_API_URL_STRAPI + card.image.formats.thumbnail.url}/>
                                     <div className="absolute bottom-4 left-4">
                                         <h3 className="card-name  font-semibold text-xs sm:text-xl">{card.title}</h3>
                                         <p className="text-[10px] sm:text-[16px]">{card.subtitle}</p>

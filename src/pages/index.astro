@@ -1,23 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import BrandingCard from "../components/BrandingCard.astro";
 import SubscribePopUp from "../components/react_components/SubscribePopUp";
 import PortfolioSlider from "../components/PortfolioSlider.astro";
 import ClientSlider from "../components/ClientSlider.astro";
-import OpenVac from "../components/OpenVac.astro";
-import NoVac from "../components/NoVac.astro";
 import SocialHref from "../components/SocialHref.astro";
 import {Image} from "astro:assets"
 import HomeLogo from "/public/logos/HomeLogo.svg"
 import ReviewSlider from '../components/react_components/ReviewSlider'
 import GetStartedPopUp from "../components/react_components/GetStartedPopUp";
 import CardSlider from "../components/react_components/CardSlider";
-import QueryProvider from "../components/react_components/QueryProvider";
 import Vacancies from "../components/react_components/Vacancies";
-
-const response = await fetch("http://137.184.20.192:1337/api/vacancies");
-const vacancies = await response.json();
-console.log(vacancies);
 
 const reviews = [
     {
@@ -250,8 +242,5 @@ const reviews = [
     <section class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF] ">
         <h1 class="font-semibold  text-[40px] text-black text-center mb-10 lg:mb-20">Join Us</h1>
         <Vacancies client:visible />
-
-
-
     </section>
 </BaseLayout>
