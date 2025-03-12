@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../../styles/modal.css";
 import FeedbackPopUp from "./FeedbackPopUp.tsx";
+import {postData} from "../../utils/utils.ts";
 
 
 interface IProps {
@@ -20,13 +21,7 @@ export default function SubscribePopUp({style}:IProps) {
         event.preventDefault();
         setIsOpen(false);
         setIsFeedbackOpen(true);
-        fetch("http://137.184.20.192:8080/join", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(subscriptionForm),
-        })
+        postData('/join', subscriptionForm)
     };
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

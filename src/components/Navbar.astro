@@ -31,9 +31,9 @@ const path = Astro.url.pathname
                     <li class=`flex ${
                         path === "/clients/" ? "border-b-2 border-[#fff]" : ""
                     }`><a href="/clients">Clients</a></li>
-                    <li class=`flex ${
-                        path === "/portfolio/" ? "border-b-2 border-[#fff]" : ""
-                    }`><a href="/portfolio">Portfolio</a></li>
+                    <!--<li class=`flex ${-->
+                    <!--    path === "/portfolio/" ? "border-b-2 border-[#fff]" : ""-->
+                    <!--}`><a href="/portfolio">Portfolio</a></li>-->
                     <li class=`flex ${
                         path === "/connect/" ? "border-b-2 border-[#fff]" : ""
                     }`><a href="/connect">Connect</a></li>
@@ -41,7 +41,9 @@ const path = Astro.url.pathname
                         path === "/blog/" ? "border-b-2 border-[#fff]" : ""
                     }`><a href="/blog">Blog</a></li>
                     <li class="flex">
-                        <StepByStepPopUp btnText='Get Started' client:visible/>
+                        <div class="w-[130px]">
+                            <StepByStepPopUp btnText='Get Started' client:visible/>
+                        </div>
                     </li>
                 </ul>
             </div>

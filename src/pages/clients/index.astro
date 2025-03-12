@@ -5,18 +5,17 @@ import UserReview from "../../components/react_components/UserReview"
 import ClientSlider from "../../components/ClientSlider.astro";
 import {Image} from "astro:assets";
 import clientImg from "../../assets/img/clients_main.png";
+import Counter from "../../components/react_components/Counter";
 ---
 <BaseLayout title="Leadin Agency - Insights & Success Stories">
     <div class="root bg-[#191718] w-full max-w-[1440px] mx-auto">
-        <div class="story-wrapper flex  justify-center">
-            <div class="stories relative h-1/2">
-                <Image src={clientImg} alt="client logo"/>
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4">
-                    <h1 class="text-[8vw] font-semibold ">Stories</h1>
-                    <h3 class="text-[4vw]">We proudly share our work and stories.</h3>
+        <section class="max-w-[1440px] bg-black mx-auto px-10 ">
+            <div class="flex flex-col justify-center items-center h-[calc(100vh-80px)]">
+                <div class="flex justify-center items-center w-2/3 flex-1">
+                    <h1 class="font-semibold text-[40px]  md:text-[60px]">Let's make your personal brand look <span class="text-[#B19482] min-w-[10ch] text-nowrap inline-block font-semibold  animated-text h-[40px]"></span></h1>
                 </div>
             </div>
-        </div>
+        </section>
 
 
         <div class="trusted-clients flex flex-col text-center gap-10 pt-24 pb-10 px-4">
@@ -49,3 +48,46 @@ import clientImg from "../../assets/img/clients_main.png";
         <UserReview client:only="react"/>
     </div>
 </BaseLayout>
+
+<!--<style>-->
+<!--    .animated-text {-->
+<!--        text-wrap: nowrap;-->
+<!--        overflow: hidden;-->
+<!--        white-space: nowrap;-->
+<!--        display: inline;-->
+<!--        font-weight: bold;-->
+<!--    }-->
+<!--</style>-->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const words = ["professional", "awesome", "remarkable", "outstanding"];
+        let index = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const textElement = document.querySelector(".animated-text");
+
+        function typeEffect() {
+            if (textElement){
+                const currentWord = words[index];
+                if (!isDeleting) {
+                    textElement.textContent = currentWord.slice(0, charIndex++);
+                } else {
+                    textElement.textContent = currentWord.slice(0, charIndex--);
+                }
+
+                if (!isDeleting && charIndex === currentWord.length + 1) {
+                    setTimeout(() => (isDeleting = true), 1000);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    index = (index + 1) % words.length;
+                }
+
+                setTimeout(typeEffect, isDeleting ? 50 : 100);
+            }
+
+        }
+
+        typeEffect();
+    });
+</script>
