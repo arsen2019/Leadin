@@ -63,7 +63,7 @@ export default function StepByStepPopUp({style, btnText}: StepByStepProps) {
 
     return (
         <div>
-            <button className="py-2 px-4 bg-[#B19482] hover:bg-[#8D705D] text-white rounded-lg"  style={style} onClick={() => setIsOpen(true)}>
+            <button className="py-2 px-4 bg-[#B19482] hover:bg-[#8D705D] text-white rounded-lg w-[130px] font-semibold"   style={style} onClick={() => setIsOpen(true)}>
                 {btnText}
             </button>
             {isOpen && (

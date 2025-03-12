@@ -41,7 +41,9 @@ const path = Astro.url.pathname
                         path === "/blog/" ? "border-b-2 border-[#fff]" : ""
                     }`><a href="/blog">Blog</a></li>
                     <li class="flex">
-                        <StepByStepPopUp btnText='Get Started' client:visible/>
+                        <div class="w-[130px]">
+                            <StepByStepPopUp btnText='Get Started' client:visible/>
+                        </div>
                     </li>
                 </ul>
             </div>
