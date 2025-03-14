@@ -44,7 +44,7 @@ const reviews = [
 ---
 <BaseLayout title="Leadin Agency - Transform Your Personal Brand">
 
-    <section class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <section class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8 bg-[#000]">
         <div class="flex flex-col justify-between items-center gap-20">
 
             <div class="w-3/4 md:w-1/2">
@@ -70,11 +70,11 @@ const reviews = [
         </div>
     </section>
 
+<section class=" bg-[#000] max-w-[1440px] mx-auto"><PortfolioSlider/></section>
 
-    <PortfolioSlider/>
 
     <!-- Branding cards-->
-    <section class="cards-section  lg:max-w-[1440px] max-w-2xl mx-auto py-6 px-4  bg-black my-14">
+    <section class="cards-section  lg:max-w-[1440px] max-w-2xl mx-auto py-6 px-4  bg-black py-14">
         <header class="text-center">
             <h2 class="sm:py-12 py-8 xl:text-5xl lg:text-4xl text-3xl font-semibold ">Result-Based Personal
                 Branding</h2>
@@ -86,7 +86,7 @@ const reviews = [
 
     </section>
     <!--Our Services-->
-    <section class="max-w-[1440px] mx-auto py-6 px-4">
+    <section class="max-w-[1440px] mx-auto py-6 px-4 bg-[#000]">
         <header class="text-center">
             <h2 class="sm:pb-12 pb-8 font-semibold xl:text-5xl lg:text-4xl text-3xl">Our Services</h2>
         </header>
@@ -124,7 +124,7 @@ const reviews = [
         </div>
     </section>
 
-    <section class="max-w-[1440px] mx-auto  ">
+    <section class="max-w-[1440px] mx-auto bg-[#000] ">
 
         <div class="trusted-clients flex flex-col text-center gap-10 pt-24 pb-10 px-4">
             <h1 class="xl:text-5xl lg:text-4xl text-3xl font-semibold">Trusted by 15+ clients</h1>
@@ -133,12 +133,12 @@ const reviews = [
         </div>
         <ClientSlider/>
     </section>
-    <section class="py-10 max-w-[1440px] mb-4 mx-auto">
+    <section class="py-10 max-w-[1440px] pb-4 mx-auto bg-[#000]">
         <h1 class="text-center sm:py-10 py-5 xl:text-5xl lg:text-4xl text-3xl font-semibold">Customer Reviews</h1>
         <ReviewSlider reviews={reviews} client:only="react"/>
     </section>
     
-    <section class="max-w-[1440px] my-8 mx-auto ">
+    <section class="max-w-[1440px] py-8 mx-auto bg-[#000]">
         <div class="flex flex-col items-center justify-center w-[90%] mx-auto border-[#785B55] border-2 rounded-md p-3 gap-3 md:w-[80%] md:py-8">
             <h2 class="font-semibold md:text-4xl text-xl text-center">Define your personal branding strategy with LEADIN</h2>
             <div class="md:w-[60%] w-[90%]"> <GetStartedPopUp buttonText="Get Started" style={{
@@ -153,7 +153,7 @@ const reviews = [
 
 
     <section class="max-w-[1440px] mx-auto ">
-        <div class="sm:flex sm:flex-row hidden pt-10">
+        <div class="sm:flex sm:flex-row hidden bg-[#000] pt-10">
             <div class="basis-3/10 w-full flex flex-col ">
                 <div class="bg-[#EDE5D9] basis-1/2 h-full text-[#191718] flex  items-center lg:px-10 px-5 xl:text-base lg:text-sm sm:text-xs">
                     <p>Building a personal brand helps professionals establish
