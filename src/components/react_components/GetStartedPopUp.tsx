@@ -30,7 +30,8 @@ export default function GetStartedPopUp({style, buttonText}: IProps) {
         event.preventDefault();
         setIsOpen(false);
         setIsFeedbackOpen(true);
-        postData('/subscriptions', formData)
+        postData('/subscriptions', formData);
+    }
 
         return (
             <div>
@@ -81,6 +82,6 @@ export default function GetStartedPopUp({style, buttonText}: IProps) {
                 {isFeedbackOpen && <FeedbackPopUp content={content} onClose={() => setIsFeedbackOpen(false)}/>}
             </div>
         );
-    }
+
 }
 
