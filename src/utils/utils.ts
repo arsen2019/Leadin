@@ -11,11 +11,10 @@ export async function fetchData(endpoint: string){
 }
 
 export async function postData(endpoint: string, body:any){
-    return await apiBackend.post(endpoint, {
+    console.log(body);
+    return await apiBackend.post(endpoint, body, {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(body),
-
-    })
+    });
 }

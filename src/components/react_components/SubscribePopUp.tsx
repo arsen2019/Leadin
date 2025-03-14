@@ -21,7 +21,7 @@ export default function SubscribePopUp({style}:IProps) {
         event.preventDefault();
         setIsOpen(false);
         setIsFeedbackOpen(true);
-        postData('/join', subscriptionForm)
+        postData('/newsletters', subscriptionForm)
     };
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

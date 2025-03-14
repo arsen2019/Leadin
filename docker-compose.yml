@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   frontend:
     build:
@@ -7,4 +5,4 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:80"
-    restart: always
+    restart: on-failure
