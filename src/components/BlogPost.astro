@@ -5,8 +5,8 @@ const bool = number % 2 === 0
 
 ---
 <section class="mb-16 blog_section">
-    <article class=`mb-16 last:mb-0 flex gap-4 flex-col md:flex-row md:${bool ? 'flex-row-reverse' : ''}`>
-        <div class="blog_content py-4 flex-1">
+    <article class=`grid grid-cols-2 gap-5`>
+        <div class=`blog_content py-4 flex-1 order-${number%2}`>
             <h2 class="text-2xl  font-bold mb-6">{title}</h2>
             <p class="blog_text text-lg">
                 {content}

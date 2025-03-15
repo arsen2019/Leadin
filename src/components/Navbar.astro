@@ -1,6 +1,6 @@
 ---
 import {Image} from 'astro:assets';
-import logo from '../assets/img/nav_logo.svg';
+import logo from '../../public/logos/navLogo.svg';
 import HamburgerMenu from './react_components/HamburgerMenu.tsx'
 import StepByStepPopUp from "./react_components/StepByStepPopUp.tsx";
 
@@ -12,7 +12,7 @@ const path = Astro.url.pathname
         <HamburgerMenu activePath={path} client:only='react'/>
         <div class="hidden lg:flex justify-between h-16 bg-black z-10">
             <div class="flex items-center">
-                <a href="/">
+                <a href="/" class="object-contain">
                     <Image src={logo} alt="logo"/>
                 </a>
 
