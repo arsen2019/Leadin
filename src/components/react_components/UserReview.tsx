@@ -1,5 +1,6 @@
 import {useState} from "react";
 import FeedbackPopUp from "./FeedbackPopUp.tsx";
+import {postData} from "../../utils/utils.ts";
 
 export default function UserReview() {
     const [rating, setRating] = useState(0);
@@ -27,13 +28,8 @@ export default function UserReview() {
     const handleSubmit = () => {
         setSubmitted(true);
         setTimeout(() => setSubmitted(false), 2000);
-        fetch("http://137.184.20.192:8080/reviews", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-        })
+        postData('/reviews',formData);
+        console.log(formData)
     };
 
     return (

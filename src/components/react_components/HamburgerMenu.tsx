@@ -63,9 +63,9 @@ export default function HamburgerMenu({activePath}: Props) {
                     <li className={`cursor-pointer transform transition-all duration-300 ${
                         activePath === "/clients/" ? "font-bold" : "opacity-80"
                     } hover:scale-130 active:scale-120 `}><a href="/clients">Clients</a></li>
-                    <li className={`cursor-pointer transform transition-all duration-300 ${
-                        activePath === "/portfolio/" ? "font-bold" : "opacity-80"
-                    }  hover:scale-130 active:scale-120 `}><a href="/portfolio">Portfolio</a></li>
+                    {/*<li className={`cursor-pointer transform transition-all duration-300 ${*/}
+                    {/*    activePath === "/portfolio/" ? "font-bold" : "opacity-80"*/}
+                    {/*}  hover:scale-130 active:scale-120 `}><a href="/portfolio">Portfolio</a></li>*/}
                     <li className={`cursor-pointer transform transition-all duration-300 ${
                         activePath === "/connect/" ? "font-bold" : "opacity-80"
                     }  hover:scale-130 active:scale-120 `}><a href="/connect">Connect</a></li>
