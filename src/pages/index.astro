@@ -10,6 +10,8 @@ import ReviewSlider from '../components/react_components/ReviewSlider'
 import GetStartedPopUp from "../components/react_components/GetStartedPopUp";
 import CardSlider from "../components/react_components/CardSlider";
 import Vacancies from "../components/react_components/Vacancies";
+import VideoComponent from "../components/react_components/VideoComponent";
+import GreetingVideo from "../../public/videos/leadin.mp4"
 
 const reviews = [
     {
@@ -44,30 +46,34 @@ const reviews = [
 ---
 <BaseLayout title="Leadin Agency - Transform Your Personal Brand">
 
-    <section class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col justify-between items-center gap-20">
-
-            <div class="w-3/4 md:w-1/2">
-                <Image src={HomeLogo} alt=''/>
-            </div>
-            <div>
-                <h2 class="text-center hidden sm:block text-[3vw]">We are ready to lead your personal brand to
-                    success.</h2>
-                <h2 class="text-xl sm:hidden ">Start your personal branding journey.</h2>
-            </div>
-            <div class="flex flex-row gap-6 w-full justify-center">
-                <div class="">
-                    <button class="py-3 px-4 md:px-12 rounded-md  text-[#FFF] text-md  md:text-xl  border-[#B19482] border-2 w-full ">
-                        <a href="/services#headerInd">For Individuals</a></button>
+    <section class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8 h-[calc(100vh-80px)] flex flex-col gap-5 md:gap-0 md:flex-row">
+        <div class="flex flex-col  md:w-1/2 w-full flex-start justify-center">
+            <div class="flex flex-col font-bold gap-[30px]">
+                <div class="content flex flex-col">
+                    <span class="text-4xl md:text-5xl">BUILD YOUR</span>
+                    <div>
+                        <span class="text-5xl md:text-6xl relative">
+                        PERSONAL
+                         <span class="absolute text-[15px] md:text-[20px] left-[95%] top-[40%]">CORPORATE</span>
+                    </span>
+                    </div>
+                    <span class="text-6xl md:text-7xl">BRAND</span>
                 </div>
-                <div class="">
-                    <button class="py-3 px-4 md:px-12 rounded-md  text-[#FFF] text-md md:text-xl border-[#B19482] border-2 w-full ">
+
+
+                <div class="font-bold flex gap-5 flex-row items-center">
+                    <button class="py-2 rounded-[10px]  text-[#FFF] text-md  md:text-xl  border-[#B19482] border-2 basis-1/2">
+                        <a href="/services#headerInd">For Individuals</a></button>
+
+                    <button class="py-2 rounded-[10px] text-[#FFF] text-md md:text-xl border-[#B19482] border-2 basis-1/2 ">
                         <a href="/services#headerCom">For Companies</a></button>
                 </div>
             </div>
-
-
         </div>
+        <div class="md:w-1/2 w-full">
+            <VideoComponent client:only="react"/>
+        </div>
+
     </section>
 
 
@@ -80,8 +86,7 @@ const reviews = [
                 Branding</h2>
         </header>
 
-            <CardSlider client:only="react" />
-
+        <CardSlider client:only="react"/>
 
 
     </section>
@@ -137,16 +142,18 @@ const reviews = [
         <h1 class="text-center sm:py-10 py-5 xl:text-5xl lg:text-4xl text-3xl font-semibold">Customer Reviews</h1>
         <ReviewSlider reviews={reviews} client:only="react"/>
     </section>
-    
+
     <section class="max-w-[1440px] my-8 mx-auto ">
         <div class="flex flex-col items-center justify-center w-[90%] mx-auto border-[#785B55] border-2 rounded-md p-3 gap-3 md:w-[80%] md:py-8">
-            <h2 class="font-semibold md:text-4xl text-xl text-center">Define your personal branding strategy with LEADIN</h2>
-            <div class="md:w-[60%] w-[90%]"> <GetStartedPopUp buttonText="Get Started" style={{
-                width: '100%',
-                border: '1px solid none',
-                color: '#FFF',
-                padding: '10px',
-            }} client:only="react"/>
+            <h2 class="font-semibold md:text-4xl text-xl text-center">Define your personal branding strategy with
+                LEADIN</h2>
+            <div class="md:w-[60%] w-[90%]">
+                <GetStartedPopUp buttonText="Get Started" style={{
+                    width: '100%',
+                    border: '1px solid none',
+                    color: '#FFF',
+                    padding: '10px',
+                }} client:only="react"/>
             </div>
         </div>
     </section>
@@ -241,6 +248,6 @@ const reviews = [
     </section>
     <section class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF] ">
         <h1 class="font-semibold  text-[40px] text-black text-center mb-10 lg:mb-20">Join Us</h1>
-        <Vacancies client:visible />
+        <Vacancies client:only="react"/>
     </section>
 </BaseLayout>

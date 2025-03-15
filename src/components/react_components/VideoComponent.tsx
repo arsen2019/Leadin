@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import ReactPlayer from 'react-player'
-import myVideo from '../../../public/videos/001-v3.mp4'
+import myVideo from '../../../public/videos/leadin.mp4'
 
 export default function VideoComponent() {
     const [loadData, setLoadData] = useState(false);
@@ -11,12 +11,15 @@ export default function VideoComponent() {
         <ReactPlayer
             url={myVideo}
             playing={true}
-            controls={true}
+            controls={false}
             loop={true}
             muted={true}
             playsinline={true}
             onReady={onLoadedData}
-            width='300px'
+            width='100%'
+            height='100%'
+            style={{ objectFit: 'contain' }}
+
 
         />
     )
