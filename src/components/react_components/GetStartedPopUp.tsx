@@ -83,5 +83,6 @@ export default function GetStartedPopUp({style, buttonText}: IProps) {
         </div>
     );
 
+
 }
 

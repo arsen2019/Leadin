@@ -46,7 +46,8 @@ const reviews = [
 ---
 <BaseLayout title="Leadin Agency - Transform Your Personal Brand">
 
-    <section class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8 h-[calc(100vh-80px)] flex flex-col gap-5 md:gap-0 md:flex-row">
+
+    <section class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8 h-[calc(100vh-80px)] flex flex-col gap-5 md:gap-0 md:flex-row bg-[#000]">
         <div class="flex flex-col  md:w-1/2 w-full flex-start justify-center">
             <div class="flex flex-col font-bold gap-[30px]">
                 <div class="content flex flex-col">
@@ -59,6 +60,7 @@ const reviews = [
                     </div>
                     <span class="text-6xl md:text-7xl">BRAND</span>
                 </div>
+
 
 
                 <div class="font-bold flex gap-5 flex-row items-center">
@@ -76,11 +78,11 @@ const reviews = [
 
     </section>
 
+<section class=" bg-[#000] max-w-[1440px] mx-auto"><PortfolioSlider/></section>
 
-    <PortfolioSlider/>
 
     <!-- Branding cards-->
-    <section class="cards-section  lg:max-w-[1440px] max-w-2xl mx-auto py-6 px-4  bg-black my-14">
+    <section class="cards-section  lg:max-w-[1440px] max-w-2xl mx-auto py-6 px-4  bg-black py-14">
         <header class="text-center">
             <h2 class="sm:py-12 py-8 xl:text-5xl lg:text-4xl text-3xl font-semibold ">Result-Based Personal
                 Branding</h2>
@@ -91,7 +93,7 @@ const reviews = [
 
     </section>
     <!--Our Services-->
-    <section class="max-w-[1440px] mx-auto py-6 px-4">
+    <section class="max-w-[1440px] mx-auto py-6 px-4 bg-[#000]">
         <header class="text-center">
             <h2 class="sm:pb-12 pb-8 font-semibold xl:text-5xl lg:text-4xl text-3xl">Our Services</h2>
         </header>
@@ -129,7 +131,7 @@ const reviews = [
         </div>
     </section>
 
-    <section class="max-w-[1440px] mx-auto  ">
+    <section class="max-w-[1440px] mx-auto bg-[#000] ">
 
         <div class="trusted-clients flex flex-col text-center gap-10 pt-24 pb-10 px-4">
             <h1 class="xl:text-5xl lg:text-4xl text-3xl font-semibold">Trusted by 15+ clients</h1>
@@ -138,12 +140,12 @@ const reviews = [
         </div>
         <ClientSlider/>
     </section>
-    <section class="py-10 max-w-[1440px] mb-4 mx-auto">
+    <section class="py-10 max-w-[1440px] pb-4 mx-auto bg-[#000]">
         <h1 class="text-center sm:py-10 py-5 xl:text-5xl lg:text-4xl text-3xl font-semibold">Customer Reviews</h1>
         <ReviewSlider reviews={reviews} client:only="react"/>
     </section>
-
-    <section class="max-w-[1440px] my-8 mx-auto ">
+    
+    <section class="max-w-[1440px] py-8 mx-auto bg-[#000]">
         <div class="flex flex-col items-center justify-center w-[90%] mx-auto border-[#785B55] border-2 rounded-md p-3 gap-3 md:w-[80%] md:py-8">
             <h2 class="font-semibold md:text-4xl text-xl text-center">Define your personal branding strategy with
                 LEADIN</h2>
@@ -160,7 +162,7 @@ const reviews = [
 
 
     <section class="max-w-[1440px] mx-auto ">
-        <div class="sm:flex sm:flex-row hidden pt-10">
+        <div class="sm:flex sm:flex-row hidden bg-[#000] pt-10">
             <div class="basis-3/10 w-full flex flex-col ">
                 <div class="bg-[#EDE5D9] basis-1/2 h-full text-[#191718] flex  items-center lg:px-10 px-5 xl:text-base lg:text-sm sm:text-xs">
                     <p>Building a personal brand helps professionals establish
@@ -175,7 +177,7 @@ const reviews = [
                 <img alt="HomeStaticImg" class="flex-shrink-0 min-w-full min-h-full" src="staticImg.png">
             </div>
             <div class="basis-4/10  flex flex-col">
-                <div class="bg-[#E0D3BD] basis-1/2 h-full text-right lg:text-5xl/[5vh] md:text-4xl text-3xl/10  text-[#191718] p-10">
+                <div class="bg-[#E0D3BD] basis-1/2 h-full text-right xl:text-6xl/[8vh] lg:text-5xl/[6vh] md:text-4xl/[5vh] text-3xl/10  text-[#191718] p-10">
                     <p class="font-bold xl:ml-40 sm:ml-20">Why Start Building Your Personal Brand With Us?</p>
                 </div>
                 <div class="w-full flex flex-row basis-1/2 h-full">
