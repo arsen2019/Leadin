@@ -21,7 +21,7 @@ export default function UserReview() {
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = event.target;
-        if (name === "text" && value.length > 500) return;
+        if (name === "comment" && value.length > 300) return;
         setFormData({...formData, [name]: value});
     };
 
@@ -63,7 +63,9 @@ export default function UserReview() {
                         placeholder="Tell us about your personal experience working with us."
                     ></textarea>
                 </div>
-
+                <div
+                    className='text-right text-gray-400'>{formData.comment.length}/300
+                </div>
 
                 <div className="review-submit flex md:justify-end justify-center ">
                     <button

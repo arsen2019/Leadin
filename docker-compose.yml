@@ -3,6 +3,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "80:80"
     restart: on-failure
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=Host(`leadin.arsgreg.com`)"
+      - "traefik.http.routers.frontend.entrypoints=websecure"
+      - "traefik.http.routers.frontend.tls=true"
+      - "traefik.http.routers.frontend.tls.certresolver=myresolver"
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    external: true

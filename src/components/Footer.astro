@@ -1,10 +1,13 @@
 ---
-import Subscribe from "./pop_ups/subscribe.astro";
+import PrivacyPolicyPopUp from "./react_components/pop_ups/PrivacyPolicyPopUp";
+import TermsPopUp from "./react_components/pop_ups/TermsPopUp";
+import CookiePolicyPopUp from "./react_components/pop_ups/CookiePopUp";
+
 const currentYear = new Date().getFullYear();
 ---
-<footer class="bg-[#EED9C4] p-4 md:p-6">
-    <div class="w-full  py-12 px-0 md:px-4 lg:px-6  max-w-[1440px] mx-auto ">
-        <div class="grid grid-cols-[0.5fr_0.5fr_1.3fr] md:grid-cols-[2fr_1fr_1fr_2fr] gap-4 md:gap-6">
+<footer class="bg-[#EED9C4] p-4 md:py-6 md:px-[40px]">
+    <div class="w-full  py-12 px-0 md:px-4 lg:px-6  max-w-[1440px] mx-auto flex justify-center ">
+        <div class="grid grid-cols-[0.5fr_0.5fr_1.3fr] md:grid-cols-[2fr_1fr_1fr_2fr] gap-4 md:gap-6 w-fit">
             <div class="order-3 md:order-none">
                     <ul class="lg:text-lg sm:text-sm xs:text-xs">
                         <li class="pb-1"><a class="flex gap-1 cursor-pointer "><img class="invert self-start" src="/icons/InstagramLogo.svg"><span class="underline-offset-2 underline">leadin.agency</span></a></li>
@@ -44,9 +47,18 @@ const currentYear = new Date().getFullYear();
 
         </div>
     </div>
-    <div>
-        <p class="text-center text-[10px] md:text-sm text-gray-500">
-            © COPYRIGHT {currentYear} LEADIN Personal Branding Agency
-        </p>
+    <div class="flex gap-5 justify-between w-full  px-0 md:px-4 lg:px-6  max-w-[1440px] mx-auto text-[14px] md:text-[16px] lg:text-[18px] font-medium flex-col md:flex-row">
+        <div>
+            <p class="text-center">
+                © COPYRIGHT {currentYear} LEADIN Personal Branding Agency
+            </p>
+        </div>
+        <div class="w-full md:w-fit flex justify-center">
+            <ul class="flex justify-between gap-4">
+                <li><TermsPopUp client:only="react" /></li>
+                <li><PrivacyPolicyPopUp client:only="react" /></li>
+                <li><CookiePolicyPopUp client:only="react" /></li>
+            </ul>
+        </div>
     </div>
 </footer>

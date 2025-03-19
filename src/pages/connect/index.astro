@@ -1,10 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SocialHref from "../../components/SocialHref.astro";
-import NoVac from "../../components/NoVac.astro";
-import PrivacyPolicy from "../../components/pop_ups/PrivacyPolicy.astro";
-import TermsConditions from "../../components/pop_ups/TermsConditions.astro";
-import CookiePolicy from "../../components/pop_ups/CookiePolicy.astro";
 import Vacancies from "../../components/react_components/Vacancies";
 ---
 <BaseLayout title="Leadin Agency - Insights & Success Stories">
@@ -36,7 +32,9 @@ import Vacancies from "../../components/react_components/Vacancies";
                               class=" start-0 w-full border p-2 border-[#D7D3CE] rounded-md focus:ring-2 bg-[#000000]"></textarea>
                 </div>
                 <div>
-                    <button class="bg-[#B19482] py-2 rounded-md w-full hover:bg-[#8D705D] text-white focus:-scale-30">Send</button>
+                    <button class="bg-[#B19482] py-2 rounded-md w-full hover:bg-[#8D705D] text-white focus:-scale-30">
+                        Send
+                    </button>
                 </div>
             </div>
         </div>
@@ -48,19 +46,23 @@ import Vacancies from "../../components/react_components/Vacancies";
             <h2 class="sm:p-12 p-8 sm:text-5xl text-2xl sm:text-[#000]">Open Positions</h2>
         </header>
         <div class="sm:mx-32">
-            <p class="text-center sm:text-2xl text-lg sm:text-[#000000]">We're an ambitious group constantly pushing each other to become the best personal branding agency in the world. And we're having a great time doing it. Want to join us? Check out our current opportunities below.</p>
+            <p class="text-center sm:text-2xl text-lg sm:text-[#000000]">We're an ambitious group constantly pushing
+                each other to become the best personal branding agency in the world. And we're having a great time doing
+                it. Want to join us? Check out our current opportunities below.</p>
             <div class="flex gap-6 py-14 sm:flex-row flex-col">
-                <div class="basis-2/3 w-full" > <input type="email" placeholder="Email"
-                             class=" w-full  p-2 border border-[#D7D3CE] rounded-md focus:ring-2  bg-[#000000] sm:bg-[#FFF] sm:text-[#000000]"/></div>
-                <div class="basis-1/3 w-full"> <button class="bg-[#B19482] py-2 rounded-md w-full hover:bg-[#8D705D] text-white focus:-scale-30">Send</button></div>
+                <div class="basis-2/3 w-full"><input type="email" placeholder="Email"
+                                                     class=" w-full  p-2 border border-[#D7D3CE] rounded-md focus:ring-2  bg-[#000000] sm:bg-[#FFF] sm:text-[#000000]"/>
+                </div>
+                <div class="basis-1/3 w-full">
+                    <button class="bg-[#B19482] py-2 rounded-md w-full hover:bg-[#8D705D] text-white focus:-scale-30">
+                        Send
+                    </button>
+                </div>
             </div>
         </div>
-        <div>     <Vacancies client:visible /></div>
-    </section>
-    <section class="m-20"><CookiePolicy/>
-    </section>
-
-
+        <div>
+            <Vacancies client:visible/>
+        </div>
 
 
 </BaseLayout>
