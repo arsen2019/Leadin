@@ -15,7 +15,7 @@ export default function StepByStepPopUp({style, btnText}: StepByStepProps) {
         lastName: "",
         phone: "",
         email: "",
-        description: ""
+        text: ""
     });
     const content = 'Thank you. Your form is submitted. You will be contacted by our team shortly.'
 
@@ -29,7 +29,7 @@ export default function StepByStepPopUp({style, btnText}: StepByStepProps) {
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = event.target;
-        if (name === "description" && value.length > 500) return;
+        if (name === "text" && value.length > 500) return;
         setFormData({...formData, [name]: value});
     };
 
@@ -39,10 +39,12 @@ export default function StepByStepPopUp({style, btnText}: StepByStepProps) {
         }
     };
 
-    const handleKeyDown = (event: React.KeyboardEvent<HTMLFormElement>) => {
+    const handleKeyDown = (event:any) => {
         if (event.key === "Enter") {
             if (!isFormValid()) {
-                handleNext()
+                if(event.target.value !== "") {
+                    handleNext()
+                }
                 event.preventDefault();
             }
         }
@@ -103,15 +105,15 @@ export default function StepByStepPopUp({style, btnText}: StepByStepProps) {
                                         ) : step === 5 ? (
                                             <>
                                                 <h1 className='mb-10 text-xl md:text-3xl'>{step}. {queries[step]}</h1>
-                                                <textarea name="description"
+                                                <textarea name="text"
                                                           className='bg-black p-4 border border-[#6E6B6B] w-full sm:text-md md:text-xl'
                                                           onChange={handleChange}
-                                                          value={formData.description}
+                                                          value={formData.text}
                                                           required={true}
                                                           placeholder='Text'></textarea>
 
                                                 <div
-                                                    className='text-right text-gray-400'>{formData.description.length}/500
+                                                    className='text-right text-gray-400'>{formData.text.length}/500
                                                 </div>
                                                 <button
                                                     className='p-2  mt-8 w-2/5 min-w-32 bg-black text-white border border-[#B19482] rounded-lg text-md md:text-xl hover:bg-white hover:text-black'

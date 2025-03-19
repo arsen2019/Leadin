@@ -2,7 +2,9 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import OurTeam from "../../components/OurTeam.astro";
 import OurTeamImg from '../../assets/img/teamImg.png'
-import LanaImg from '../../assets/img/Lana.png'
+import AboutUs from '../../assets/img/AboutUs.png'
+import LanaImg from '../../assets/img/Lana.png';
+import LuizaImg from '../../assets/img/Luiza.png';
 import GetStartedPopUp from "../../components/react_components/GetStartedPopUp";
 import {Image} from "astro:assets";
 import Counter from "../../components/react_components/Counter";
@@ -19,10 +21,10 @@ import Counter from "../../components/react_components/Counter";
         </header>
         <div class="flex sm:flex-row flex-col gap-10 md:m-6">
             <div class="basis-2/5">
-                <Image src={OurTeamImg} class="object-contain " alt=""/>
+                <Image src={AboutUs} class="object-contain " alt=""/>
             </div>
             <div class="basis-3/5">
-                <p class=" text-base lg:text-lg xl:text-xl py-5 text-[#191718]">At LEADIN Personal Branding Agency, our mission is to revolutionize personal
+                <p class=" text-base lg:text-lg xl:text-xl pb-5 text-[#191718]">At LEADIN Personal Branding Agency, our mission is to revolutionize personal
                     branding for experts and
                     professionals by transcending the conventional PR approach. We delve deep into the emotions,
                     aspirations, and fears that drive each individual, crafting a holistic personal brand that resonates
@@ -36,7 +38,9 @@ import Counter from "../../components/react_components/Counter";
                         <GetStartedPopUp buttonText="Contact Us" style={{
                             border: '1px solid none',
                             color: '#FFF',
-                            padding: '10px',
+                            padding: '8px 16px',
+                            borderRadius: '8px',
+                            fontWeight:'600',
                         }} client:only="react"/>
                     </div>
                 </div>
@@ -83,10 +87,11 @@ import Counter from "../../components/react_components/Counter";
                         content creation but also in emotional support and professional development, ensuring clients
                         feel confident navigating the digital landscape.</p>
                 </div>
-                <div class="xl:pt-20">
+                <div class="xl:pt-20 flex justify-center">
                     <GetStartedPopUp buttonText="Build Your personal brand with us" style={{
-                        width: '100%',
-                        padding: '10px',
+                        padding: '8px 16px',
+                        borderRadius: '8px',
+                        fontWeight: '600',
                     }} client:only="react"/>
 
                 </div>
@@ -103,13 +108,16 @@ import Counter from "../../components/react_components/Counter";
         <header class="text-center">
             <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl text-[#000] font-semibold">Our Team</h2>
         </header>
-        <div class="team-section grid sm:grid-cols-3 grid-cols-2 gap-4 xl:w-[70%] lg:w-[80%] mx-auto ">
+        <div class="team-section grid sm:grid-cols-3 grid-cols-2 gap-5 xl:w-[70%] lg:w-[80%] mx-auto ">
             <OurTeam title="Inessa Manukyan" position="CEO/Founder" followers="4K"
                      href="https://www.linkedin.com/in/inessa-manukyan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                      src={OurTeamImg}/>
             <OurTeam title="Lana Hakobjanyan" position="Chief Operations Officer " followers="2K"
                      href="#"
                      src={LanaImg}/>
+            <!--<OurTeam title="Luiza Hakobyan" position="Content Creator " followers="2K"-->
+            <!--         href="#"-->
+            <!--         src={LuizaImg}/>-->
         </div>
     </section>
 
@@ -120,12 +128,13 @@ import Counter from "../../components/react_components/Counter";
                     <h3 class=" text-center sm:text-3xl text-2xl text-[#FFF]">Let's create your personal branding
                         together</h3>
                 </div>
-                <div class="w-full md:pt-8 pt-4">
+                <div class="w-full md:pt-8 pt-4 flex justify-center">
                     <GetStartedPopUp buttonText="Let's build your brand" style={{
-                        width: '100%',
                         border: '1px solid none',
                         color: '#FFF',
-                        padding: '10px',
+                        padding: '8px 16px',
+                        borderRadius: '8px',
+                        fontWeight: '600',
                     }} client:only="react"/>
                 </div>
 
