@@ -5,6 +5,13 @@ import HamburgerMenu from './react_components/HamburgerMenu.tsx'
 import StepByStepPopUp from "./react_components/StepByStepPopUp.tsx";
 
 const path = Astro.url.pathname
+
+function isActivePath(currentPath:string, pathPrefix:string) {
+    if (pathPrefix === '/') {
+        return currentPath === '/';
+    }
+    return currentPath.startsWith(pathPrefix);
+}
 ---
 
 <nav class="top-0 shadow-sm  sticky bg-black z-50 ">
@@ -20,25 +27,25 @@ const path = Astro.url.pathname
             <div class="hidden lg:flex h-16 items-center xl:text-lg  text-md ">
                 <ul class="flex items-center gap-6 h-16">
                     <li class=`flex ${
-                        path === "/" ? "border-b-2 border-[#fff]" : ""
+                        isActivePath(path, "/") ? "underline-text" : ""
                     }`><a href="/">Home</a></li>
+                    <li class={`flex ${
+                        isActivePath(path, "/about") ? "underline-text" : ""
+                    }`}><a href="/about">About Us</a></li>
                     <li class=`flex ${
-                        path === "/about/" ? "border-b-2 border-[#fff]" : ""
-                    }`><a href="/about">About Us</a></li>
-                    <li class=`flex ${
-                        path === "/services/" ? "border-b-2 border-[#fff]" : ""
+                        isActivePath(path, "/services")  ? "underline-text" : ""
                     }`><a href="/services">Services</a></li>
                     <li class=`flex ${
-                        path === "/clients/" ? "border-b-2 border-[#fff]" : ""
+                        isActivePath(path, "/clients") ? "underline-text" : ""
                     }`><a href="/clients">Clients</a></li>
                     <!--<li class=`flex ${-->
-                    <!--    path === "/portfolio/" ? "border-b-2 border-[#fff]" : ""-->
+                    <!--    path === "/portfolio/" ? "underline-text" : ""-->
                     <!--}`><a href="/portfolio">Portfolio</a></li>-->
                     <li class=`flex ${
-                        path === "/connect/" ? "border-b-2 border-[#fff]" : ""
+                        isActivePath(path, "/connect") ? "underline-text" : ""
                     }`><a href="/connect">Connect</a></li>
                     <li class=`flex ${
-                        path === "/blog/" ? "border-b-2 border-[#fff]" : ""
+                        isActivePath(path, "/blog") ? "underline-text" : ""
                     }`><a href="/blog">Blog</a></li>
                     <li class="flex">
                         <div class="w-[130px]">
@@ -50,3 +57,21 @@ const path = Astro.url.pathname
         </div>
     </div>
 </nav>
+
+<style>
+    .underline-text{
+        position:relative;
+        display:inline-block;
+    }
+
+    .underline-text:after{
+        position: absolute;
+        bottom: -5px;
+        content: " ";
+        width:100%;
+        height:2px;
+        left:0;
+        //top: 5px;
+        background: white;
+    }
+</style>
