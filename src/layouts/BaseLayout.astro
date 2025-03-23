@@ -1,7 +1,8 @@
 ---
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import '../styles/global.css'
+import '../styles/global.css';
+// import openGraphImage from '../../public/logos/navLogo.svg'
 
 interface Props {
     title: string;
@@ -15,15 +16,55 @@ const {
     title,
     description = `LEADIN transforms professionals into recognized industry leaders through strategic personal branding, digital positioning, and authentic storytelling. Elevate your professional identity today.`,
     image = "/logos/navLogo.svg",
-    canonicalURL = Astro.url.href,
+    canonicalURL = 'http://leadin.agency' + Astro.url.pathname,
     type = "website",
 } = Astro.props;
+
+console.log(Astro.url.pathname)
+// Make sure image is an absolute URL
+// const openGraphImage = image.startsWith('http')
+//     ? image
+//     : new URL(image, Astro.site || Astro.url.origin).href;
+//
+const openGraphImage = '/logos/navLogo.svg';
+
+// Generate manifest data
+const manifestJSON = JSON.stringify({
+    name: title,
+    short_name: "LEADIN",
+    description: description,
+    start_url: "/",
+    display: "standalone",
+    background_color: "#151515",
+    theme_color: "#151515",
+    icons: [
+        {
+            src: "/favicon/favicon-180.svg",
+            sizes: "180x180",
+            type: "image/svg+xml"
+        },
+        {
+            src: "/favicon/favicon-32.svg",
+            sizes: "32x32",
+            type: "image/svg+xml"
+        },
+        {
+            src: "/favicon/favicon-16.svg",
+            sizes: "16x16",
+            type: "image/svg+xml"
+        }
+    ]
+});
+
+// Create a dynamic manifest route
+const dynamicManifest = `/site-${encodeURIComponent(title.substring(0, 20))}.webmanifest`;
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1 ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Primary Meta Tags -->
     <title>{title}</title>
@@ -35,33 +76,45 @@ const {
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={type}>
-    <meta property="og:url" content={Astro.url.href}>
+    <meta property="og:url" content={canonicalURL}>
     <meta property="og:title" content={title}>
     <meta property="og:description" content={description}>
-    <meta property="og:image" content={new URL(image, Astro.url.origin).href}>
+    <meta property="og:image" content={openGraphImage}>
+    <!--<meta property="og:image:width" content="1200">-->
+    <!--<meta property="og:image:height" content="630">-->
+    <meta property="og:site_name" content="LEADIN">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content={Astro.url.href}>
-    <meta property="twitter:title" content={title}>
-    <meta property="twitter:description" content={description}>
-    <meta property="twitter:image" content={new URL(image, Astro.url.origin).href}>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content={canonicalURL}>
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content={openGraphImage}>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/favicon-180.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32.svg">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16.svg">
-    <link rel="manifest" href="/site.webmanifest">
-    <!--<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">-->
     <meta name="msapplication-TileColor" content="#151515">
     <meta name="theme-color" content="#151515">
 
-    <!-- Google Fonts (if using Raleway) -->
+    <!-- Web App Manifest - Dynamic based on page -->
+    <!--<script define:vars={{ manifestJSON, dynamicManifest }}>-->
+    <!--    // Create a blob with the manifest JSON-->
+    <!--    const blob = new Blob([manifestJSON], { type: 'application/json' });-->
+    <!--    // Create a link to the manifest-->
+    <!--    const link = document.createElement('link');-->
+    <!--    link.rel = 'manifest';-->
+    <!--    link.href = URL.createObjectURL(blob);-->
+    <!--    document.head.appendChild(link);-->
+    <!--</script>-->
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <slot name="head" />
 </head>
 <body>
 <Navbar/>
@@ -71,11 +124,11 @@ const {
 <Footer/>
 </body>
 </html>
+
 <style is:global>
     main, nav {
         color: #fff;
     }
-
     body {
         font-family: 'Raleway', sans-serif;
         background: #151515;

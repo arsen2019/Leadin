@@ -9,6 +9,7 @@ import GetStartedPopUp from "../components/react_components/GetStartedPopUp";
 import CardSlider from "../components/react_components/CardSlider";
 import Vacancies from "../components/react_components/Vacancies";
 import VideoComponent from "../components/react_components/VideoComponent";
+import OptimizedImage from "../components/react_components/utils/utils";
 
 const reviews = [
     {
@@ -41,10 +42,13 @@ const reviews = [
     },
 ];
 ---
-<BaseLayout title="Leadin Agency - Transform Your Personal Brand">
+<BaseLayout title="Leadin Agency - Transform Your Personal Brand"
+            description=`LEADIN transforms professionals into recognized industry leaders through strategic personal branding, digital positioning, and authentic storytelling. Elevate your professional identity today.`
+>
 
 
-    <section class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8 h-[calc(100vh-80px)] flex flex-col gap-5 md:gap-0 md:flex-row bg-[#000]">
+    <section
+            class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8 h-[calc(100vh-80px)] flex flex-col gap-5 md:gap-0 md:flex-row bg-[#000]">
         <div class="flex flex-col  md:w-1/2 w-full flex-start justify-center">
             <div class="flex flex-col font-bold gap-[30px]">
                 <div class="content flex flex-col">
@@ -57,7 +61,6 @@ const reviews = [
                     </div>
                     <span class="text-6xl md:text-7xl">BRAND</span>
                 </div>
-
 
 
                 <div class="font-bold flex gap-5 flex-row items-center">
@@ -75,11 +78,13 @@ const reviews = [
 
     </section>
 
-<section class=" bg-[#000] max-w-[1440px] mx-auto"><PortfolioSlider/></section>
+    <section class=" bg-[#000] max-w-[1440px] mx-auto">
+        <PortfolioSlider/>
+    </section>
 
 
     <!-- Branding cards-->
-    <section class="cards-section  lg:max-w-[1440px] max-w-2xl mx-auto py-6 px-4  bg-black py-14">
+    <section class="cards-section max-w-[1440px] mx-auto py-6 px-4  bg-black py-14">
         <header class="text-center">
             <h2 class="sm:py-12 py-8 xl:text-5xl lg:text-4xl text-3xl font-semibold ">Result-Based Personal
                 Branding</h2>
@@ -141,7 +146,7 @@ const reviews = [
         <h1 class="text-center sm:py-10 py-5 xl:text-5xl lg:text-4xl text-3xl font-semibold">Customer Reviews</h1>
         <ReviewSlider reviews={reviews} client:only="react"/>
     </section>
-    
+
     <section class="max-w-[1440px] py-8 mx-auto bg-[#000]">
         <div class="flex flex-col items-center justify-center w-[90%] mx-auto border-[#785B55] border-2 rounded-md p-3 gap-3 md:w-[80%] md:py-8">
             <h2 class="font-semibold md:text-4xl text-xl text-center">Define your personal branding strategy with

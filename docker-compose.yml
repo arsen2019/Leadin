@@ -3,15 +3,20 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    restart: on-failure
+    restart: always
+    container_name: frontend
+    networks:
+      - traefik
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.frontend.rule=Host(`leadin.arsgreg.com`)"
+      - "traefik.http.routers.frontend.rule=Host(`leadin.agency`)"
       - "traefik.http.routers.frontend.entrypoints=websecure"
       - "traefik.http.routers.frontend.tls=true"
       - "traefik.http.routers.frontend.tls.certresolver=myresolver"
-    networks:
-      - traefik
+      - "traefik.http.services.frontend.loadbalancer.server.port=80"  # Assuming your app serves on port 80 in the container
+      - "traefik.http.middlewares.frontend-retry.retry.attempts=5"
+      - "traefik.http.middlewares.frontend-retry.retry.initialInterval=100ms"
+      - "traefik.http.routers.frontend.middlewares=frontend-retry"
 
 networks:
   traefik:

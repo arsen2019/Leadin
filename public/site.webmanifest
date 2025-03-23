@@ -1,0 +1,25 @@
+{
+    "name":"Leadin Agency - Transform Your Personal Brand",
+    "short_name":"LEADIN",
+    "description":"LEADIN transforms professionals into recognized industry leaders through strategic personal branding, digital positioning, and authentic storytelling. Elevate your professional identity today.",
+    "start_url":"/",
+    "display":"standalone",
+    "background_color":"#151515",
+    "theme_color":"#151515",
+    "icons":[
+        {
+            "src":"/favicon/favicon-180.svg",
+            "sizes":"180x180",
+            "type":"image/svg+xml"
+        },
+        {
+            "src":"/favicon/favicon-32.svg",
+            "sizes":"32x32",
+            "type":"image/svg+xml"},
+        {
+            "src":"/favicon/favicon-16.svg",
+            "sizes":"16x16",
+            "type":"image/svg+xml"
+        }
+    ]
+}

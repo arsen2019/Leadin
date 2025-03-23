@@ -1,6 +1,7 @@
 import React, {useState, useRef, useEffect} from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import OptimizedImage from "./utils/utils.tsx";
 import {filter} from "minimatch";
 
 interface PortfolioProps {
@@ -96,13 +97,13 @@ export default function Portfolio({ slides }: PortfolioProps) {
                         <div
                             key={index}
                             className="px-2"
-                            style={{ paddingTop: isMiddleOne ? "1.5rem" : isOdd ? "3rem" :"0rem" }}
                         >
-                            <img
-                                src={image}
-                                alt={`Slide ${index + 1}`}
-                                className="w-full h-full object-cover"
-                            />
+                            {/*<img*/}
+                            {/*    src={image}*/}
+                            {/*    alt={`Slide ${index + 1}`}*/}
+                            {/*    className="w-full h-full object-cover"*/}
+                            {/*/>*/}
+                            <OptimizedImage src={image} alt={`Slide ${index + 1}`} style={{width:'100%', height:'100%', objectFit: 'cover'}}  />
                         </div>
                     );
                 })}
