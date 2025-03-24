@@ -10,6 +10,7 @@ import CardSlider from "../components/react_components/CardSlider";
 import Vacancies from "../components/react_components/Vacancies";
 import VideoComponent from "../components/react_components/VideoComponent";
 import OptimizedImage from "../components/react_components/utils/utils";
+import AboutUs from "../components/AboutUs.astro";
 
 const reviews = [
     {
@@ -48,7 +49,7 @@ const reviews = [
 
 
     <section
-            class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8 h-[calc(100vh-80px)] flex flex-col gap-5 md:gap-0 md:flex-row bg-[#000]">
+            class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8 md:h-[calc(100vh-80px)] flex flex-col gap-5 md:gap-0 md:flex-row bg-[#000]">
         <div class="flex flex-col  md:w-1/2 w-full flex-start justify-center">
             <div class="flex flex-col font-bold gap-[30px]">
                 <div class="content flex flex-col">
@@ -77,6 +78,8 @@ const reviews = [
         </div>
 
     </section>
+
+    <AboutUs/>
 
     <section class=" bg-[#000] max-w-[1440px] mx-auto">
         <PortfolioSlider/>
