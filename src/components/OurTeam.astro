@@ -5,7 +5,7 @@ const {title, position, followers, href, src} = Astro.props;
 <div class="team-member flex flex-col max-w-72  ">
     <div class="rounded-md overflow-hidden">
         <div class="flex-1">
-            <Image src={src} class="flex-shrink-0 min-w-full min-h-full" alt=''/>
+            <Image src={src} class="flex-shrink-0 min-w-full min-h-full object-cover w-[240px] h-[300px]" alt=''/>
         </div>
         <div class="team-content flex flex-col justify-center items-center  w-full p-4 pb-8 bg-[#000000] ">
             <h3 class="lg:text-xl md:text-lg text-[14px] pt-1">{title}</h3>

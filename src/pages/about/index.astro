@@ -4,6 +4,7 @@ import OurTeam from "../../components/OurTeam.astro";
 import OurTeamImg from '../../assets/img/teamImg.png'
 import LanaImg from '../../assets/img/Lana.png';
 import LuizaImg from '../../assets/img/Luiza.png';
+import AboutUsImg from '../../assets/img/aboutUs.png';
 import GetStartedPopUp from "../../components/react_components/GetStartedPopUp";
 import {Image} from "astro:assets";
 import Counter from "../../components/react_components/Counter";
@@ -80,13 +81,13 @@ import AboutUs from "../../components/AboutUs.astro";
         <div class="team-section grid sm:grid-cols-3 grid-cols-2 gap-5 xl:w-[70%] lg:w-[80%] mx-auto ">
             <OurTeam title="Inessa Manukyan" position="CEO/Founder" followers="4K"
                      href="https://www.linkedin.com/in/inessa-manukyan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-                     src={OurTeamImg}/>
+                     src={AboutUsImg}/>
             <OurTeam title="Lana Hakobjanyan" position="Chief Operations Officer " followers="2K"
                      href="#"
                      src={LanaImg}/>
-            <!--<OurTeam title="Luiza Hakobyan" position="Content Creator " followers="2K"-->
-            <!--         href="#"-->
-            <!--         src={LuizaImg}/>-->
+            <OurTeam title="Luiza Hakobyan" position="Content Creator " followers="2K"
+                     href="#"
+                     src={LuizaImg}/>
         </div>
     </section>
 
