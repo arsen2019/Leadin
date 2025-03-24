@@ -65,13 +65,15 @@ import GetStartedPopUp from "../../components/react_components/GetStartedPopUp";
             </div>
         </div>
     </section>
-    <section class="max-w-[1440px] mx-auto">
-        <div class="py-16 md:w-[40%] w-full p-2 mx-auto">
+    <section class="max-w-[1440px] mx-auto bg-black">
+        <div class="py-16 w-full p-2 mx-auto flex justify-center items-center">
             <GetStartedPopUp buttonText="Get a quote" style={{
-                width: '100%',
                 border: '1px solid none',
                 color: '#FFF',
-                padding: '10px',
+                padding: '10px 20px',
+                fontWeight: '600',
+                fontSize: '20px',
+                borderRadius: '8px',
             }} client:only="react"/>
         </div>
     </section>
@@ -136,16 +138,18 @@ import GetStartedPopUp from "../../components/react_components/GetStartedPopUp";
         </div>
     </section>
 
-  <section class="max-w-[1440px] mx-auto">
-      <div class="py-16 md:w-[40%] w-full p-2 mx-auto">
-          <GetStartedPopUp buttonText="Get a quote" style={{
-              width: '100%',
-              border: '1px solid none',
-              color: '#FFF',
-              padding: '10px',
-          }} client:only="react"/>
-      </div>
-  </section>
+    <section class="max-w-[1440px] mx-auto bg-black">
+        <div class="py-16 w-full p-2 mx-auto flex justify-center items-center">
+            <GetStartedPopUp buttonText="Get a quote" style={{
+                border: '1px solid none',
+                color: '#FFF',
+                padding: '10px 20px',
+                fontWeight: '600',
+                fontSize: '20px',
+                borderRadius: '8px',
+            }} client:only="react"/>
+        </div>
+    </section>
 
 
 </BaseLayout>
