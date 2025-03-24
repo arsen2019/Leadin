@@ -10,15 +10,28 @@ export default function Vacancies() {
             link: ''
         }]
     });
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         (async () => {
-            setData(await fetchData('/api/vacancies'));
-        })()
-
+            try {
+                const response = await fetchData('/api/vacancies');
+                setData(response);
+            } catch (error) {
+                console.error("Failed to fetch data:", error);
+            } finally {
+                setIsLoading(false);
+            }
+        })();
     }, []);
+
+    if (isLoading) {
+        return (
+            <div className="flex justify-center items-center">
+                <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-[#000]"></div>
+            </div>
+        );
+    }
 
     return (
         <div className="flex  items-center justify-center">
