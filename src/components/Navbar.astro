@@ -16,7 +16,9 @@ function isActivePath(currentPath:string, pathPrefix:string) {
 
 <nav class="top-0 shadow-sm  sticky  z-50 ">
     <div class="mx-auto py-2 max-w-[1440px] px-4 sm:px-6 lg:px-8 bg-black">
-        <HamburgerMenu activePath={path} client:only='react'/>
+        <div class="sm:h-[32px] lg:h-fit">
+            <HamburgerMenu activePath={path} client:visible/>
+        </div>
         <div class="hidden lg:flex justify-between h-16 bg-black z-10">
             <div class="flex items-center">
                 <a href="/" class="object-contain">
