@@ -12,7 +12,16 @@ import Counter from "../../components/react_components/Counter";
         <section class="max-w-[1440px] bg-black mx-auto px-10 ">
             <div class="flex flex-col justify-center items-center h-[calc(100vh-80px)]">
                 <div class="flex justify-center items-center w-2/3 flex-1">
-                    <h1 class="font-semibold text-[40px]  md:text-[60px]">Let's make your personal brand look <span class="text-[#B19482] min-w-[10ch] text-nowrap inline-block font-semibold  animated-text h-[40px]"></span></h1>
+                    <h1 class="font-semibold text-[40px]  md:text-[60px]">Let's make your personal brand look
+                        <span class="text-[#B19482] min-w-[10ch] text-nowrap inline-block font-semibold  animated-text h-[40px] roller">
+                            <span id="rolltext">Professional<br/>
+                                Awesome<br/>
+                                Memorable<br/>
+                                Cool<br/>
+                                Powerful<br/>
+                            </span>
+                        </span>
+                    </h1>
                 </div>
             </div>
         </section>
@@ -49,45 +58,64 @@ import Counter from "../../components/react_components/Counter";
     </div>
 </BaseLayout>
 
-<!--<style>-->
-<!--    .animated-text {-->
-<!--        text-wrap: nowrap;-->
-<!--        overflow: hidden;-->
-<!--        white-space: nowrap;-->
-<!--        display: inline;-->
-<!--        font-weight: bold;-->
-<!--    }-->
-<!--</style>-->
+<style>
+    .roller {
+        height: 60px;
+        line-height: 60px;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        color: #B19482;
+        top:10px;
+    }
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const words = ["professional", "awesome", "remarkable", "outstanding"];
-        let index = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const textElement = document.querySelector(".animated-text");
+    .roller #rolltext {
+        position: absolute;
+        top: 0;
+        animation: slide 7s infinite;
+    }
 
-        function typeEffect() {
-            if (textElement){
-                const currentWord = words[index];
-                if (!isDeleting) {
-                    textElement.textContent = currentWord.slice(0, charIndex++);
-                } else {
-                    textElement.textContent = currentWord.slice(0, charIndex--);
-                }
+    @keyframes slide {
+        0% {
+            top: 0;
+        }
+        25% {
+            top: -60px;
+        }
+        50% {
+            top: -120px;
+        }
+        72.5% {
+            top: -180px;
+        }
+        100% {
+            top: 0;
+        }
+    }
 
-                if (!isDeleting && charIndex === currentWord.length + 1) {
-                    setTimeout(() => (isDeleting = true), 1000);
-                } else if (isDeleting && charIndex === 0) {
-                    isDeleting = false;
-                    index = (index + 1) % words.length;
-                }
-
-                setTimeout(typeEffect, isDeleting ? 50 : 100);
-            }
-
+    @media screen and (max-width: 768px) {
+        .roller {
+            height: 40px;
+            line-height: 40px;
+            top:0;
         }
 
-        typeEffect();
-    });
-</script>
+        @keyframes slide {
+            0% {
+                top: 0;
+            }
+            25% {
+                top: -40px;
+            }
+            50% {
+                top: -80px;
+            }
+            72.5% {
+                top: -120px;
+            }
+            100% {
+                top: 0;
+            }
+        }
+    }
+</style>
