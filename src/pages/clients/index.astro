@@ -28,13 +28,21 @@ import Counter from "../../components/react_components/Counter";
 
 
         <div class="trusted-clients flex flex-col text-center gap-10 pt-24 pb-10 px-4">
-            <h1 class="text-lg md:text-4xl font-semibold">Trusted by 15+ clients</h1>
-            <p class="text-sm md:text-xl">Our clients are our top priority, and we are committed to providing them with
+            <h1 class="text-[32px] md:text-[48px] font-bold">Our clients</h1>
+            <div class="flex bg-white w-full md:w-[80%] mx-auto rounded-[30px] md:px-20 md:py-10 px-6 py-5">
+                <ul class="flex justify-between text-black w-full font-bold text-[16px] md:text-[24px] lg:text-[32px] gap-5">
+                    <li>Clients <br><Counter value={13} client:only="react"/>+</li>
+                    <li>Reach <br><Counter value={3} client:only="react"/>M+</li>
+                    <li>Campaigns <br><Counter value={10} client:only="react"/>+</li>
+                    <li>Budgets <br><Counter value={40} client:only="react"/>K+</li>
+                </ul>
+            </div>
+            <p class="text-md md:text-[24px] font-bold mb-10">Our clients are our top priority, and we are committed to providing them with
                 the high level of service</p>
         </div>
 
         <ClientSlider/>
-        <h1 class="text-3xl text-center my-14">Customer Review</h1>
+        <h1 class="text-[32px] md:text-[48px] font-bold text-center my-32 ">Customer Review</h1>
         <div class="grid items-center lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-1">
             <ReviewCard name="Karen" last_name="Grigoryan" stars="5" text=`Our social media presence was all over the
                         place before we started working with Leadin. They helped us develop a consistent, engaging
