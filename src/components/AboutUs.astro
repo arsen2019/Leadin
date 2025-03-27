@@ -2,6 +2,9 @@
 import AboutUsImg from '../assets/img/AboutUs.png'
 import {Image} from "astro:assets";
 import GetStartedPopUp from "./react_components/GetStartedPopUp";
+import AboutUSVideo from "../../public/videos/Inessa - Sitting - Introduction 2 - Desktop.mp4"
+import AboutUSVideoMobile from "../../public/videos/Inessa - Sitting - Introduction 2 - Mobile.mp4"
+import VideoComponent from "./react_components/VideoComponent";
 ---
 <section class=" max-w-[1440px] mx-auto md:py-6 px-4 sm:px-6 lg:px-8 text-[#000] bg-white">
     <header class="text-center">
@@ -9,7 +12,7 @@ import GetStartedPopUp from "./react_components/GetStartedPopUp";
     </header>
     <div class="flex flex-col md:flex-row gap-10 md:m-6">
         <div class="basis-2/5">
-            <Image src={AboutUsImg} class="object-contain " alt=""/>
+            <VideoComponent videoBasePath={AboutUSVideo} fallbackVideoBasePath={AboutUSVideoMobile} controls={true} muted={true} loop={false}   client:only="react" />
         </div>
         <div class="basis-3/5">
             <p class=" text-base lg:text-lg xl:text-xl pb-5 text-[#191718]">At LEADIN Personal Branding Agency, our mission is to revolutionize personal
