@@ -19,7 +19,7 @@ export default function FeedbackPopUp({content, onClose}: FeedbackPopUpProps) {
                     </button>
                 </div>
 
-                <div className="modal-content">
+                <div className="modal-content text-white">
                     {content}
                 </div>
 
