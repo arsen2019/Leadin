@@ -13,6 +13,7 @@ import OptimizedImage from "../components/react_components/utils/utils";
 import GreetingVideo from "../../public/videos/Desktop V_1.mp4"
 import GreetingVideoMobile from "../../public/videos/Mobile V_1.mp4"
 import AboutUs from "../components/AboutUs.astro";
+import VideoSection from "../components/VideoSection.astro";
 
 const reviews = [
     {
@@ -75,8 +76,8 @@ const reviews = [
                 </div>
             </div>
         </div>
-        <div class="lg:w-1/2 w-full">
-            <VideoComponent videoBasePath={GreetingVideo} fallbackVideoBasePath={GreetingVideoMobile} client:only="react"/>
+        <div class="lg:w-1/2 w-full lg:flex lg:justify-center">
+            <VideoSection videoBasePath={GreetingVideo} fallbackVideoBasePath={GreetingVideoMobile}/>
         </div>
 
     </section>

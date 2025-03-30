@@ -1,0 +1,38 @@
+---
+interface Props {
+    videoBasePath: string;
+    fallbackVideoBasePath?: string;
+    className?: string;
+    loop?: boolean;
+    controls?: boolean;
+    muted?: boolean;
+    autoPlay?: boolean;
+}
+
+const { videoBasePath, fallbackVideoBasePath, className = '', loop = true, muted = true, controls = false, autoPlay = true } = Astro.props;
+---
+
+<div class={`video-container ${className}`}>
+    <video
+            muted={muted}
+            loop={loop}
+            autoplay={autoPlay}
+            controls={controls}
+            playsinline
+            class="object-contain max-h-[500px]"
+            data-video-base={videoBasePath}
+            data-fallback-video={fallbackVideoBasePath || ''}
+    ></video>
+</div>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("video[data-video-base]").forEach(video => {
+            const videoBase = video.getAttribute("data-video-base");
+            const fallbackVideo = video.getAttribute("data-fallback-video");
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+            video.src = isMobile && fallbackVideo ? fallbackVideo : videoBase;
+        });
+    });
+</script>
