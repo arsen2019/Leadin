@@ -98,7 +98,7 @@ const VideoComponent: React.FC<VideoComponentProps> = ({
                 loop={loop}
                 playsInline
                 controls={controls}
-                className="h-full object-contain max-h-[500px]"
+                className="object-contain max-h-[500px]"
                 onLoadedData={onLoadedData}
             />
         </div>

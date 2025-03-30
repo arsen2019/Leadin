@@ -19,6 +19,17 @@ export default function Portfolio({slides}: PortfolioProps) {
     const [itemsToShow, setItemsToShow] = useState(4);
     const [data, setData] = useState<{ data: any[] }>({data: []});
     const [isLoading, setIsLoading] = useState(true);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+        return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
 
     useEffect(() => {
         (async () => {
@@ -43,13 +54,13 @@ export default function Portfolio({slides}: PortfolioProps) {
         return () => window.removeEventListener("resize", updateItemsToShow);
     }, []);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            carouselRef1.current?.next();
-            carouselRef2.current?.next();
-        }, 5000);
-        return () => clearInterval(interval);
-    }, []);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         carouselRef1.current?.next();
+    //         carouselRef2.current?.next();
+    //     }, 5000);
+    //     return () => clearInterval(interval);
+    // }, []);
 
     if (isLoading) return <p>Loading...</p>;
 
@@ -103,7 +114,8 @@ export default function Portfolio({slides}: PortfolioProps) {
                         {row.data.map((item, index) => {
                             const imageUrl =
                                 PUBLIC_API_URL_STRAPI +
-                                (item.image?.formats?.large?.url ||
+                                (!isMobile ? item.image?.formats?.medium?.url ||
+                                    item.image?.formats?.thumbnail?.url: item.image?.formats?.small?.url ||
                                     item.image?.formats?.thumbnail?.url);
 
                             return (
@@ -161,3 +173,4 @@ export default function Portfolio({slides}: PortfolioProps) {
         </div>
     );
 }
+
