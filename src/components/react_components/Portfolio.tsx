@@ -1,7 +1,7 @@
 import React, {useState, useRef, useEffect} from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import OptimizedImage from "./utils/utils.tsx";
+import ResponsiveImage from "./ResponsiveImage.tsx";
 import {fetchData} from "../../utils/utils.ts";
 import {PUBLIC_API_URL_STRAPI} from "../../services/api.ts";
 
@@ -98,10 +98,10 @@ export default function Portfolio({slides}: PortfolioProps) {
                     <Carousel
                         ref={row.ref}
                         responsive={responsive}
-                        swipeable
-                        draggable
+                        swipeable={true}
+                        draggable={true}
                         showDots={false}
-                        infinite={false}
+                        infinite={true}
                         autoPlay={false}
                         keyBoardControl
                         customTransition="all 0.5s ease"
@@ -112,19 +112,20 @@ export default function Portfolio({slides}: PortfolioProps) {
                         partialVisible
                     >
                         {row.data.map((item, index) => {
+                            console.log(item)
                             const imageUrl =
                                 PUBLIC_API_URL_STRAPI +
-                                (!isMobile ? item.image?.formats?.medium?.url ||
-                                    item.image?.formats?.thumbnail?.url: item.image?.formats?.small?.url ||
+                                (item.image?.formats?.small?.url ?  item.image?.formats?.small?.url:
                                     item.image?.formats?.thumbnail?.url);
 
                             return (
                                 <div key={index} className="px-2 w-full h-full">
-                                    <OptimizedImage
-                                        src={imageUrl}
-                                        alt={`Slide ${index + 1}`}
-                                        style={{width: "100%", height: "100%", objectFit: "cover"}}
-                                    />
+                                    {/*<OptimizedImage*/}
+                                    {/*    src={imageUrl}*/}
+                                    {/*    alt={`Slide ${index + 1}`}*/}
+                                    {/*    style={{width: "100%", height: "100%", objectFit: "cover"}}*/}
+                                    {/*/>*/}
+                                    <ResponsiveImage src={imageUrl} alt={`Slide ${index + 1}`} className='w-full h-full object-cover' loading='lazy' fetchPriority='auto' />
                                 </div>
                             );
                         })}

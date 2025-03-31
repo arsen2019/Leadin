@@ -62,7 +62,7 @@ export default function CardSlider() {
                         {group.map((card: any) => {
                             const imageUrl =
                                 PUBLIC_API_URL_STRAPI +
-                                (card.image?.formats?.large?.url ||
+                                (card.image?.formats?.small?.url ||
                                     card.image?.formats?.thumbnail?.url);
                                     // || "/fallback-image.jpg");
 
