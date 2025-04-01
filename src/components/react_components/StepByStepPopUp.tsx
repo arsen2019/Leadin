@@ -61,6 +61,7 @@ export default function StepByStepPopUp({style, btnText}: StepByStepProps) {
         postData('/subscriptions', formData)
         console.log(formData)
         setSubmitted(true);
+        setTimeout(() => setSubmitted(false), 2000);
         setIsOpen(false);
         setStep(0);
     };

@@ -10,19 +10,21 @@ interface IProps {
 
 
 
-export default function SubscribePopUp({style}:IProps) {
+export default function GetInTouch({style}:IProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
     const [subscriptionForm, setSubscriptionForm]= useState({
         email: "",
+        text:""
     })
-    const content = "Thanks for subscribing to our newsletter. We will get back to you as soon as possible."
+    const content = "Thank you. Your form is submitted. You will be contacted by our team shortly."
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
+        console.log(subscriptionForm)
         setIsOpen(false);
         setIsFeedbackOpen(true);
+        postData('/contact', subscriptionForm)
         setTimeout(() => setIsFeedbackOpen(false), 2000);
-        postData('/newsletters', subscriptionForm)
     };
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -32,9 +34,19 @@ export default function SubscribePopUp({style}:IProps) {
 
     return (
         <div>
-            <button className="open-btn  hover:bg-[#8D705D]" style={style} onClick={() => setIsOpen(true)}>
-                Subscribe to our newsletter
-            </button>
+            <form className="flex flex-col h-full justify-between gap-4" onSubmit={handleSubmit} >
+                <div className="inputs flex h-full gap-4 flex-col">
+                    <input name="email" type="email" placeholder="Email" required onChange={handleChange}
+                           className="w-full p-2 border border-[#D9B99B] rounded-md focus:ring-2 bg-[#191718]"/>
+                    <textarea name="text" placeholder="Text" required onChange={handleChange}
+                              className="start-0 w-full h-full border grow flex p-2 border-[#D9B99B] rounded-md focus:ring-2 bg-[#191718]"></textarea>
+                </div>
+                <div className="flex">
+                    <button className="bg-[#B19482] py-2 rounded-md w-full hover:bg-[#8D705D] text-white" type="submit">
+                        Send
+                    </button>
+                </div>
+            </form>
 
             {isOpen && (
                 <div className="modal-overlay">
@@ -45,16 +57,7 @@ export default function SubscribePopUp({style}:IProps) {
                             </button>
                         </div>
                         <div className="modal-content">
-
-                            <div className="modal-header">
-                                <h2>Subscribe to our daily newsletter:</h2>
-                            </div>
-
-
-                            <form className="modal-form" onSubmit={handleSubmit}>
-                                <input type="email" placeholder="Email" className="input-field" value={subscriptionForm['email']} name='email' onChange={handleChange} />
-                                <button type="submit" className="submit-btn">Submit</button>
-                            </form>
+                                <p>{content}</p>
 
                         </div>
                     </div>

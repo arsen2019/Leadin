@@ -5,11 +5,8 @@ import ResponsiveImage from "./ResponsiveImage.tsx";
 import {fetchData} from "../../utils/utils.ts";
 import {PUBLIC_API_URL_STRAPI} from "../../services/api.ts";
 
-interface PortfolioProps {
-    slides: string[];
-}
 
-export default function Portfolio({slides}: PortfolioProps) {
+export default function Portfolio() {
     const [currentIndex, setCurrentIndex] = useState<any>({
         0: 0,
         1: 0,
@@ -62,7 +59,13 @@ export default function Portfolio({slides}: PortfolioProps) {
     //     return () => clearInterval(interval);
     // }, []);
 
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) {
+        return (
+            <div className="flex justify-center items-center">
+                <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-[#000]"></div>
+            </div>
+        );
+    }
 
     const midIndex = Math.ceil(data.data.length / 2);
     const firstRow = data.data.slice(0, midIndex);
@@ -163,6 +166,7 @@ export default function Portfolio({slides}: PortfolioProps) {
                             <img
                                 src="/icons/next.svg"
                                 alt="next"
+                                loading={'eager'}
                                 style={{
                                     filter: currentIndex[rowIndex] >= row.data.length - itemsToShow ? "invert(0.5)" : "",
                                 }}

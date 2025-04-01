@@ -4,6 +4,7 @@ import BlogPost from '../../components/BlogPost.astro';
 import StepByStepPopUp from "../../components/react_components/StepByStepPopUp";
 import stones from '../../assets/img/image.png';
 import axjik from '../../../public/axjik.png'
+import Blog from "../../components/react_components/Blog";
 
 const loremContent = `Lorem Ipsum is simply dummy text of the printing and typesetting
  industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
@@ -15,13 +16,14 @@ const loremContent = `Lorem Ipsum is simply dummy text of the printing and types
 >
     <section class="max-w-[1440px] mx-auto py-12 px-4 sm:px-6 lg:px-8 bg-[#000] ">
         <header class="mb-16 ">
-            <h1 class="text-2xl font-semibold md:text-4xl">
-                Results-based personal branding
+            <h1 class="text-2xl text-center font-bold md:text-4xl mb-20">
+                BLOG
             </h1>
 
         </header>
 
         <div class=`content flex flex-col`>
+            <Blog client:only="react" />
             <BlogPost
                     title="How Joe Had A Record Month Using His Personal Brand"
                     content={loremContent}

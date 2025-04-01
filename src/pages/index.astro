@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SubscribePopUp from "../components/react_components/SubscribePopUp";
-import PortfolioSlider from "../components/PortfolioSlider.astro";
 import ClientSlider from "../components/ClientSlider.astro";
 import SocialHref from "../components/SocialHref.astro";
 import ReviewSlider from '../components/react_components/ReviewSlider'
@@ -12,41 +11,14 @@ import GreetingVideo from "../../public/videos/DesktopV_1compressed.mp4"
 import GreetingVideoMobile from "../../public/videos/MobileV_1compressed.mp4"
 import AboutUs from "../components/AboutUs.astro";
 import VideoSection from "../components/VideoSection.astro";
-
-const reviews = [
-    {
-        id: 1,
-        firstName: "Deren",
-        lastName: "Minasyan",
-        rate: 5,
-        comment: "They helped me define my brand’s mission, values, and personality in a way that was both authentic and compelling. Since working with them, I’ve seen an increase in engagement and customer loyalty."
-    },
-    {
-        id: 2,
-        firstName: "Karen",
-        lastName: "Grigoryan",
-        rate: 5,
-        comment: "\"Our social media presence was all over the place before we started working with Leadin. They helped us develop a consistent, engaging social media strategy that reflects our brand’s voice and values."
-    },
-    {
-        id: 3,
-        firstName: "Srbui",
-        lastName: "Ambartsumian",
-        rate: 5,
-        comment: "From content calendars to post designs, they made sure everything we shared online reinforced our brand identity. We've noticed a significant increase in followers and engagement since implementing their strategy!"
-    },
-    {
-        id: 4,
-        firstName: "Haik",
-        lastName: "Khachatryan",
-        rate: 5,
-        comment: "One of the biggest challenges we faced was creating a consistent brand voice across all our communications. [Your Name] helped us develop a tone that speaks directly to our target audience, making our messaging more engaging and authentic. "
-    },
-];
+import GetInTouch from "../components/react_components/GetInTouch"
+import Portfolio from "../components/react_components/Portfolio";
 ---
 <head>
-    <link rel="preload" href={GreetingVideo} as="video" type="video/mp4" media="(min-width: 768px)" fetchpriority="high">
-    <link rel="preload" href={GreetingVideoMobile} as="video" type="video/mp4" media="(max-width: 767px)" fetchpriority="high">
+    <link rel="preload" href={GreetingVideo} as="video" type="video/mp4" media="(min-width: 768px)"
+          fetchpriority="high">
+    <link rel="preload" href={GreetingVideoMobile} as="video" type="video/mp4" media="(max-width: 767px)"
+          fetchpriority="high">
 </head>
 <BaseLayout title="Leadin Agency - Transform Your Personal Brand"
             description=`LEADIN transforms professionals into recognized industry leaders through strategic personal branding, digital positioning, and authentic storytelling. Elevate your professional identity today.`
@@ -88,7 +60,10 @@ const reviews = [
     <AboutUs/>
 
     <section class=" bg-[#000] max-w-[1440px] mx-auto">
-        <PortfolioSlider/>
+        <div class="flex flex-col items-center">
+            <h1 class="sm:py-12 py-8 xl:text-5xl lg:text-4xl text-3xl font-bold my-10">OUR PORTFOLIO</h1>
+            <Portfolio  client:visible />
+        </div>
     </section>
 
 
@@ -152,7 +127,7 @@ const reviews = [
     </section>
     <section class="py-10 max-w-[1440px] pb-4 mx-auto bg-[#000]">
         <h1 class="text-center sm:py-10 py-5 xl:text-5xl lg:text-4xl text-3xl font-bold">CUSTOMER REVIEWS</h1>
-        <ReviewSlider reviews={reviews} client:only="react"/>
+        <ReviewSlider client:only="react"/>
     </section>
 
     <section class="max-w-[1440px] py-8 mx-auto bg-[#000]">
@@ -211,7 +186,7 @@ const reviews = [
             <div class="text-right bg-[#EED9C4] p-10 pl-14">
                 <h2 class="text-[#191718] text-3xl/10 font-bold">Why Start Building Your Personal Brand With Us?</h2>
                 <p class="text-[#000] text-sm/6 ml-6">Personal brands increase credibility, with professionals who
-                    actively build their brands seen as more knowledgeableand approachable.</p>
+                    actively build their brands seen as more knowledgeable and approachable.</p>
             </div>
             <div>
                 <img class="flex-shrink-0 min-w-full min-h-full" alt="HomeStaticImg" src="staticImg.png">
@@ -238,22 +213,12 @@ const reviews = [
             <div class="contact-href  flex flex-1 flex-col sm:gap-8 gap-2">
                 <h3 class="sm:text-4xl text-2xl py-4">Do you have any questions?</h3>
                 <SocialHref/>
-                <SubscribePopUp style={{width: '100%', borderRadius: '6px'}} client:only="react"/>
+                <SubscribePopUp style={{width: '100%', borderRadius: '6px'}} client:visible/>
             </div>
-            <div class="contact-send flex flex-1 flex-col gap-4">
+            <div class="contact-send flex flex-1 flex-col">
                 <h3 class="sm:text-4xl text-2xl py-4">Get in touch</h3>
+                    <GetInTouch client:visible />
                 <div>
-                    <input type="email" placeholder="Email"
-                           class="w-full p-2 border border-[#D9B99B] rounded-md focus:ring-2  bg-[#191718]"/>
-                </div>
-                <div class="flex  h-full ">
-                    <textarea placeholder="Text"
-                              class=" start-0 w-full border p-2 border-[#D9B99B] rounded-md focus:ring-2 bg-[#191718]"></textarea>
-                </div>
-                <div>
-                    <button class="bg-[#B19482] py-2 rounded-md w-full hover:bg-[#8D705D] text-white focus:-scale-30">
-                        Send
-                    </button>
                 </div>
             </div>
         </div>

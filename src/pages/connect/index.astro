@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SocialHref from "../../components/SocialHref.astro";
 import Vacancies from "../../components/react_components/Vacancies";
+import GetInTouchLarge from "../../components/react_components/GetInTouchLarge";
 ---
 <BaseLayout title="Leadin Agency - Insights & Success Stories">
 
@@ -17,25 +18,7 @@ import Vacancies from "../../components/react_components/Vacancies";
                 <SocialHref/>
             </div>
             <div class="flex flex-1 w-full flex-col gap-4 text-[#D7D3CE]">
-                <div><input type="text" placeholder="First name"
-                            class="w-full p-2 border border-[#D7D3CE] rounded-md focus:ring-2  bg-[#000000]"></div>
-                <div><input type="text" placeholder="Last name"
-                            class="w-full p-2 border border-[#D7D3CE] rounded-md focus:ring-2  bg-[#000000]"></div>
-                <div><input type="text" placeholder="Phone number"
-                            class="w-full p-2 border border-[#D7D3CE] rounded-md focus:ring-2  bg-[#000000]"></div>
-                <div>
-                    <input type="email" placeholder="Email"
-                           class="w-full p-2 border border-[#D7D3CE] rounded-md focus:ring-2  bg-[#000000]"/>
-                </div>
-                <div class="flex  h-full ">
-                    <textarea placeholder="Text"
-                              class=" start-0 w-full border p-2 border-[#D7D3CE] rounded-md focus:ring-2 bg-[#000000]"></textarea>
-                </div>
-                <div>
-                    <button class="bg-[#B19482] py-2 rounded-md w-full hover:bg-[#8D705D] text-white focus:-scale-30">
-                        Send
-                    </button>
-                </div>
+                <GetInTouchLarge client:only="react"/>
             </div>
         </div>
     </section>

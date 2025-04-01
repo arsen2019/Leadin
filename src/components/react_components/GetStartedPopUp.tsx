@@ -30,6 +30,7 @@ export default function GetStartedPopUp({style, buttonText}: IProps) {
         event.preventDefault();
         setIsOpen(false);
         setIsFeedbackOpen(true);
+        setTimeout(() => setIsFeedbackOpen(false), 2000);
         postData('/subscriptions', formData)
     }
 

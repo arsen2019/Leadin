@@ -23,7 +23,13 @@ export default function CardSlider() {
         })();
     }, []);
 
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) {
+        return (
+            <div className="flex justify-center items-center">
+                <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-[#000]"></div>
+            </div>
+        );
+    }
 
     const responsive = {
         superLargeDesktop: { breakpoint: { max: 4000, min: 1024 }, items: 1 },

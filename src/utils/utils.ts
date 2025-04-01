@@ -18,3 +18,12 @@ export async function postData(endpoint: string, body:any){
         },
     });
 }
+
+export async function postDataStrapi(endpoint: string, body:any){
+    console.log(body);
+    return await apiStrapi.post(endpoint, body, {
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
+}
