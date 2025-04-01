@@ -1,18 +1,70 @@
 ---
-import Portfolio from "./react_components/Portfolio.tsx";
-
-const image_paths = import.meta.glob("/public/portfolio/*");
-
-const imagePaths = Object.keys(image_paths).map((path) =>
-    path.replace(/^\/public/, "")
-);
-const concat = imagePaths.concat(imagePaths).concat(imagePaths);
+// PortfolioLoader.astro
+import Portfolio from "./react_components/Portfolio";
+import {hydrateRoot} from "react-dom/client";
 ---
 
-<div class="flex flex-col items-center">
-    <h1 class="sm:py-12 py-8 xl:text-5xl lg:text-4xl text-3xl font-bold my-10">OUR PORTFOLIO</h1>
-    <Portfolio slides={concat} client:visible />
+<div class="portfolio-container" data-lazy="true">
+    <!-- Placeholder while component loads -->
+    <div class="portfolio-placeholder">
+        <div class="w-full space-y-4">
+            {Array(2).fill(0).map((_, rowIndex) => (
+                    <div  class="relative">
+                        <div class="flex overflow-hidden">
+                            {Array(4).fill(0).map((_, i) => (
+                                    <div class="px-2 flex-shrink-0" style={{ width: `${100 / 4}%` }}>
+                                        <div class="bg-gray-200 animate-pulse h-44 rounded"></div>
+                                    </div>
+                            ))}
+                        </div>
+                    </div>
+            ))}
+        </div>
+    </div>
+
+    <!-- React component will be loaded here -->
+    <div class="portfolio-react">
+        <!-- This will be hydrated -->
+        <Portfolio client:only="react"/>
+    </div>
 </div>
 
+<script>
+    // Import the React component only after initial page load
+    document.addEventListener('DOMContentLoaded', () => {
+        const portfolioContainer = document.querySelector('.portfolio-container');
 
+        // Use Intersection Observer to load the component when it's near viewport
+        if (portfolioContainer) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Only load when visible
+                        import('../components/react_components/Portfolio.tsx').then((module) => {
+                            // Create a script tag to hydrate the component
+                            const script = document.createElement('script');
+                            script.type = 'module';
+                            script.innerHTML = `
+              import { Portfolio } from '../components/react_components/Portfolio';
+              
+              const container = document.querySelector('.portfolio-react');
+              hydrateRoot(container, Portfolio());
+            `;
+                            document.body.appendChild(script);
 
+                            // Remove the placeholder
+                            const placeholder = document.querySelector('.portfolio-placeholder');
+                            //placeholder.style.display = 'none';
+                        });
+
+                        // Disconnect observer after loading
+                        observer.disconnect();
+                    }
+                });
+            }, { rootMargin: '400px' }); // Start loading when 200px from viewport
+
+            observer.observe(portfolioContainer);
+        }
+
+    });
+</script>

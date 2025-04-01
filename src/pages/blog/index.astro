@@ -1,16 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import BlogPost from '../../components/BlogPost.astro';
 import StepByStepPopUp from "../../components/react_components/StepByStepPopUp";
-import stones from '../../assets/img/image.png';
-import axjik from '../../../public/axjik.png'
-import Blog from "../../components/react_components/Blog";
+import BlogPagination from "../../components/react_components/BlogPagination";
 
-const loremContent = `Lorem Ipsum is simply dummy text of the printing and typesetting
- industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-  took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-   but also the leap into electronic typesetting`;
+const { page = 1 } = Astro.params;
+const currentPage = typeof page === 'string' ? parseInt(page) : 1;
 ---
+
 <BaseLayout title="Leadin Agency - Blogs and More"
             description=`Find inspiring blogs in our page`
 >
@@ -19,42 +15,18 @@ const loremContent = `Lorem Ipsum is simply dummy text of the printing and types
             <h1 class="text-2xl text-center font-bold md:text-4xl mb-20">
                 BLOG
             </h1>
-
         </header>
 
-        <div class=`content flex flex-col`>
-            <Blog client:only="react" />
-            <BlogPost
-                    title="How Joe Had A Record Month Using His Personal Brand"
-                    content={loremContent}
-                    img={stones}
-                    number=0
-            />
-            <BlogPost
-                    title="How Joe Had A Record Month Using His Personal Brand"
-                    content={loremContent}
-                    img={axjik}
-                    number=1
-            />
-            <BlogPost
-                    title="How Joe Had A Record Month Using His Personal Brand"
-                    content={loremContent}
-                    img={stones}
-                    number=2
-            />
-            {
-
-            }
-            <BlogPost
-                    title="How Joe Had A Record Month Using His Personal Brand"
-                    content={loremContent}
-                    img={axjik}
-                    number=3
+        <div class="content flex flex-col">
+            <BlogPagination
+                    initialPage={currentPage}
+                    articlesPerPage={4}
+                    client:load
             />
         </div>
     </section>
 
-    <div class=" mx-auto py-12 w-full md:w-1/2 px-4">
+    <div class="mx-auto py-12 w-full md:w-1/2 px-4">
         <StepByStepPopUp btnText="Let's create your personal branding together" style={{width: '100%'}}
                          client:only="react"/>
     </div>

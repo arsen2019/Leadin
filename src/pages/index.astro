@@ -13,6 +13,9 @@ import AboutUs from "../components/AboutUs.astro";
 import VideoSection from "../components/VideoSection.astro";
 import GetInTouch from "../components/react_components/GetInTouch"
 import Portfolio from "../components/react_components/Portfolio";
+import PortfolioSlider from "../components/PortfolioSlider.astro";
+import {hydrateRoot} from "react-dom/client";
+
 ---
 <head>
     <link rel="preload" href={GreetingVideo} as="video" type="video/mp4" media="(min-width: 768px)"
@@ -28,7 +31,7 @@ import Portfolio from "../components/react_components/Portfolio";
     <section
             class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8 h-fit flex flex-row lg:gap-2 lg:flex-row  bg-[#000]">
         <div class="flex lg:flex-row gap-5 flex-col w-full">
-            <div class="flex basis-1/2 flex-col font-bold gap-[30px] justify-end">
+            <div class="flex basis-1/2 flex-col font-bold gap-[30px] lg:gap-[50px] justify-end">
                 <div class="content flex flex-col">
                     <span class="text-4xl md:text-5xl">BUILD YOUR</span>
                     <div>
@@ -62,7 +65,7 @@ import Portfolio from "../components/react_components/Portfolio";
     <section class=" bg-[#000] max-w-[1440px] mx-auto">
         <div class="flex flex-col items-center">
             <h1 class="sm:py-12 py-8 xl:text-5xl lg:text-4xl text-3xl font-bold my-10">OUR PORTFOLIO</h1>
-            <Portfolio  client:visible />
+            <Portfolio client:only="react"/>
         </div>
     </section>
 

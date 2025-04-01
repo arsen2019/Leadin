@@ -59,13 +59,7 @@ export default function Portfolio() {
     //     return () => clearInterval(interval);
     // }, []);
 
-    if (isLoading) {
-        return (
-            <div className="flex justify-center items-center">
-                <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-[#000]"></div>
-            </div>
-        );
-    }
+    if (isLoading) return <p>Loading...</p>;
 
     const midIndex = Math.ceil(data.data.length / 2);
     const firstRow = data.data.slice(0, midIndex);
@@ -166,7 +160,7 @@ export default function Portfolio() {
                             <img
                                 src="/icons/next.svg"
                                 alt="next"
-                                loading={'eager'}
+                                loading={'lazy'}
                                 style={{
                                     filter: currentIndex[rowIndex] >= row.data.length - itemsToShow ? "invert(0.5)" : "",
                                 }}
