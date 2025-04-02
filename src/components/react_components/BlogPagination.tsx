@@ -97,8 +97,19 @@ const BlogPagination: React.FC<BlogPaginationProps> = ({
             }
             return items;
         }
+        if (pageCount < 5) {
+            items.push(
+                <span key={1} className="font-bold border-b-2 border-white">1</span>,
 
-        if (current === 1) {
+            )
+                for(let i = 2; i <= pageCount; i++){
+                    items.push(
+                        <span key={i} className="font-bold border-b-2">{i}</span>,
+                    )
+                }
+        }
+
+        else if (current === 1) {
             items.push(
                 <span key={1} className="font-bold border-b-2 border-white">1</span>,
                 <span key={2} onClick={() => handlePageChange(2)} className="cursor-pointer hover:text-gray-400">2</span>,
@@ -107,12 +118,13 @@ const BlogPagination: React.FC<BlogPaginationProps> = ({
             );
         } else if (current === 2) {
             items.push(
+                <span key={1} onClick={() => handlePageChange(3)} className="cursor-pointer hover:text-gray-400">1</span>,
                 <span key={2} className="font-bold border-b-2 border-white">2</span>,
                 <span key={3} onClick={() => handlePageChange(3)} className="cursor-pointer hover:text-gray-400">3</span>,
                 <span key="ellipsis" className="text-lg">...</span>,
                 <span key={pageCount} onClick={() => handlePageChange(pageCount)} className="cursor-pointer hover:text-gray-400">{pageCount}</span>
             );
-        } else if (current >= 3 && current < pageCount - 1) {
+        } else if (current >= 3 && current < pageCount - 2) {
             items.push(
                 <span key={1} onClick={() => handlePageChange(1)} className="cursor-pointer hover:text-gray-400">1</span>,
                 <span key="ellipsis1" className="text-lg">...</span>,
@@ -129,8 +141,16 @@ const BlogPagination: React.FC<BlogPaginationProps> = ({
                 <span key={pageCount} onClick={() => handlePageChange(pageCount)} className="cursor-pointer hover:text-gray-400">{pageCount}</span>
             );
         }
-        else {
-            // When on the last two pages
+        else if (current == pageCount - 2) {
+            items.push(
+                <span key={1} onClick={() => handlePageChange(1)} className="cursor-pointer hover:text-gray-400">1</span>,
+                <span key="ellipsis1" className="text-lg">...</span>,
+                <span key={current} className="font-bold border-b-2 border-white">{current}</span>,
+                <span key={pageCount - 1} onClick={() => handlePageChange(pageCount - 1)} className="cursor-pointer hover:text-gray-400">{pageCount - 1}</span>,
+                <span key={pageCount} onClick={() => handlePageChange(pageCount)} className="cursor-pointer hover:text-gray-400">{pageCount}</span>
+            );
+        }
+        else if (current==pageCount){
             items.push(
                 <span key={1} onClick={() => handlePageChange(1)} className="cursor-pointer hover:text-gray-400">1</span>,
                 <span key="ellipsis" className="text-lg">...</span>,

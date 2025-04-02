@@ -33,7 +33,15 @@ export default function UserReview() {
             if(formData.rate === 0){ return }
             setTimeout(() => setSubmitted(false), 2000);
             postData('/reviews',formData);
-            console.log(formData)
+            setFormData({
+                firstName: '',
+                lastName: '',
+                company: '',
+                rate: 0,
+                comment: '',
+            });
+            setRating(0);
+
         }
         else{
             setShowRatingError(true)

@@ -26,8 +26,12 @@ const currentPage = typeof page === 'string' ? parseInt(page) : 1;
         </div>
     </section>
 
-    <div class="mx-auto py-12 w-full md:w-1/2 px-4">
-        <StepByStepPopUp btnText="Let's create your personal branding together" style={{width: '100%'}}
+    <div class="mx-auto py-12 w-full  md:w-1/2 px-4">
+        <StepByStepPopUp btnText="Let's create your personal branding together" style={{
+            width: '100%',
+            fontWeight:'600',
+            padding:"8px 16px",
+        }}
                          client:only="react"/>
     </div>
 </BaseLayout>

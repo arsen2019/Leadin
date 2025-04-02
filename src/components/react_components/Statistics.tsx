@@ -46,8 +46,8 @@ export default function Statistics() {
 
     return (
         <div>
-            {data.data.map((stats) => (
-                <div className="grid sm:grid-cols-2 grid-cols-1 md:m-20 m-5 md:gap-10">
+            {data.data.map((stats, index) => (
+                <div key={index} className="grid sm:grid-cols-2 grid-cols-1 md:m-20 m-5 md:gap-10">
                     <div className="p-5" ><h3 className="font-semibold text-2xl lg:text-3xl xl:text-4xl py-3"><span><Counter value={stats.employers} />%</span> of employers</h3>
                         <p className="text-base lg:text-lg/6 xl:text-xl/8 sm:pr-5">use social media to screen candidates during the hiring process</p></div>
                     <div className="p-5" ><h3 className="font-semibold text-2xl lg:text-3xl xl:text-4xl py-3"><span><Counter value={stats.opportunities}/>%</span> of opportunities</h3>

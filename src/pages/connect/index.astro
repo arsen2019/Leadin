@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SocialHref from "../../components/SocialHref.astro";
 import Vacancies from "../../components/react_components/Vacancies";
 import GetInTouchLarge from "../../components/react_components/GetInTouchLarge";
+import OpenPositions from "../../components/react_components/OpenPositions";
 ---
 <BaseLayout title="Leadin Agency - Insights & Success Stories">
 
@@ -32,16 +33,7 @@ import GetInTouchLarge from "../../components/react_components/GetInTouchLarge";
             <p class="text-center sm:text-2xl text-lg sm:text-[#000000]">We're an ambitious group constantly pushing
                 each other to become the best personal branding agency in the world. And we're having a great time doing
                 it. Want to join us? Check out our current opportunities below.</p>
-            <div class="flex gap-6 py-14 sm:flex-row flex-col">
-                <div class="basis-2/3 w-full"><input type="email" placeholder="Email"
-                                                     class=" w-full  p-2 border border-[#D7D3CE] rounded-md focus:ring-2  bg-[#000000] sm:bg-[#FFF] sm:text-[#000000]"/>
-                </div>
-                <div class="basis-1/3 w-full">
-                    <button class="bg-[#B19482] py-2 rounded-md w-full hover:bg-[#8D705D] text-white focus:-scale-30">
-                        Send
-                    </button>
-                </div>
-            </div>
+            <OpenPositions client:only="react"/>
         </div>
         <div>
             <Vacancies client:visible/>

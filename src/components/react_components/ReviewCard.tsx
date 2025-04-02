@@ -60,8 +60,13 @@ export default function ReviewCard() {
                     <div
                         className='review-content absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10/12 flex flex-col gap-[1vh] md:text-md'>
                         {
-                            review.company ?  (<h3 className="text-center text-xl lg:text-2xl">{review.company}</h3>):
-                                (<h3 className="text-center text-xl lg:text-2xl">{review.firstname} {review.lastname}</h3>)
+                            review.company ?  (
+                                <>
+                                    <h3 className="text-center text-xl lg:text-2xl font-semibold">{review.company}</h3>
+                                    <h4 className='text-center text-lg lg:text-xl'>{review.firstname} {review.lastname}</h4>
+                                </>
+                                ):
+                                (<h3 className="text-center text-xl lg:text-2xl font-semibold">{review.firstname} {review.lastname}</h3>)
                         }
                         <div className="flex justify-center my-2">
                             {Array.from({length: review.rate}).map((_, i) => (
