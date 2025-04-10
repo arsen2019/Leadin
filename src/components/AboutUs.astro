@@ -6,36 +6,39 @@ import AboutUSVideo from "../../public/videos/Inessa_Desktop.mp4"
 import AboutUSVideoMobile from "../../public/videos/Inessa_Mobile.mp4"
 import VideoSection from "./VideoSection.astro";
 ---
-<section class=" max-w-[1440px] mx-auto md:py-6 px-4 sm:px-6 lg:px-8 text-[#000] bg-white">
-    <header class="text-center">
-        <h2 class="font-bold sm:p-12 p-8 sm:text-5xl text-3xl ">ABOUT US</h2>
-    </header>
-    <div class="flex flex-col md:flex-row gap-10 md:m-6">
-        <div class="basis-2/5 flex justify-center">
-            <VideoSection videoBasePath={AboutUSVideo} fallbackVideoBasePath={AboutUSVideoMobile}  controls={true} loop={false} autoPlay={true} muted={true}/>
-        </div>
-        <div class="basis-3/5">
-            <p class=" text-base lg:text-lg xl:text-xl pb-5 text-[#191718]">At LEADIN Personal Branding Agency, our mission is to revolutionize personal
-                branding for experts and
-                professionals by transcending the conventional PR approach. We delve deep into the emotions,
-                aspirations, and fears that drive each individual, crafting a holistic personal brand that resonates
-                authentically with their audience. Through expert guidance and a comprehensive suite of services, we
-                empower our clients to navigate the digital landscape with confidence, establishing lasting
-                connections and amplifying their influence on LinkedIn and beyond.</p>
-            <div class="">
-                <div class="text-lg lg:text-xl xl:text-2xl  font-medium"><p>Let's start your personal branding journey</p>
-                </div>
-                <div class="mx-auto">
-                    <GetStartedPopUp buttonText="Contact Us" style={{
-                        border: '1px solid none',
-                        color: '#FFF',
-                        padding: '8px 16px',
-                        borderRadius: '8px',
-                        fontWeight:'600',
-                        marginBottom:'20px'
-                    }} client:visible/>
+<section class=" w-full mx-auto md:py-6 px-4 sm:px-6 lg:px-8 text-[#000] bg-white">
+    <div class="max-w-[1440px] mx-auto" >
+        <header class="text-center">
+            <h2 class="font-bold sm:p-12 p-8 sm:text-5xl text-3xl ">ABOUT US</h2>
+        </header>
+        <div class="flex flex-col md:flex-row gap-10 md:m-6">
+            <div class="basis-2/5 flex justify-center">
+                <VideoSection videoBasePath={AboutUSVideo} fallbackVideoBasePath={AboutUSVideoMobile}  controls={true} loop={false} autoPlay={true} muted={true}/>
+            </div>
+            <div class="basis-3/5">
+                <p class=" text-base lg:text-lg xl:text-xl pb-5 text-[#191718]">At LEADIN Personal Branding Agency, our mission is to revolutionize personal
+                    branding for experts and
+                    professionals by transcending the conventional PR approach. We delve deep into the emotions,
+                    aspirations, and fears that drive each individual, crafting a holistic personal brand that resonates
+                    authentically with their audience. Through expert guidance and a comprehensive suite of services, we
+                    empower our clients to navigate the digital landscape with confidence, establishing lasting
+                    connections and amplifying their influence on LinkedIn and beyond.</p>
+                <div class="">
+                    <div class="text-lg lg:text-xl xl:text-2xl  font-medium"><p>Let's start your personal branding journey</p>
+                    </div>
+                    <div class="mx-auto">
+                        <GetStartedPopUp buttonText="Contact Us" style={{
+                            border: '1px solid none',
+                            color: '#FFF',
+                            padding: '8px 16px',
+                            borderRadius: '8px',
+                            fontWeight:'600',
+                            marginBottom:'20px'
+                        }} client:visible/>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 </section>

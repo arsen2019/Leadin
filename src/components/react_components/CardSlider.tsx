@@ -76,7 +76,7 @@ export default function CardSlider() {
                                 <div key={card.id} className="cards-container flex flex-row rounded-xl overflow-hidden min-w-[350px]">
                                     <div className="basis-2/5 relative text-[#FFF]">
                                         <img
-                                            className="flex-shrink-0 min-w-full min-h-full"
+                                            className="flex-shrink-0 min-w-full min-h-full object-cover"
                                             src={imageUrl}
                                             alt={card.title || "Image"}
                                         />

@@ -12,7 +12,7 @@ interface Props {
 const { videoBasePath, fallbackVideoBasePath, className = '', loop = true, muted = true, controls = false, autoPlay = true } = Astro.props;
 ---
 
-<div class={`video-container ${className}`}>
+<div class={`video-container  ${className}`}>
     <video
             muted={muted}
             loop={loop}

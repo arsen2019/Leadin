@@ -48,10 +48,10 @@ export default function Info() {
         <div className="flex bg-white w-full md:w-[80%] mx-auto rounded-[30px] md:px-20 md:py-10 px-6 py-5">
                 {data.data.map((stats,index) => (
                     <ul key={index} className="flex justify-between text-black w-full font-bold text-[16px] md:text-[24px] lg:text-[32px] gap-5">
-                        <li>Clients <br/><Counter value={stats.clients}/>+</li>
-                        <li>Reach <br/><Counter value={stats.reach} />M+</li>
-                        <li>Campaigns <br/><Counter value={stats.campaigns} />+</li>
-                        <li>Budgets <br/><Counter value={stats.budgets}/>K+</li>
+                        <li>Clients <br/><Counter value={stats.clients}/></li>
+                        <li>Reach <br/><Counter value={stats.reach} /></li>
+                        <li>Campaigns <br/><Counter value={stats.campaigns} /></li>
+                        <li>Budgets <br/><Counter value={stats.budgets}/></li>
                     </ul>
 ))}
 

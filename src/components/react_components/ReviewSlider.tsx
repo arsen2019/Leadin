@@ -103,11 +103,11 @@ export default function ReviewSlider() {
                                 {
                                     review.company ?  (
                                             <>
-                                                <h3 className="text-center text-xl lg:text-2xl font-semibold">{review.company}</h3>
-                                                <h4 className='text-center text-lg lg:text-xl'>{review.firstname} {review.lastname}</h4>
+                                                <h2 className="text-center text-xl lg:text-2xl font-semibold">{review.company}</h2>
+                                                <h3 className='text-center text-lg lg:text-xl'>{review.firstname} {review.lastname}</h3>
                                             </>
                                         ):
-                                        (<h3 className="text-center text-xl lg:text-2xl font-semibold">{review.firstname} {review.lastname}</h3>)
+                                        (<h2 className="text-center text-xl lg:text-2xl font-semibold">{review.firstname} {review.lastname}</h2>)
                                 }
                                 <div className="flex justify-center my-2">
                                     {Array.from({length: review.rate}).map((_, i) => (

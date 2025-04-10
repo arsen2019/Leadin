@@ -51,13 +51,6 @@ export default function Portfolio() {
         return () => window.removeEventListener("resize", updateItemsToShow);
     }, []);
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         carouselRef1.current?.next();
-    //         carouselRef2.current?.next();
-    //     }, 5000);
-    //     return () => clearInterval(interval);
-    // }, []);
 
     if (isLoading) return <p>Loading...</p>;
 
@@ -117,12 +110,7 @@ export default function Portfolio() {
 
                             return (
                                 <div key={index} className="px-2 w-full h-full">
-                                    {/*<OptimizedImage*/}
-                                    {/*    src={imageUrl}*/}
-                                    {/*    alt={`Slide ${index + 1}`}*/}
-                                    {/*    style={{width: "100%", height: "100%", objectFit: "cover"}}*/}
-                                    {/*/>*/}
-                                    <ResponsiveImage src={imageUrl} alt={`Slide ${index + 1}`} className='w-full h-full object-cover' loading='lazy' fetchPriority='auto' />
+                                    <ResponsiveImage src={imageUrl} alt={`Slide ${index + 1}`} className='w-full h-full object-cover'/>
                                 </div>
                             );
                         })}

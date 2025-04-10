@@ -65,9 +65,9 @@ export default function OurTeam() {
                                     className="team-content flex flex-col justify-center items-center  w-full p-4 pb-8 bg-[#000000] ">
                                     <h3 className="lg:text-xl md:text-lg text-[14px] pt-1">{member.name} {member.lastname}</h3>
                                     <p className="lg:text-lg md:text-[14px] text-xs ">{member.role}</p>
-                                    <p className="lg:text-lg md:text-[14px] text-xs"> {member.followers}K followers</p>
+                                    <p className="lg:text-lg md:text-[14px] text-xs"> {member.followers} followers</p>
                                     <a className="underline underline-offset-2 lg:text-xl  text-md" href={member.link}
-                                       target="_blank">Linkdin</a>
+                                       target="_blank">Linkedin</a>
                                 </div>
                             </div>
 

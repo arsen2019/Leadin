@@ -55,7 +55,7 @@ export default function Statistics() {
                     <div className="p-5" ><h3 className="font-semibold text-2xl lg:text-3xl xl:text-4xl py-3"><span><Counter value={stats.people}/>%</span> of people</h3>
                         <p className="text-base lg:text-lg/6 xl:text-xl/8 sm:pr-5">are more likely to trust a company whose leadership is active on social media.</p></div>
                     <div className="p-5" ><h3 className="font-semibold text-2xl lg:text-3xl xl:text-4xl py-3"><span><Counter value={stats.business_opportunity}/>x</span> more business opportunities</h3>
-                        <p className="text-base lg:text-lg/6 xl:text-xl/8 sm:pr-5">Entrepreneurs with a strong personal brand attract 4x more business opportunities, as clients prefer working with individuals they know, like, and trust.</p></div>
+                        <p className="text-base lg:text-lg/6 xl:text-xl/8 sm:pr-5">Entrepreneurs with a strong personal brand attract {stats.business_opportunity}x more business opportunities, as clients prefer working with individuals they know, like, and trust.</p></div>
                 </div>
             ))}
 
