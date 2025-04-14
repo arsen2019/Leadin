@@ -1,88 +1,79 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SubscribePopUp from "../components/react_components/SubscribePopUp";
-import PortfolioSlider from "../components/PortfolioSlider.astro";
 import ClientSlider from "../components/ClientSlider.astro";
 import SocialHref from "../components/SocialHref.astro";
 import ReviewSlider from '../components/react_components/ReviewSlider'
 import GetStartedPopUp from "../components/react_components/GetStartedPopUp";
 import CardSlider from "../components/react_components/CardSlider";
 import Vacancies from "../components/react_components/Vacancies";
-import VideoComponent from "../components/react_components/VideoComponent";
+import GreetingVideo from "../../public/videos/DesktopV_1compressed.mp4"
+import GreetingVideoMobile from "../../public/videos/MobileV_1compressed.mp4"
+import AboutUs from "../components/AboutUs.astro";
+import VideoSection from "../components/VideoSection.astro";
+import GetInTouch from "../components/react_components/GetInTouch"
+import Portfolio from "../components/react_components/Portfolio";
 
-const reviews = [
-    {
-        id: 1,
-        firstName: "Deren",
-        lastName: "Minasyan",
-        rate: 5,
-        comment: "They helped me define my brand’s mission, values, and personality in a way that was both authentic and compelling. Since working with them, I’ve seen an increase in engagement and customer loyalty."
-    },
-    {
-        id: 2,
-        firstName: "Karen",
-        lastName: "Grigoryan",
-        rate: 5,
-        comment: "\"Our social media presence was all over the place before we started working with Leadin. They helped us develop a consistent, engaging social media strategy that reflects our brand’s voice and values."
-    },
-    {
-        id: 3,
-        firstName: "Srbui",
-        lastName: "Ambartsumian",
-        rate: 5,
-        comment: "From content calendars to post designs, they made sure everything we shared online reinforced our brand identity. We've noticed a significant increase in followers and engagement since implementing their strategy!"
-    },
-    {
-        id: 4,
-        firstName: "Haik",
-        lastName: "Khachatryan",
-        rate: 5,
-        comment: "One of the biggest challenges we faced was creating a consistent brand voice across all our communications. [Your Name] helped us develop a tone that speaks directly to our target audience, making our messaging more engaging and authentic. "
-    },
-];
 ---
-<BaseLayout title="Leadin Agency - Transform Your Personal Brand">
+<head>
+    <link rel="preload" as="video" href={GreetingVideo} type="video/mp4" media="(min-width: 768px)"
+          fetchpriority="high">
+    <link rel="preload" as="video" href={GreetingVideoMobile} type="video/mp4" media="(max-width: 767px)"
+          fetchpriority="high">
+</head>
+<BaseLayout title=" Personal Branding Services | LEADIN Agency"
+            description=` Build your personal or company brand with LEADIN. We deliver tailored strategies, expert content creation, and brand positioning that elevates visibility and drives meaningful impact.`
+>
 
 
-    <section class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8 h-[calc(100vh-80px)] flex flex-col gap-5 md:gap-0 md:flex-row bg-[#000]">
-        <div class="flex flex-col  md:w-1/2 w-full flex-start justify-center">
-            <div class="flex flex-col font-bold gap-[30px]">
-                <div class="content flex flex-col">
-                    <span class="text-4xl md:text-5xl">BUILD YOUR</span>
+    <section
+            class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8 h-fit flex flex-row lg:gap-2 lg:flex-row bg-[#000] relative">
+        <div class="flex lg:flex-row gap-5 flex-col w-full relative">
+            <div class="hidden lg:block absolute top-0 bottom-0 left-[50%] w-[120px] z-10"
+                 style="background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 100%);">
+
+            </div>
+
+            <div class="flex basis-1/2 flex-col font-bold gap-[30px] lg:gap-[50px] justify-end z-20">
+                <div class="content mb-12 flex flex-col">
+                    <span class="text-4xl md:text-[50px] lg:text-[60px] pb-[10px] ">BUILD YOUR</span>
                     <div>
-                        <span class="text-5xl md:text-6xl relative">
-                        PERSONAL
-                         <span class="absolute text-[15px] md:text-[20px] left-[95%] top-[40%]">CORPORATE</span>
-                    </span>
+                    <span class="text-5xl md:text-[65px] lg:text-[75px] relative">
+                    PERSONAL
+                     <span class="absolute text-[15px] md:text-[20px] lg:text-[25px] left-[96%] top-[32%]">CORPORATE</span>
+                </span>
                     </div>
-                    <span class="text-6xl md:text-7xl">BRAND</span>
+                    <span class="text-6xl md:text-[85px] lg:text-[100px]">BRAND</span>
                 </div>
 
-
-
                 <div class="font-bold flex gap-5 flex-row items-center">
-                    <button class="py-2 rounded-[10px]  text-[#FFF] text-md  md:text-xl  border-[#B19482] border-2 basis-1/2">
+                    <button class="py-2 rounded-[10px] text-[#FFF] text-md md:text-xl border-[#B19482] border-2 basis-1/2">
                         <a href="/services#headerInd">For Individuals</a></button>
 
                     <button class="py-2 rounded-[10px] text-[#FFF] text-md md:text-xl border-[#B19482] border-2 basis-1/2 ">
                         <a href="/services#headerCom">For Companies</a></button>
                 </div>
             </div>
-        </div>
-        <div class="md:w-1/2 w-full">
-            <VideoComponent client:only="react"/>
-        </div>
 
+            <div class="basis-1/2  aspect-[1.63] flex justify-center z-0">
+                <VideoSection videoBasePath={GreetingVideo} fallbackVideoBasePath={GreetingVideoMobile}/>
+            </div>
+        </div>
     </section>
+    <AboutUs/>
 
-<section class=" bg-[#000] max-w-[1440px] mx-auto"><PortfolioSlider/></section>
+    <section class=" bg-[#000] max-w-[1440px] mx-auto">
+        <div class="flex flex-col items-center">
+            <h1 class="sm:py-12 py-8 xl:text-5xl lg:text-4xl text-3xl font-bold my-10">OUR PORTFOLIO</h1>
+            <Portfolio client:only="react"/>
+        </div>
+    </section>
 
 
     <!-- Branding cards-->
-    <section class="cards-section  lg:max-w-[1440px] max-w-2xl mx-auto py-6 px-4  bg-black py-14">
+    <section class="cards-section max-w-[1440px] mx-auto py-6 px-4  bg-black py-14">
         <header class="text-center">
-            <h2 class="sm:py-12 py-8 xl:text-5xl lg:text-4xl text-3xl font-semibold ">Result-Based Personal
-                Branding</h2>
+            <h2 class="sm:py-12 py-8 xl:text-5xl lg:text-4xl text-3xl font-bold mb-20 ">RESULT-BASED PERSONAL BRANDING</h2>
         </header>
 
         <CardSlider client:only="react"/>
@@ -92,7 +83,7 @@ const reviews = [
     <!--Our Services-->
     <section class="max-w-[1440px] mx-auto py-6 px-4 bg-[#000]">
         <header class="text-center">
-            <h2 class="sm:pb-12 pb-8 font-semibold xl:text-5xl lg:text-4xl text-3xl">Our Services</h2>
+            <h2 class="sm:pb-12 pb-8 font-bold xl:text-5xl lg:text-4xl text-3xl">OUR SERVICES</h2>
         </header>
         <div class="ourServices-conteiner grid  grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 sm:gap-10 gap-5">
             <div class="ourServices  ">
@@ -131,17 +122,17 @@ const reviews = [
     <section class="max-w-[1440px] mx-auto bg-[#000] ">
 
         <div class="trusted-clients flex flex-col text-center gap-10 pt-24 pb-10 px-4">
-            <h1 class="xl:text-5xl lg:text-4xl text-3xl font-semibold">Trusted by 15+ clients</h1>
+            <h1 class="xl:text-5xl lg:text-4xl text-3xl font-bold">OUR CLIENTS</h1>
             <p class="text-sm md:text-xl">Our clients are our top priority, and we are committed to providing them with
                 the high level of service</p>
         </div>
         <ClientSlider/>
     </section>
     <section class="py-10 max-w-[1440px] pb-4 mx-auto bg-[#000]">
-        <h1 class="text-center sm:py-10 py-5 xl:text-5xl lg:text-4xl text-3xl font-semibold">Customer Reviews</h1>
-        <ReviewSlider reviews={reviews} client:only="react"/>
+        <h1 class="text-center sm:py-10 py-5 xl:text-5xl lg:text-4xl text-3xl font-bold">CUSTOMER REVIEWS</h1>
+        <ReviewSlider client:only="react"/>
     </section>
-    
+
     <section class="max-w-[1440px] py-8 mx-auto bg-[#000]">
         <div class="flex flex-col items-center justify-center w-[90%] mx-auto border-[#785B55] border-2 rounded-md p-3 gap-3 md:w-[80%] md:py-8">
             <h2 class="font-semibold md:text-4xl text-xl text-center">Define your personal branding strategy with
@@ -198,7 +189,7 @@ const reviews = [
             <div class="text-right bg-[#EED9C4] p-10 pl-14">
                 <h2 class="text-[#191718] text-3xl/10 font-bold">Why Start Building Your Personal Brand With Us?</h2>
                 <p class="text-[#000] text-sm/6 ml-6">Personal brands increase credibility, with professionals who
-                    actively build their brands seen as more knowledgeableand approachable.</p>
+                    actively build their brands seen as more knowledgeable and approachable.</p>
             </div>
             <div>
                 <img class="flex-shrink-0 min-w-full min-h-full" alt="HomeStaticImg" src="staticImg.png">
@@ -217,36 +208,32 @@ const reviews = [
 
     </section>
     <!--Contact us-->
-    <section class="bg-[#191718] max-w-[1440px] mx-auto py-12 px-4">
-        <header class="text-center">
-            <h2 class="sm:p-12 p-8 xl:text-5xl lg:text-4xl text-3xl font-semibold">Contact Us</h2>
-        </header>
-        <div class="contact-conteiner flex sm:flex-row flex-col-reverse gap-20 px-10">
-            <div class="contact-href  flex flex-1 flex-col sm:gap-8 gap-2">
-                <h3 class="sm:text-4xl text-2xl py-4">Do you have any questions?</h3>
-                <SocialHref/>
-                <SubscribePopUp style={{width: '100%', borderRadius: '6px'}} client:only="react"/>
-            </div>
-            <div class="contact-send flex flex-1 flex-col gap-4">
-                <h3 class="sm:text-4xl text-2xl py-4">Get in touch</h3>
-                <div>
-                    <input type="email" placeholder="Email"
-                           class="w-full p-2 border border-[#D9B99B] rounded-md focus:ring-2  bg-[#191718]"/>
+    <section class="w-full  py-12 px-4 bg-[#191718]">
+        <div class=" max-w-[1440px] mx-auto">
+            <header class="text-center">
+                <h2 class="sm:p-12 p-8 xl:text-5xl lg:text-4xl text-3xl font-bold">CONTACT US</h2>
+            </header>
+            <div class="contact-conteiner flex sm:flex-row flex-col-reverse gap-20 px-10">
+                <div class="contact-href  flex flex-1 flex-col sm:gap-8 gap-2">
+                    <h3 class="sm:text-4xl text-2xl py-4">Do you have any questions?</h3>
+                    <SocialHref/>
+                    <SubscribePopUp style={{width: '100%', borderRadius: '6px'}} client:visible/>
                 </div>
-                <div class="flex  h-full ">
-                    <textarea placeholder="Text"
-                              class=" start-0 w-full border p-2 border-[#D9B99B] rounded-md focus:ring-2 bg-[#191718]"></textarea>
-                </div>
-                <div>
-                    <button class="bg-[#B19482] py-2 rounded-md w-full hover:bg-[#8D705D] text-white focus:-scale-30">
-                        Send
-                    </button>
+                <div class="contact-send flex flex-1 flex-col">
+                    <h3 class="sm:text-4xl text-2xl py-4">Get in touch</h3>
+                    <GetInTouch client:visible />
+                    <div>
+                    </div>
                 </div>
             </div>
         </div>
+
     </section>
-    <section class="max-w-[1440px] mx-auto py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF] ">
-        <h1 class="font-semibold  text-[40px] text-black text-center mb-10 lg:mb-20">Join Us</h1>
-        <Vacancies client:only="react"/>
+    <section class="w-full py-16 px-4 sm:px-6 lg:px-8 bg-[#FFF] ">
+        <div class="max-w-[1440px] mx-auto">
+            <h1 class="font-bold  text-[40px] text-black text-center mb-10 lg:mb-20">JOIN US</h1>
+            <Vacancies client:only="react"/>
+        </div>
+
     </section>
 </BaseLayout>

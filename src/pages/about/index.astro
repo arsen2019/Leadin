@@ -1,67 +1,24 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import OurTeam from "../../components/OurTeam.astro";
-import OurTeamImg from '../../assets/img/teamImg.png'
-import AboutUs from '../../assets/img/AboutUs.png'
-import LanaImg from '../../assets/img/Lana.png';
-import LuizaImg from '../../assets/img/Luiza.png';
 import GetStartedPopUp from "../../components/react_components/GetStartedPopUp";
-import {Image} from "astro:assets";
-import Counter from "../../components/react_components/Counter";
+import OurTeam from "../../components/react_components/OurTeam";
+import AboutUs from "../../components/AboutUs.astro";
+import Statistics from "../../components/react_components/Statistics";
 ---
-<BaseLayout title="Leadin Agency - Insights & Success Stories">
+<BaseLayout title="About LEADIN | Transforming Personal Branding Globally"
+            description="Learn more about LEADIN's mission to revolutionize personal branding. Discover our unique approach that blends psychology, strategy, and creative storytelling.">
     <section class=" max-w-[1440px] mx-auto py-12 px-4 sm:px-6 lg:px-8 bg-[#000] ">
-        <header class=" sm:m-12 m-8 text-center sm:text-4xl lg:text-6xl text-2xl">
-            <h2> We help individuals and companies build and grow their digital presence.</h2>
+        <header class=" sm:m-12 m-8 md:pr-40 pr-12 sm:text-4xl lg:text-6xl text-2xl font-bold">
+            <h2>WE HELP INDIVIDUALS AND COMPANIES BUILD AND GROW THEIR DIGITAL PRESENCE</h2>
         </header>
     </section>
-    <section class=" max-w-[1440px] mx-auto md:py-6 px-4 sm:px-6 lg:px-8 text-[#000] bg-white">
-        <header class="text-center">
-            <h2 class="font-semibold sm:p-12 p-8 sm:text-5xl text-3xl ">About Us</h2>
-        </header>
-        <div class="flex sm:flex-row flex-col gap-10 md:m-6">
-            <div class="basis-2/5">
-                <Image src={AboutUs} class="object-contain " alt=""/>
-            </div>
-            <div class="basis-3/5">
-                <p class=" text-base lg:text-lg xl:text-xl pb-5 text-[#191718]">At LEADIN Personal Branding Agency, our mission is to revolutionize personal
-                    branding for experts and
-                    professionals by transcending the conventional PR approach. We delve deep into the emotions,
-                    aspirations, and fears that drive each individual, crafting a holistic personal brand that resonates
-                    authentically with their audience. Through expert guidance and a comprehensive suite of services, we
-                    empower our clients to navigate the digital landscape with confidence, establishing lasting
-                    connections and amplifying their influence on LinkedIn and beyond.</p>
-                <div class="text-lg lg:text-xl xl:text-2xl py-10 font-medium">
-                    <div><p>Let’s start your personal branding journey</p>
-                    </div>
-                    <div class="mx-auto">
-                        <GetStartedPopUp buttonText="Contact Us" style={{
-                            border: '1px solid none',
-                            color: '#FFF',
-                            padding: '8px 16px',
-                            borderRadius: '8px',
-                            fontWeight:'600',
-                        }} client:only="react"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <AboutUs/>
 
     <section class="vision-section max-w-[1440px] mx-auto py-12 bg-[#000]">
 
-        <div class="grid sm:grid-cols-2 grid-cols-1 md:m-20 m-5 md:gap-10">
-            <div class="p-5" ><h3 class="font-semibold text-2xl lg:text-3xl xl:text-4xl py-3"><span><Counter value={70} client:only="react"/>%</span> of employers</h3>
-            <p class="text-base lg:text-lg/6 xl:text-xl/8 sm:pr-5">use social media to screen candidates during the hiring process</p></div>
-            <div class="p-5" ><h3 class="font-semibold text-2xl lg:text-3xl xl:text-4xl py-3"><span><Counter value={50} client:only="react"/>%</span> of employers</h3>
-                <p class="text-base lg:text-lg/6 xl:text-xl/8 sm:pr-5">are lost because people don’t have an active personal brand.</p></div>
-            <div class="p-5" ><h3 class="font-semibold text-2xl lg:text-3xl xl:text-4xl py-3"><span><Counter value={82} client:only="react"/>%</span> of employers</h3>
-                <p class="text-base lg:text-lg/6 xl:text-xl/8 sm:pr-5">are more likely to trust a company whose leadership is active on social media.</p></div>
-            <div class="p-5" ><h3 class="font-semibold text-2xl lg:text-3xl xl:text-4xl py-3"><span><Counter value={4} client:only="react"/>x</span> of employers</h3>
-                <p class="text-base lg:text-lg/6 xl:text-xl/8 sm:pr-5">Entrepreneurs with a strong personal brand attract 4x more business opportunities, as clients prefer working with individuals they know, like, and trust.</p></div>
-        </div>
+        <Statistics client:only="react" />
         <header class="text-center">
-            <h2 class="font-semibold sm:p-12 p-8 sm:text-5xl text-3xl">Our Vision</h2>
+            <h2 class="font-bold sm:p-12 p-8 sm:text-5xl text-3xl">OUR VISION</h2>
         </header>
         <div class="vision-container flex md:flex-row flex-col-reverse lg:gap-12  p-3">
             <div class="flex flex-col md:w-[44%] xl:gap-9 md:gap-6 gap-3 p-6">
@@ -88,7 +45,7 @@ import Counter from "../../components/react_components/Counter";
                         feel confident navigating the digital landscape.</p>
                 </div>
                 <div class="xl:pt-20 flex justify-center">
-                    <GetStartedPopUp buttonText="Build Your personal brand with us" style={{
+                    <GetStartedPopUp buttonText="Build your personal brand with us" style={{
                         padding: '8px 16px',
                         borderRadius: '8px',
                         fontWeight: '600',
@@ -104,21 +61,14 @@ import Counter from "../../components/react_components/Counter";
 
 
     <!-- Our Team cards-->
-    <section class="team-section w-full bg-white max-w-[1440px] mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <header class="text-center">
-            <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl text-[#000] font-semibold">Our Team</h2>
-        </header>
-        <div class="team-section grid sm:grid-cols-3 grid-cols-2 gap-5 xl:w-[70%] lg:w-[80%] mx-auto ">
-            <OurTeam title="Inessa Manukyan" position="CEO/Founder" followers="4K"
-                     href="https://www.linkedin.com/in/inessa-manukyan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-                     src={OurTeamImg}/>
-            <OurTeam title="Lana Hakobjanyan" position="Chief Operations Officer " followers="2K"
-                     href="#"
-                     src={LanaImg}/>
-            <!--<OurTeam title="Luiza Hakobyan" position="Content Creator " followers="2K"-->
-            <!--         href="#"-->
-            <!--         src={LuizaImg}/>-->
+    <section class="team-section w-full bg-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[1440px] mx-auto ">
+            <header class="text-center">
+                <h2 class="sm:p-12 p-8 sm:text-5xl text-3xl text-[#000] font-bold">OUR TEAM</h2>
+            </header>
+            <OurTeam client:only="react" />
         </div>
+
     </section>
 
     <section class="team-section w-full bg-black max-w-[1440px] mx-auto py-24 px-8 sm:px-6 lg:px-10">

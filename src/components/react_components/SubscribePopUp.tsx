@@ -21,6 +21,7 @@ export default function SubscribePopUp({style}:IProps) {
         event.preventDefault();
         setIsOpen(false);
         setIsFeedbackOpen(true);
+        setTimeout(() => setIsFeedbackOpen(false), 2000);
         postData('/newsletters', subscriptionForm)
     };
 

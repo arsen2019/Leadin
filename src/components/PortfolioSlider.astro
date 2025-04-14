@@ -1,18 +1,58 @@
 ---
-import Portfolio from "./react_components/Portfolio.tsx";
-
-const image_paths = import.meta.glob("/public/portfolio/*");
-
-const imagePaths = Object.keys(image_paths).map((path) =>
-    path.replace(/^\/public/, "")
-);
-const concat = imagePaths.concat(imagePaths).concat(imagePaths);
+import Portfolio from "./react_components/Portfolio";
 ---
 
-<div class="flex flex-col items-center">
-    <h1 class="sm:py-12 py-8 xl:text-5xl lg:text-4xl text-3xl font-semibold">Our Portfolio</h1>
-    <Portfolio slides={concat} client:only="react" />
+<div class="portfolio-container" data-lazy="true">
+    <div class="portfolio-placeholder">
+        <div class="w-full space-y-4">
+            {Array(2).fill(0).map((_, rowIndex) => (
+                    <div  class="relative">
+                        <div class="flex overflow-hidden">
+                            {Array(4).fill(0).map((_, i) => (
+                                    <div class="px-2 flex-shrink-0" style={{ width: `${100 / 4}%` }}>
+                                        <div class="bg-gray-200 animate-pulse h-44 rounded"></div>
+                                    </div>
+                            ))}
+                        </div>
+                    </div>
+            ))}
+        </div>
+    </div>
+
+    <div class="portfolio-react">
+        <Portfolio client:only="react"/>
+    </div>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const portfolioContainer = document.querySelector('.portfolio-container');
 
+        if (portfolioContainer) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        import('../components/react_components/Portfolio.tsx').then((module) => {
+                            const script = document.createElement('script');
+                            script.type = 'module';
+                            script.innerHTML = `
+              import { Portfolio } from '../components/react_components/Portfolio';
+              
+              const container = document.querySelector('.portfolio-react');
+              hydrateRoot(container, Portfolio());
+            `;
+                            document.body.appendChild(script);
 
+                            const placeholder = document.querySelector('.portfolio-placeholder');
+                        });
+
+                        observer.disconnect();
+                    }
+                });
+            }, { rootMargin: '400px' });
+
+            observer.observe(portfolioContainer);
+        }
+
+    });
+</script>
