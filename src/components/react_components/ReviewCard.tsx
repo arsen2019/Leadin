@@ -28,7 +28,7 @@ export default function ReviewCard() {
         (async () => {
             try {
                 const response = await fetchData("/api/reviews");
-                console.log(response);
+
                 setData(response);
             } catch (error) {
                 console.error("Failed to fetch data:", error);

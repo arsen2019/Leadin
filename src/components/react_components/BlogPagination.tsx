@@ -56,9 +56,6 @@ const BlogPagination: React.FC<BlogPaginationProps> = ({
                     `/api/blogs?pagination[page]=${currentPage}&pagination[pageSize]=${articlesPerPage}&populate=*`
                 );
 
-                // Debug logging
-                console.log("Fetched data:", data);
-
                 if (!data) {
                     throw new Error("No data returned from fetchData");
                 }
@@ -81,7 +78,7 @@ const BlogPagination: React.FC<BlogPaginationProps> = ({
         const items = [];
 
         if (pageCount < 5) {
-            // If total pages < 5, just show all pages
+
             for (let i = 1; i <= pageCount; i++) {
                 items.push(
                     <span
@@ -166,7 +163,7 @@ const BlogPagination: React.FC<BlogPaginationProps> = ({
         if (pageLoading || newPage === currentPage) return;
         setPageLoading(true);
         setCurrentPage(newPage);
-        // Scroll to top when changing pages
+
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 

@@ -12,7 +12,7 @@ export default function OpenPositions() {
     const content = "Thank you. Your form is submitted. You will be contacted by our team shortly."
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        console.log(subscriptionForm)
+
         setIsOpen(false);
         setIsFeedbackOpen(true);
         postData('/join', subscriptionForm)

@@ -26,7 +26,6 @@ export default function Info() {
             try {
                 const response = await fetchData("/api/infos");
                 setData(response);
-                console.log(response.data);
             } catch (error) {
                 console.error("Failed to fetch data:", error);
             } finally {

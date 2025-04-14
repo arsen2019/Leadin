@@ -76,7 +76,7 @@ export default function Portfolio() {
     const goToPrev = (ref: any, rowIndex: number) => {
         setCurrentIndex((prev: any) => ({
             ...prev,
-            [rowIndex]: Math.max((prev[rowIndex] || 0) - 1, 0), // Prevent negative index
+            [rowIndex]: Math.max((prev[rowIndex] || 0) - 1, 0),
         }));
         ref.current?.previous();
     };
@@ -102,7 +102,7 @@ export default function Portfolio() {
                         partialVisible
                     >
                         {row.data.map((item, index) => {
-                            console.log(item)
+
                             const imageUrl =
                                 PUBLIC_API_URL_STRAPI +
                                 (item.image?.formats?.small?.url ?  item.image?.formats?.small?.url:
@@ -143,8 +143,7 @@ export default function Portfolio() {
                         <button
                             onClick={() => goToNext(row.ref, rowIndex)}
                             aria-label="Next"
-                            disabled={currentIndex[rowIndex] >= row.data.length - itemsToShow} // ✅ Correctly disables at last index
-                        >
+                            disabled={currentIndex[rowIndex] >= row.data.length - itemsToShow}
                             <img
                                 src="/icons/next.svg"
                                 alt="next"

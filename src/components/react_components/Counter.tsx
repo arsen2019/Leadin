@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 interface CounterProps {
     value: number;
-    duration?: number; // Default duration in milliseconds
+    duration?: number;
 }
 
 const Counter: React.FC<CounterProps> = ({ value, duration = 2000 }) => {
@@ -14,9 +14,9 @@ const Counter: React.FC<CounterProps> = ({ value, duration = 2000 }) => {
             ([entry]) => {
                 if (entry.isIntersecting) {
                     let start = 0;
-                    const frameRate = 16; // ~60fps
+                    const frameRate = 16;
                     const totalFrames = duration / frameRate;
-                    const step = value / totalFrames; // Ensure the same duration for all numbers
+                    const step = value / totalFrames;
 
                     const interval = setInterval(() => {
                         start += step;

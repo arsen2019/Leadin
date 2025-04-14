@@ -29,7 +29,7 @@ export default function ReviewSlider() {
         (async () => {
             try {
                 const response = await fetchData("/api/reviews");
-                console.log(response);
+
                 setData(response);
             } catch (error) {
                 console.error("Failed to fetch data:", error);

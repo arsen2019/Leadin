@@ -15,7 +15,7 @@ const AnimatedText = ({ words = ["Professional", "Awesome", "Memorable", "Cool",
 
             setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
 
-            // await new Promise(resolve => setTimeout(resolve, 200));
+
         };
 
         animationCycle();

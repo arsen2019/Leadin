@@ -20,7 +20,6 @@ export default function GetInTouch({style}:IProps) {
     const content = "Thank you. Your form is submitted. You will be contacted by our team shortly."
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        console.log(subscriptionForm)
         setIsOpen(false);
         setIsFeedbackOpen(true);
         postData('/contact', subscriptionForm)

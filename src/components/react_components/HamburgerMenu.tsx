@@ -56,22 +56,19 @@ export default function HamburgerMenu({activePath}: Props) {
                     } hover:scale-130 active:scale-120 `}><a href="/">Home</a></li>
                     <li className={`cursor-pointer transform transition-all duration-300 ${
                         activePath === "/about/" ? "font-bold" : "opacity-80"
-                    }  hover:scale-130 active:scale-120 `}><a href="/about">About Us</a></li>
+                    }  hover:scale-130 active:scale-120 `}><a href="/about/">About Us</a></li>
                     <li className={`cursor-pointer transform transition-all duration-300 ${
                         activePath === "/services/" ? "font-bold" : "opacity-80"
-                    } hover:scale-130 active:scale-120 `}><a href="/services">Services</a></li>
+                    } hover:scale-130 active:scale-120 `}><a href="/services/">Services</a></li>
                     <li className={`cursor-pointer transform transition-all duration-300 ${
                         activePath === "/clients/" ? "font-bold" : "opacity-80"
-                    } hover:scale-130 active:scale-120 `}><a href="/clients">Clients</a></li>
-                    {/*<li className={`cursor-pointer transform transition-all duration-300 ${*/}
-                    {/*    activePath === "/portfolio/" ? "font-bold" : "opacity-80"*/}
-                    {/*}  hover:scale-130 active:scale-120 `}><a href="/portfolio">Portfolio</a></li>*/}
+                    } hover:scale-130 active:scale-120 `}><a href="/clients/">Clients</a></li>
                     <li className={`cursor-pointer transform transition-all duration-300 ${
                         activePath === "/connect/" ? "font-bold" : "opacity-80"
-                    }  hover:scale-130 active:scale-120 `}><a href="/connect">Connect</a></li>
+                    }  hover:scale-130 active:scale-120 `}><a href="/connect/">Connect</a></li>
                     <li className={`cursor-pointer transform transition-all duration-300 ${
                         activePath === "/blog/" ? "font-bold" : "opacity-80"
-                    } hover:scale-130 active:scale-120 `}><a href="/blog">Blog</a></li>
+                    } hover:scale-130 active:scale-120 `}><a href="/blog/">Blog</a></li>
                 </ul>
 
                 <button

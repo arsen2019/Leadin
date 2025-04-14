@@ -25,7 +25,6 @@ export default function GetInTouchLarge() {
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
         setIsOpen(false);
-        console.log(formData);
         setIsFeedbackOpen(true);
         setTimeout(() => setIsFeedbackOpen(false), 2000);
         postData('/subscriptions', formData)

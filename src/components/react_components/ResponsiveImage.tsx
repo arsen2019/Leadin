@@ -1,8 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { fetchData } from "../../utils/utils.ts";
-import { PUBLIC_API_URL_STRAPI } from "../../services/api.ts";
 
 const ResponsiveImage = ({ src, alt, className }:{src:string,alt:string,className:string}) => {
     const [imageLoaded, setImageLoaded] = useState(false);
@@ -15,11 +12,10 @@ const ResponsiveImage = ({ src, alt, className }:{src:string,alt:string,classNam
                 const response = await fetch(src, { method: 'HEAD' });
                 const contentType = response.headers.get('content-type');
 
-                // Set the appropriate source
                 setImageSrc(src);
             } catch (err) {
                 console.error("Error checking image type:", err);
-                setImageSrc(src); // Fallback to original source
+                setImageSrc(src);
                 setError(true);
             }
         };

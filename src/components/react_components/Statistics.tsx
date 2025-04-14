@@ -26,7 +26,7 @@ export default function Statistics() {
             try {
                 const response = await fetchData("/api/statistics");
                 setData(response);
-                console.log(response.data);
+
             } catch (error) {
                 console.error("Failed to fetch data:", error);
             } finally {

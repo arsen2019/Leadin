@@ -33,22 +33,19 @@ function isActivePath(currentPath:string, pathPrefix:string) {
                     }`><a href="/">Home</a></li>
                     <li class={`flex ${
                         isActivePath(path, "/about") ? "underline-text" : ""
-                    }`}><a href="/about">About Us</a></li>
+                    }`}><a href="/about/">About Us</a></li>
                     <li class=`flex ${
                         isActivePath(path, "/services")  ? "underline-text" : ""
-                    }`><a href="/services">Services</a></li>
+                    }`><a href="/services/">Services</a></li>
                     <li class=`flex ${
                         isActivePath(path, "/clients") ? "underline-text" : ""
-                    }`><a href="/clients">Clients</a></li>
-                    <!--<li class=`flex ${-->
-                    <!--    path === "/portfolio/" ? "underline-text" : ""-->
-                    <!--}`><a href="/portfolio">Portfolio</a></li>-->
+                    }`><a href="/clients/">Clients</a></li>
                     <li class=`flex ${
                         isActivePath(path, "/connect") ? "underline-text" : ""
-                    }`><a href="/connect">Connect</a></li>
+                    }`><a href="/connect/">Connect</a></li>
                     <li class=`flex ${
                         isActivePath(path, "/blog") ? "underline-text" : ""
-                    }`><a href="/blog">Blog</a></li>
+                    }`><a href="/blog/">Blog</a></li>
                     <li class="flex">
                         <div class="w-[130px]">
                             <StepByStepPopUp btnText='Get Started' client:visible/>

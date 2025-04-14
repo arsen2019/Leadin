@@ -16,9 +16,9 @@ import Portfolio from "../components/react_components/Portfolio";
 
 ---
 <head>
-    <link rel="preload" href={GreetingVideo} type="video/mp4" media="(min-width: 768px)"
+    <link rel="preload" as="video" href={GreetingVideo} type="video/mp4" media="(min-width: 768px)"
           fetchpriority="high">
-    <link rel="preload" href={GreetingVideoMobile} type="video/mp4" media="(max-width: 767px)"
+    <link rel="preload" as="video" href={GreetingVideoMobile} type="video/mp4" media="(max-width: 767px)"
           fetchpriority="high">
 </head>
 <BaseLayout title=" Personal Branding Services | LEADIN Agency"
@@ -55,7 +55,7 @@ import Portfolio from "../components/react_components/Portfolio";
                 </div>
             </div>
 
-            <div class="basis-1/2 as aspect-[1.63] flex justify-center z-0">
+            <div class="basis-1/2  aspect-[1.63] flex justify-center z-0">
                 <VideoSection videoBasePath={GreetingVideo} fallbackVideoBasePath={GreetingVideoMobile}/>
             </div>
         </div>

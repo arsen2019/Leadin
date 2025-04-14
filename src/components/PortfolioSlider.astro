@@ -1,11 +1,8 @@
 ---
-// PortfolioLoader.astro
 import Portfolio from "./react_components/Portfolio";
-import {hydrateRoot} from "react-dom/client";
 ---
 
 <div class="portfolio-container" data-lazy="true">
-    <!-- Placeholder while component loads -->
     <div class="portfolio-placeholder">
         <div class="w-full space-y-4">
             {Array(2).fill(0).map((_, rowIndex) => (
@@ -22,26 +19,20 @@ import {hydrateRoot} from "react-dom/client";
         </div>
     </div>
 
-    <!-- React component will be loaded here -->
     <div class="portfolio-react">
-        <!-- This will be hydrated -->
         <Portfolio client:only="react"/>
     </div>
 </div>
 
 <script>
-    // Import the React component only after initial page load
     document.addEventListener('DOMContentLoaded', () => {
         const portfolioContainer = document.querySelector('.portfolio-container');
 
-        // Use Intersection Observer to load the component when it's near viewport
         if (portfolioContainer) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Only load when visible
                         import('../components/react_components/Portfolio.tsx').then((module) => {
-                            // Create a script tag to hydrate the component
                             const script = document.createElement('script');
                             script.type = 'module';
                             script.innerHTML = `
@@ -52,16 +43,13 @@ import {hydrateRoot} from "react-dom/client";
             `;
                             document.body.appendChild(script);
 
-                            // Remove the placeholder
                             const placeholder = document.querySelector('.portfolio-placeholder');
-                            //placeholder.style.display = 'none';
                         });
 
-                        // Disconnect observer after loading
                         observer.disconnect();
                     }
                 });
-            }, { rootMargin: '400px' }); // Start loading when 200px from viewport
+            }, { rootMargin: '400px' });
 
             observer.observe(portfolioContainer);
         }

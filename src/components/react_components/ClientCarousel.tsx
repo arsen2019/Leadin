@@ -16,7 +16,6 @@ export default function ClientCarousel() {
 
     }, []);
 
-    console.log(data)
 
     return (
         <div className="flex flex-col items-center">
