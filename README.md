@@ -1,48 +1,112 @@
-# Astro Starter Kit: Basics
+# 🚀 Astro + React Frontend
 
-```sh
-npm create astro@latest -- --template basics
+This is a modern frontend blog application built with **Astro** and **React** using **TypeScript**. It renders structured blog content from a headless CMS (or static source) and is optimized for performance, developer experience, and SEO.
+
+---
+
+## 📚 Features
+
+- 🌌 Built with [Astro](https://astro.build/) and [React](https://react.dev/)
+- 🧠 TypeScript support
+- 🖼️ Markdown & dynamic content rendering
+- 📱 Responsive and mobile-friendly design
+- 🧪 Easy local development
+- 🚀 Deploy-ready structure
+
+---
+
+## ⚙️ Requirements
+
+Before starting, make sure you have the following installed:
+
+### 🟢 Node.js & npm
+
+- 📦 **Node.js**: JavaScript runtime environment
+- 🧰 **npm**: Node package manager (comes with Node.js)
+
+### 👉 Install from here:
+
+- [Node.js (LTS version recommended)](https://nodejs.org/en)
+- After installation, verify using:
+
+```bash
+node -v
+npm -v
+```
+### Project architecture
+
+````
+Leadin/
+├── public/             # Static assets (images, etc.)
+├── scripts/            # Script to upload the project to server
+├── src/                # Source code
+│   ├── components/     # React and Astro components
+│   ├── pages/          # Routes
+│   └── layout/         # Shared layouts
+├── astro.config.mjs    # Astro config
+├── tsconfig.json       # TypeScript config
+├── package.json        # Dependencies & scripts
+├── docker-compose.yml  # Docker config for deployment
+├── Dockerfile          # Docker file for image build
+└── README.md
+
+````
+
+## 🛠️ Local Development
+
+### Clone Repository
+```bash
+
+git clone https://github.com/arsen2019/Leadin.git
+cd Leadin
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+### Install Dependencies
+```bash
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+npm install
+```
+### Run the Development Server
+```bash
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+npm run dev
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Then open http://localhost:4321 in your browser to view the app.
 
-## 🧞 Commands
+## 🚢 Deployment
 
-All commands are run from the root of the project, from a terminal:
+We are going to deploy on our Droplet in Digital ocean.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### 1. Setup the .env file
 
-## 👀 Want to learn more?
+Create .env file and create two environment variables
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+``` bash
+    touch .env
+```
+and then create two environment variables and pass them your URLs
+- PUBLIC_API_URL_STRAPI
+- PUBLIC_API_URL_BACKEND
+
+### 2. Upload the project to server
+
+Upload the project to server by running this script from root folder
+
+```bash
+    ./scripts/uploadserver.sh
+```
+
+### 3. Run docker on server
+
+Enter the server with ssh username@IP_Address and pass your ssh key and on the server run this command
+
+```bash
+    docker compose up --build -d
+```
+
+# 🎉 Congratulations!
+
+## Your app is now up and running! 🚀
+
+
